@@ -13,14 +13,14 @@ import os
 import pandas as pd
 import librosa
 import soundfile as sf
-import argparse
+# import argparse
 
-ap = argparse.ArgumentParser()
-ap.add_argument("-df", "--data_frame", type=str, default=0,
-	help="path of data frame")
-ap.add_argument("-ap", "--audio_path", type=str, default=0,
-    help="path of audio file")
-args = vars(ap.parse_args())
+# ap = argparse.ArgumentParser()
+# ap.add_argument("-df", "--data_frame", type=str, default=0,
+# 	help="path of data frame")
+# ap.add_argument("-ap", "--audio_path", type=str, default=0,
+#     help="path of audio file")
+# args = vars(ap.parse_args())
 
 
 def create_audio(audio_path, folder_name, q, current_speaker):
