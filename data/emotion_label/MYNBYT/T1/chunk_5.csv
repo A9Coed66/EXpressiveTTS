@@ -1,0 +1,7 @@
+,audio_path,model_label,start,end,script,emotion
+0,../../data/concat_audio/MYNBYT/T1/chunk_5/87.7 90.3 BichNgoc.wav,BichNgoc,87.7,90.3,{'text': 'để đến nỗi đêm chồng con có về không con cũng không biết.'},Sadness
+1,../../data/concat_audio/MYNBYT/T1/chunk_5/69.9 72.2 DucAnh.wav,DucAnh,69.9,72.2,{'text': 'làm gì đâu có đúng là gì mà đòi khác đâu.'},Disgust
+2,../../data/concat_audio/MYNBYT/T1/chunk_5/32.6 36.3 BichNgoc.wav,BichNgoc,32.6,36.3,{'text': 'còn cái thi này thắng nước anh đâu anh ấy đi làm từ tháng à mẹ.'},Anger
+3,../../data/concat_audio/MYNBYT/T1/chunk_5/47.0 50.6 DucAnh.wav,DucAnh,47.0,50.6,{'text': 'lúc đấy con hay đi về đêm xong vào sáng đi sớm chắc thân không biết.'},Fear
+4,../../data/concat_audio/MYNBYT/T1/chunk_5/99.0 101.5 BichNgoc.wav,BichNgoc,99.0,101.5,{'text': 'mang cái xích từ đầy nào đầy nào ra khóa cổng.'},Anger
+5,../../data/concat_audio/MYNBYT/T1/chunk_5/108.5 110.8 DucAnh.wav,DucAnh,108.5,110.8,{'text': 'cái cái trích dắt ngoài cửa là.'},Anger

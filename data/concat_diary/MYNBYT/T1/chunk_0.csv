@@ -1,0 +1,16 @@
+,audio_path,model_label,start,end
+0,../../data/denoised/chunk_0,DucAnh,75.5,84.0
+1,../../data/denoised/chunk_0,BichNgoc,84.7,86.0
+2,../../data/denoised/chunk_0,DucAnh,86.6,89.9
+3,../../data/denoised/chunk_0,BichNgoc,96.9,98.0
+4,../../data/denoised/chunk_0,DucAnh,99.7,109.9
+5,../../data/denoised/chunk_0,DucAnh,121.0,132.1
+6,../../data/denoised/chunk_0,BichNgoc,148.9,150.0
+7,../../data/denoised/chunk_0,DucAnh,159.3,163.1
+8,../../data/denoised/chunk_0,BichNgoc,186.4,188.8
+9,../../data/denoised/chunk_0,DucAnh,203.2,240.2
+10,../../data/denoised/chunk_0,BichNgoc,241.9,248.1
+11,../../data/denoised/chunk_0,DucAnh,249.4,253.7
+12,../../data/denoised/chunk_0,BichNgoc,253.9,255.5
+13,../../data/denoised/chunk_0,DucAnh,270.1,271.8
+14,../../data/denoised/chunk_0,BichNgoc,275.9,277.6

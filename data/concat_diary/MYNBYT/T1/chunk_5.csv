@@ -1,0 +1,7 @@
+,audio_path,model_label,start,end
+0,../../data/denoised/chunk_5,BichNgoc,32.6,36.3
+1,../../data/denoised/chunk_5,DucAnh,47.0,50.6
+2,../../data/denoised/chunk_5,DucAnh,69.9,72.2
+3,../../data/denoised/chunk_5,BichNgoc,87.7,90.3
+4,../../data/denoised/chunk_5,BichNgoc,99.0,101.5
+5,../../data/denoised/chunk_5,DucAnh,108.5,110.8
