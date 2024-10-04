@@ -4,7 +4,7 @@ import torch
 import os
 import json
 
-secret = "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"
+secret = "mo di cu"
 
 print("Loading diarization model...")
 diarization = Pipeline.from_pretrained(
