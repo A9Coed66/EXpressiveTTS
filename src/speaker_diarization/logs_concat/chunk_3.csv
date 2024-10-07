@@ -1,0 +1,14 @@
+audio_path,model_label,start,end
+./concat_audio/MYNBYT/T1/chunk_3/1.8 to 6.1.mp3,NgocQuan,1.8,6.1
+./concat_audio/MYNBYT/T1/chunk_3/7.5 to 10.1.mp3,NgocQuan,7.5,10.1
+./concat_audio/MYNBYT/T1/chunk_3/15.4 to 20.1.mp3,NgocQuan,15.4,20.1
+./concat_audio/MYNBYT/T1/chunk_3/79.2 to 80.5.mp3,DucAnh,79.2,80.5
+./concat_audio/MYNBYT/T1/chunk_3/99.0 to 106.5.mp3,DucAnh,99.0,106.5
+./concat_audio/MYNBYT/T1/chunk_3/143.4 to 144.5.mp3,DucAnh,143.4,144.5
+./concat_audio/MYNBYT/T1/chunk_3/212.6 to 217.0.mp3,KieuGiang,212.6,217.0
+./concat_audio/MYNBYT/T1/chunk_3/220.0 to 221.7.mp3,KieuGiang,220.0,221.7
+./concat_audio/MYNBYT/T1/chunk_3/232.0 to 235.8.mp3,KieuGiang,232.0,235.8
+./concat_audio/MYNBYT/T1/chunk_3/238.6 to 244.7.mp3,KieuGiang,238.6,244.7
+./concat_audio/MYNBYT/T1/chunk_3/265.1 to 266.4.mp3,KieuGiang,265.1,266.4
+./concat_audio/MYNBYT/T1/chunk_3/267.7 to 274.3.mp3,KieuGiang,267.7,274.3
+./concat_audio/MYNBYT/T1/chunk_3/284.0 to 285.2.mp3,NgocQuan,284.0,285.2
