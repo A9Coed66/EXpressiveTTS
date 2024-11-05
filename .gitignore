@@ -1,6 +1,4 @@
-data/
+data_verifed/
 data_unverified/
-src/speaker_diarization/pretrained_models
-src/speaker_diarization/__pycache__
-src/speaker_diarization/phobert_fold4.pth
-src/speaker_diarization/phobert_fold5.pth
+dataRawProcess/
+raw_path/
