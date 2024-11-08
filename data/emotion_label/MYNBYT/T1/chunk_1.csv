@@ -1,4 +1,0 @@
-,audio_path,model_label,start,end,script,emotion
-0,../../data/concat_audio/MYNBYT/T1/chunk_1/4.5 9.4 DucAnh.wav,DucAnh,4.5,9.4,{'text': 'ờ đêm nay tao phải chạy đết lai nên chắc là về muộn nếu mà có gì mà hân say quá thì mày đưa hân về nhá.'},Anger
-1,../../data/concat_audio/MYNBYT/T1/chunk_1/272.9 279.7 DucAnh.wav,DucAnh,272.9,279.7,{'text': 'cô đi là đúng đấy chứ tuần trước a hà nội rét buốt lạnh lắm cô ạ vừa mưa phùn nồm ẩm.'},Sadness
-2,../../data/concat_audio/MYNBYT/T1/chunk_1/186.3 188.0 DucAnh.wav,DucAnh,186.3,188.0,{'text': 'gọi để nhắc em là nhớ quá cỡ.'},Enjoyment

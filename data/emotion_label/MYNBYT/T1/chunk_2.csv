@@ -1,9 +1,0 @@
-,audio_path,model_label,start,end,script,emotion
-0,../../data/concat_audio/MYNBYT/T1/chunk_2/162.5 164.8 BichNgoc.wav,BichNgoc,162.5,164.8,{'text': 'em học nói giọng sài gòn ở trên mạng đó.'},Enjoyment
-1,../../data/concat_audio/MYNBYT/T1/chunk_2/24.9 37.3 DucAnh.wav,DucAnh,24.9,37.3,{'text': 'dạ vâng đấy cháu cũng đã định bay vào thăm ông anh họ ở trong khu công nghiệp bình dương nhưng mà giá vé thế này thì khó quá bọn cháu lái taxi thế này ngày được vài trăm bây giờ mà đi thì mất một ngày công.'},Sadness
-2,../../data/concat_audio/MYNBYT/T1/chunk_2/156.9 158.9 BichNgoc.wav,BichNgoc,156.9,158.9,{'text': 'vui thì ở lại lâu lâu một xíu nhá.'},Enjoyment
-3,../../data/concat_audio/MYNBYT/T1/chunk_2/215.9 229.9 BichNgoc.wav,BichNgoc,215.9,229.9,{'text': 'hôm nay với ngày mai là em xin nghỉ nhà em có khách ở quê ra còn gì ơ thì thoa ơi hết mắm tôm rồi bảo cái nhung ra chợ mua đi nhung ra chợ mua mắm tôm cho mẹ bảo trong trong ví lấy tiền cho mẹ đi thôi.'},Other
-4,../../data/concat_audio/MYNBYT/T1/chunk_2/55.7 58.4 BichNgoc.wav,BichNgoc,55.7,58.4,{'text': 'mày thì cứ tại sao lại nói với mẹ như thế hả.'},Anger
-5,../../data/concat_audio/MYNBYT/T1/chunk_2/248.0 249.1 BichNgoc.wav,BichNgoc,248.0,249.1,{'text': 'thôi chị dự luật đi nhá.'},Other
-6,../../data/concat_audio/MYNBYT/T1/chunk_2/6.5 8.6 DucAnh.wav,DucAnh,6.5,8.6,{'text': 'mà cháu nghe nói từ ngày mùng một tháng ba.'},Enjoyment
-7,../../data/concat_audio/MYNBYT/T1/chunk_2/188.9 194.1 BichNgoc.wav,BichNgoc,188.9,194.1,{'text': 'thứ hai là khoái nào làm sao em biết được cũng có thể là đức anh hay là cái hân nó khoái nhầm thì sao.'},Other

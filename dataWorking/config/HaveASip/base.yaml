@@ -1,15 +1,15 @@
 resume:
 test_checkpoint: 
 checkpoint:      ./checkpoints
-dataset:         'Mihoyo'
+dataset:         'HaveASip'
 vocoder:         'hifigan'   ## vocoder & vocoder path ['hifigan', 'bigvgan']
 
 path:
 ## TODO: change the path to true
   pretrain_model_path:  ''
-  train_path:           'filelists/Mihoyo/train_unseen.txt'
-  val_path:             'filelists/Mihoyo/valid.txt'
-  test_path:            'filelists/Mihoyo/test.txt'
+  train_path:           'filelists/HaveASip/train_unseen.txt'
+  val_path:             'filelists/HaveASip/valid.txt'
+  test_path:            'filelists/HaveASip/test.txt'
   cmu_path:             'resources/cmu_dictionary'
   vocoder_path:         'hifigan/weights'          #  ['hifigan/weights', 'bigvgan/bigvgan_22khz_80band', 'bigvgan/bigvgan_base_22khz_80band']
 
@@ -87,7 +87,7 @@ model:
 
 train:
   epoch:      1000
-  batch_size: 12
+  batch_size: 24
   save_epoch: 50
   syn_every:  50
   fix_len:    2

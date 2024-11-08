@@ -106,7 +106,7 @@ phonemizer_backend = EspeakBackend(language=g2p_lang,
 
 def vietnamese_cleaners(text):
     text = lowercase(text)
-    phones = phonemizer_backend.phonemize([text], strip=True)[0]
-    text = phonecodes.convert(phones, "ipa", "xsampa")
+    # phones = phonemizer_backend.phonemize([text], strip=True)[0]
+    # text = phonecodes.convert(phones, "ipa", "xsampa")
     text = collapse_whitespace(text)
     return text

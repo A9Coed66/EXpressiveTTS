@@ -122,6 +122,39 @@ from text import cleaners
 from text.symbols import symbols
 import sys
 
+import phonecodes.phonecode_tables as phonecode_tables
+from phonemizer.backend import EspeakBackend 
+from phonecodes import phonecodes
+
+
+language = "vie"
+
+if language == "en":
+    g2p_lang = "en-us"  # English as spoken in USA
+    expand_abbreviations = lambda x: x
+    phonemizer = "espeak"
+elif language == "vie":
+    g2p_lang = "vi"  # Northern Vietnamese
+    expand_abbreviations = lambda x: x
+    phonemizer = "espeak"
+
+elif language == "vi-ctr":
+    g2p_lang = "vi-vn-x-central"  # Central Vietnamese
+    expand_abbreviations = lambda x: x
+    phonemizer = "espeak"
+
+elif language == "vi-so":
+    g2p_lang = "vi-vn-x-south"  # Southern Vietnamese
+    expand_abbreviations = lambda x: x
+    phonemizer = "espeak"
+
+phonemizer_backend = EspeakBackend(language=g2p_lang,
+                                    punctuation_marks='*;:,.!?¡¿—…()"«»“”~/。【】、‥،؟“”؛',
+                                    preserve_punctuation=True,
+                                    language_switch='remove-flags',
+                                    with_stress=False)
+
+
 print(f'symbols: {symbols}')
 _symbol_to_id = {s: i for i, s in enumerate(symbols)}
 _id_to_symbol = {i: s for i, s in enumerate(symbols)}
@@ -142,13 +175,14 @@ _id_to_symbol = {i: s for i, s in enumerate(symbols)}
 # '@UW2': 142, '@V': 143, '@W': 144, '@Y': 145, '@Z': 146, '@ZH': 147}
 
 _curly_re = re.compile(r'(.*?)\{(.+?)\}(.*)')
-print(f'_curly_re: {_curly_re}')
 
 
 def get_arpabet(word, dictionary):
-    word_arpabet = dictionary.lookup(word)
-    if word_arpabet is not None:
-        return "{" + word_arpabet[0] + "}"
+    # word_arpabet = dictionary.lookup(word)
+    phones = phonemizer_backend.phonemize([word], strip=True)[0]
+    arpabet = phonecodes.translate_string(phones, phonecode_tables._ipa2arpabet)
+    if arpabet is not None:
+        return '{' + " ".join(arpabet[0]) + '}'
     else:
         return word
 
@@ -168,25 +202,24 @@ def text_to_sequence(text, cleaner_names=["vietnamese_cleaners"], dictionary=Non
     Returns:
       List of integers corresponding to the symbols in the text
     '''
-    sequence = []
-    space = _symbols_to_sequence(' ')
-    # print(f'space: {space}')
+    sequence    =  []
+    space       =  _symbols_to_sequence(' ')
+    dot         =  _symbols_to_sequence('.')
     # Check for curly braces and treat their contents as ARPAbet:
     while len(text):
         m = _curly_re.match(text)
-        # print(f'm: {m}')
         if not m:
             clean_text = _clean_text(text, cleaner_names)
             if dictionary is not None:
                 clean_text = [get_arpabet(w, dictionary) for w in clean_text.split(" ")]
                 for i in range(len(clean_text)):
                     t = clean_text[i]
-                    # print(f'clean_text[i]: {t}')
                     if t.startswith("{"):
                         sequence += _arpabet_to_sequence(t[1:-1])
                     else:
                         sequence += _symbols_to_sequence(t)
                     sequence += space
+                sequence += dot
             else:
                 sequence += _symbols_to_sequence(clean_text)
             break
@@ -232,4 +265,4 @@ def _arpabet_to_sequence(text):
 
 
 def _should_keep_symbol(s):
-    return s in _symbol_to_id
+    return s in _symbol_to_id and s != '_' and s != '~'

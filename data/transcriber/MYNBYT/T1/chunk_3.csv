@@ -1,5 +1,0 @@
-,audio_path,model_label,start,end,script
-0,../../data/concat_audio/MYNBYT/T1/chunk_3/242.8 244.7 BichNgoc.wav,BichNgoc,242.8,244.7,{'text': 'mình bảo là như thế có điện không.'}
-1,../../data/concat_audio/MYNBYT/T1/chunk_3/293.0 294.2 DucAnh.wav,DucAnh,293.0,294.2,{'text': 'chưa ở trong đây đông lắm rồi.'}
-2,../../data/concat_audio/MYNBYT/T1/chunk_3/99.0 106.5 DucAnh.wav,DucAnh,99.0,106.5,{'text': 'may quá gì đi mất tiền đẹp không ấy anh ơi không từ từ để anh đây có gì em đưa anh đi bệnh viện kiểm tra xem mình kiểm tra chụp chiếu xem thương khớp hay là.'}
-3,../../data/concat_audio/MYNBYT/T1/chunk_3/220.0 221.7 BichNgoc.wav,BichNgoc,220.0,221.7,{'text': 'em gọi chả đứa nào nghe máy cả.'}
