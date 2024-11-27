@@ -247,7 +247,7 @@ class Diffusion(nn.Module):
 
         print(f'Model:{model_type}, Precond & Sampler: {precond}')
         
-    def forward(self, x, mask, mu, ref, ref_lengths, sty, sty_lengths, n_timesteps=1, spk=None, infer=False, temperature=1.0, mask_ratio=0):
+    def forward(self, x, mask, mu, ref, ref_lengths, sty, sty_lengths, n_timesteps=5, spk=None, infer=False, temperature=1.0, mask_ratio=0):
 
         if not infer:
             loss = self.loss_fn(self.precond_model, x, mask, mu, ref, ref_lengths, sty, sty_lengths, spk=spk, mask_ratio=mask_ratio)

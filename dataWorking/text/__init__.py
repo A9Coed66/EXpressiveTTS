@@ -159,7 +159,16 @@ print(f'symbols: {symbols}')
 _symbol_to_id = {s: i for i, s in enumerate(symbols)}
 _id_to_symbol = {i: s for i, s in enumerate(symbols)}
 
-#_symbol_to_id: {'_': 0, '-': 1, '!': 2, "'": 3, '(': 4, ')': 5, ',': 6, '.': 7, ':': 8, ';': 9, '?': 10, ' ': 11, 
+_dict = {' ': 1, '!': 2, '"': 3, '#': 4, '%': 5, '&': 6, '+': 7, ',': 8, '-': 9, '.': 10, '/': 11,
+ '0': 12, '1': 13, '2': 14, '3': 15, '4': 16, '5': 17, '6': 18, '7': 19, '8': 20, '9': 21, ':': 22, '<': 23,
+ '=': 24, '>': 25, '?': 26, '@': 27, 'A': 28, 'B': 29, 'C': 30, 'D': 31, 'E': 32, 'F': 33, 'G': 34, 'H': 35,
+ 'I': 36, 'J': 37, 'K': 38, 'L': 39, 'M': 40, 'N': 41, 'O': 42, 'P': 43, 'Q': 44, 'R': 45, 'S': 46, 'T': 47,
+ 'U': 48, 'V': 49, 'W': 50, 'X': 51, 'Y': 52, 'Z': 53, '\\': 54, '^': 55, '_': 56, '`': 57, 'a': 58, 'b': 59,
+ 'c': 60, 'd': 61, 'e': 62, 'f': 63, 'g': 64, 'h': 65, 'i': 66, 'j': 67, 'k': 68, 'l': 69, 'm': 70, 'n': 71,
+ 'o': 72, 'p': 73, 'q': 74, 'r': 75, 's': 76, 't': 77, 'u': 78, 'v': 79, 'w': 80, 'x': 81, 'y': 82, 'z': 83,
+ '{': 84, '|': 85, '}': 86, '~': 87}
+
+# _symbol_to_id: {'_': 0, '-': 1, '!': 2, "'": 3, '(': 4, ')': 5, ',': 6, '.': 7, ':': 8, ';': 9, '?': 10, ' ': 11, 
 # 'A': 12, 'B': 13, 'C': 14, 'D': 15, 'E': 16, 'F': 17, 'G': 18, 'H': 19, 'I': 20, 'J': 21, 'K': 22, 'L': 23, 'M': 24, 
 # 'N': 25, 'O': 26, 'P': 27, 'Q': 28, 'R': 29, 'S': 30, 'T': 31, 'U': 32, 'V': 33, 'W': 34, 'X': 35, 'Y': 36, 'Z': 37, 
 # 'a': 38, 'b': 39, 'c': 40, 'd': 41, 'e': 42, 'f': 43, 'g': 44, 'h': 45, 'i': 46, 'j': 47, 'k': 48, 'l': 49, 'm': 50, 
@@ -179,10 +188,12 @@ _curly_re = re.compile(r'(.*?)\{(.+?)\}(.*)')
 
 def get_arpabet(word, dictionary):
     # word_arpabet = dictionary.lookup(word)
+    print(f'word: {word}')
     phones = phonemizer_backend.phonemize([word], strip=True)[0]
-    arpabet = phonecodes.translate_string(phones, phonecode_tables._ipa2arpabet)
-    if arpabet is not None:
-        return '{' + " ".join(arpabet[0]) + '}'
+    phoneme = phonecodes.translate_string(phones, phonecode_tables._ipa2xsampa)
+    print(phoneme)
+    if phoneme is not None:
+        return '{' + " ".join(phoneme[0]) + '}'
     else:
         return word
 
@@ -209,19 +220,18 @@ def text_to_sequence(text, cleaner_names=["vietnamese_cleaners"], dictionary=Non
     while len(text):
         m = _curly_re.match(text)
         if not m:
+            # print(f'clean_text: {text}')
             clean_text = _clean_text(text, cleaner_names)
+            # print(f'clean_text: {clean_text}')
             if dictionary is not None:
                 clean_text = [get_arpabet(w, dictionary) for w in clean_text.split(" ")]
-                for i in range(len(clean_text)):
-                    t = clean_text[i]
-                    if t.startswith("{"):
-                        sequence += _arpabet_to_sequence(t[1:-1])
-                    else:
-                        sequence += _symbols_to_sequence(t)
-                    sequence += space
-                sequence += dot
-            else:
+                clean_text = " ".join(clean_text)
                 sequence += _symbols_to_sequence(clean_text)
+                # print(sequence)
+                # print("stop the program")
+                # sys.exit()
+            else:
+                print("Oh my gotto!")
             break
         sequence += _symbols_to_sequence(_clean_text(m.group(1), cleaner_names))
         sequence += _arpabet_to_sequence(m.group(2))
@@ -257,7 +267,7 @@ def _clean_text(text, cleaner_names):
 
 
 def _symbols_to_sequence(symbols):
-    return [_symbol_to_id[s] for s in symbols if _should_keep_symbol(s)]
+    return [_dict[s] for s in symbols]
 
 
 def _arpabet_to_sequence(text):

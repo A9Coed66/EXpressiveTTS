@@ -8,6 +8,8 @@ from tqdm import tqdm
 from text import _clean_text
 import resampy
 import soundfile as sf
+import contextlib
+import wave
 
 
 def prepare_align(config):
@@ -22,6 +24,14 @@ def prepare_align(config):
         for file_name in os.listdir(os.path.join(in_dir, speaker)):
             if file_name[-4:] != ".wav":
                 continue
+
+            file_path = os.path.join(in_dir, speaker, file_name)
+            with contextlib.closing(wave.open(file_path, 'r')) as f:
+                frames = f.getnframes()
+                rate = f.getframerate()
+                duration = frames / float(rate)
+                if duration < 1.0 or duration > 20.0:
+                    continue
             
             base_name = file_name[:-4]
             text_path = os.path.join(in_dir, speaker, "{}.lab".format(base_name))

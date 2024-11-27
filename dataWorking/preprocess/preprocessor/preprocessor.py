@@ -79,7 +79,7 @@ class Preprocessor:
             segment = wav[start:end]
             combined_segments = np.concatenate((combined_segments, segment))
             total_duration += (turn.end - turn.start)
-
+        #Note: độ dài tối thiểu của một đoạn âm thanh là 2s và tối đa là 12s
         if total_duration >= 2.0 and total_duration <= 12.0:
             return combined_segments, True
         else:

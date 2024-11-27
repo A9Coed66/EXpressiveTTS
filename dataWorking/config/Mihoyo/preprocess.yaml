@@ -1,10 +1,10 @@
 dataset: "Mihoyo"
 
 path:
-  corpus_path: "/home/tuannd/tuanlha/Dataset/Mihoyo/RawData/English"
+  corpus_path: "/home2/tuannd/tuanlha/Dataset/Mihoyo/RawData/English"
   lexicon_path: "/kaggle/working/DEX-TTS/DEX-TTS/preprocess/lexicon/new_librispeech-lexicon.txt"
-  raw_path: "/home/tuannd/tuanlha/PreprocessedData/raw_path"
-  preprocessed_path: "/home/tuannd/tuanlha/PreprocessedData/preprocessed_data"
+  raw_path: "/home2/tuannd/tuanlha/PreprocessedData/raw_path"
+  preprocessed_path: "/home2/tuannd/tuanlha/PreprocessedData/preprocessed_data"
 
 preprocessing:
   text:
