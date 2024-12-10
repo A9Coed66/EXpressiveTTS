@@ -53,15 +53,13 @@ class Preprocessor:
         print("Processing Data ...")
         out_list = []
         speakers = {}
-        for i, speaker in enumerate(tqdm(os.listdir(self.in_dir))):
-            speakers[speaker] = i
-            for wav_name in tqdm(os.listdir(os.path.join(self.in_dir, speaker))):
-                if ".wav" not in wav_name:
-                    continue
+        for wav_name in tqdm(os.listdir(os.path.join(self.in_dir))):
+            if ".wav" not in wav_name:
+                continue
 
-                basename = wav_name[:-4]
-                out      = self.process_utterance(speaker, basename)
-                out_list.append(out)
+            basename = wav_name[:-4]
+            out      = self.process_utterance(basename)
+            out_list.append(out)
 
     def trim_silence(self, audio_path):
         wav, sr = librosa.load(audio_path, sr=None)
@@ -86,9 +84,9 @@ class Preprocessor:
             return combined_segments, False
 
 ############################################
-    def process_utterance(self, speaker, basename):
-        wav_path  = os.path.join(self.in_dir, speaker, "{}.wav".format(basename))
-        text_path = os.path.join(self.in_dir, speaker, "{}.lab".format(basename))
+    def process_utterance(self, basename):
+        wav_path  = os.path.join(self.in_dir, "{}.wav".format(basename))
+        text_path = os.path.join(self.in_dir, "{}.lab".format(basename))
 
         ########################################################################
         """
@@ -135,13 +133,13 @@ class Preprocessor:
         
         # Save files
 ##################################################################
-        wav_filename = "{}-wav-{}.wav".format(speaker, basename)
+        wav_filename = "{}-wav.wav".format( basename)
         sf.write(os.path.join(self.out_dir, "trim_wav", wav_filename), wav, self.sampling_rate)  
         
-        mel_filename = "{}-mel-{}.npy".format(speaker, basename)
+        mel_filename = "{}-mel.npy".format(basename)
         np.save(os.path.join(self.out_dir, "mel", mel_filename), mel_spectrogram.T)
         
-        wav_filename = "{}-wav-{}.wav".format(speaker, basename)
+        wav_filename = "{}-wav.wav".format(basename)
         wav_path     = os.path.join(self.out_dir, "trim_wav", wav_filename)
         
         wav, fs = sf.read(wav_path)
@@ -157,8 +155,8 @@ class Preprocessor:
         lf0                   = f0.copy()
         lf0[nonzeros_indices] = np.log(f0[nonzeros_indices]) # for f0(Hz), lf0 > 0 when f0 != 0
         
-        lf0_filename = "{}-lf0-{}.npy".format(speaker, basename)
+        lf0_filename = "{}-lf0.npy".format(basename)
         np.save(os.path.join(self.out_dir, "lf0", lf0_filename), lf0)
         
 ##################################################################
-        return "|".join([basename, speaker, raw_text])
+        return "|".join([basename, raw_text])

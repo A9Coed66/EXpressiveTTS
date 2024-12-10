@@ -12,7 +12,7 @@ all_results = {}
 # transcription_folder = "transcription_RS1" # Update this path to your transcription folder
 # audio_folder = os.environ.get("AUDIO_FOLDER")
 # transcription_folder = os.environ.get("TRANSCRIPTION_FOLDER")
-root_audio_folder = "/home2/tuannd/tuanlha/EXpressiveTTS/data_unverified/concat_audio_temp/HAS"
+root_audio_folder = "/home2/tuannd/tuanlha/EXpressiveTTS/data_unverified/concat_audio/HAS"
 transcription_folder = "/home2/tuannd/tuanlha/EXpressiveTTS/data_unverified/transcription/HAS"
 
 device = "cuda"

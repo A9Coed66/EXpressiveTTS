@@ -77,7 +77,9 @@ class TextMelSpeakerDataset(Dataset):
         return lf0
     
     def get_text(self, text, add_blank=True):
-        text_norm = text_to_sequence(text, dictionary=self.cmudict)
+        # print(text)
+        text_norm = text_to_sequence(text)
+        # print(text_norm)
         # sys.exit("Terminating the program.")
         if self.add_blank:
             text_norm = intersperse(text_norm, len(symbols))  # add a blank token, whose id number is len(symbols)

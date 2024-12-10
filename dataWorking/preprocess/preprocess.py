@@ -3,7 +3,7 @@ import argparse
 import yaml
 
 from preprocessor.preprocessor import Preprocessor
-from preprocessor import mihoyo, haveasip
+from preprocessor import mihoyo, haveasip, visec, lmh_final, esd, tth_final
 
 
 def main(config):
@@ -16,8 +16,14 @@ def main(config):
     #     esd.make_meta_dict(config)
     # if "Mihoyo" in config["dataset"]:
     #     mihoyo.prepare_align(config)
-    if "HaveASip" in config["dataset"]:
-        haveasip.prepare_align(config)
+    # if "HaveASip" in config["dataset"]:
+    #     haveasip.prepare_align(config)
+    # if "Visec" in config["dataset"]:
+    #     visec.prepare_align(config)
+    if "LMH_final" in config["dataset"]:
+        lmh_final.prepare_align(config)
+    if "TTH_final" in config["dataset"]:
+        tth_final.prepare_align(config)
 
     preprocessor = Preprocessor(config)
     preprocessor.build_from_path()

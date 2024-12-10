@@ -51,6 +51,7 @@ def test(cfg, sample_size):
             x    = item['x'].unsqueeze(0).to(cfg.device)
             text = item['raw_text']
         else:
+            # lmao
             x    = torch.LongTensor(intersperse(text_to_sequence(text, dictionary=cmu), len(symbols))).to(cfg.device)[None]
 
         x_lengths   = torch.LongTensor([x.shape[-1]]).to(cfg.device)

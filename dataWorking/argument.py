@@ -16,7 +16,7 @@ def get_config():
     parser.add_argument('--pa', type=bool, default=False, help='parallel sentence')
     parser.add_argument('--env', type=str, default='local', help='Enviornment')
     parser.add_argument('--test_checkpoint', type=str, default='test', help='Exp number')
-    parser.add_argument('--test_file', type=str, default='./test_sentence/mihoyo_sentence.txt', help='path to a file with texts to synthesize')
+    parser.add_argument('--test_file', type=str, default='./test_sentence/haveasip_sentence.txt', help='path to a file with texts to synthesize')
     
     arguments = parser.parse_args()
     

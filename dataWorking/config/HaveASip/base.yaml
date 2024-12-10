@@ -25,13 +25,13 @@ preprocess:
 model:
   add_blank:   True
   n_feats:     80
-  n_spks:      0  # 
+  n_spks:      0 
   spk_emb_dim: 64
 
   tv_encoder: 
     c_in:      80 
-    num_layer: 6
-    c_h:       128
+    num_layer: 10
+    c_h:       192
     c_out:     192
     c_out_g:   192 
     commit_w:  0.25
@@ -40,35 +40,35 @@ model:
   lf0_encoder:
     c_in:      1
     c_h:       192    # match n_feat
-    c_out:     192   # match encoder n_channels
+    c_out:     192    # match encoder n_channels
     c_out_g:   192   
-    num_layer: 2
+    num_layer: 4
 
   tiv_encoder:
-    c_in:      80 
+    c_in:      80
     num_layer: 6
-    c_h:       128  
+    c_h:       128   
     c_out:     64  
 
   encoder:
-    n_channels:         192   
+    n_channels:         192    
     filter_channels:    1024
     filter_channels_dp: 256
     n_layers:           8
     kernel_size:        3
     p_dropout:          0.1
-    n_heads:            2
+    n_heads:            4
     window_size:        4
     use_softmax:        True
     use_decay:          False
 
   decoder:
     dim:        64   
-    pe_scale:   1000  
+    pe_scale:   1000 
     dim_mults:  [1, 2]
     model_type: 'dit'  
     precond:    'edm' 
-    loss_type:  'base' 
+    loss_type:  'base'
 
   dit:
     in_channels:     3
@@ -76,9 +76,9 @@ model:
     stride_size:     2        # 2 | 4 | 8
     overlap:         True
     hidden_size:     256     
-    depth:           4        
-    num_heads:       2        
-    mlp_ratio:       2      
+    depth:           16       
+    num_heads:       4       
+    mlp_ratio:       4       
     out_channels:    1
     conv_pos:        16
     conv_pos_groups: 8
@@ -87,9 +87,9 @@ model:
 
 train:
   epoch:      1000
-  batch_size: 24
-  save_epoch: 50
-  syn_every:  50
+  batch_size: 16
+  save_epoch: 10
+  syn_every:  10
   fix_len:    2
   out_size:   True
   lr:         1e-4
@@ -103,4 +103,4 @@ train:
 
 test:
   ema:          False
-  n_spks:       7
+  n_spks:       30

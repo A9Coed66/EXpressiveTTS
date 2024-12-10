@@ -207,29 +207,30 @@ def text_to_sequence(text, cleaner_names=["vietnamese_cleaners"], dictionary=Non
     dot         =  _symbols_to_sequence('.')
     # Check for curly braces and treat their contents as ARPAbet:
     while len(text):
-        m = _curly_re.match(text)
-        if not m:
-            clean_text = _clean_text(text, cleaner_names)
-            if dictionary is not None:
-                clean_text = [get_arpabet(w, dictionary) for w in clean_text.split(" ")]
-                for i in range(len(clean_text)):
-                    t = clean_text[i]
-                    if t.startswith("{"):
-                        sequence += _arpabet_to_sequence(t[1:-1])
-                    else:
-                        sequence += _symbols_to_sequence(t)
-                    sequence += space
-                sequence += dot
-            else:
-                sequence += _symbols_to_sequence(clean_text)
-            break
-        sequence += _symbols_to_sequence(_clean_text(m.group(1), cleaner_names))
-        sequence += _arpabet_to_sequence(m.group(2))
-        text = m.group(3)
+        # print(text)
+        # NOT_UNDERSTAND
+        # m = _curly_re.match(text)
+        # if not m:
+            # clean_text = _clean_text(text, cleaner_names)
+        clean_text = text
+        # if dictionary is not None:
+        #     clean_text = [get_arpabet(w, dictionary) for w in clean_text.split(" ")]
+        #     for i in range(len(clean_text)):
+        #         t = clean_text[i]
+        #         if t.startswith("{"):
+        #             sequence += _arpabet_to_sequence(t[1:-1])
+        #         else:
+        #             sequence += _symbols_to_sequence(t)
+        #         sequence += space
+        #     sequence += dot
+        # else:
+        sequence += _symbols_to_sequence(clean_text)
+        break
   
     # remove trailing space
     if dictionary is not None:
         sequence = sequence[:-1] if sequence[-1] == space[0] else sequence
+    # print(f'sequence: {sequence}')
     return sequence
 
 
