@@ -1,15 +1,15 @@
-resume:
+resume:          
 test_checkpoint: 
 checkpoint:      ./checkpoints
-dataset:         'HaveASip'
+dataset:         'Mihoyo'
 vocoder:         'hifigan'   ## vocoder & vocoder path ['hifigan', 'bigvgan']
 
 path:
 ## TODO: change the path to true
-  pretrain_model_path:  ''
-  train_path:           'filelists/HaveASip/train_unseen.txt'
-  val_path:             'filelists/HaveASip/valid.txt'
-  test_path:            'filelists/HaveASip/test.txt'
+  pretrain_model_path:  '/home/tuannd/tuanlha/DEX-TTS-Project/DEX-TTS/DEX-TTS/checkpoints/DEX-TTS-32/model-val-best.pth'
+  train_path:           'filelists/Mihoyo/train_unseen.txt'
+  val_path:             'filelists/Mihoyo/valid.txt'
+  test_path:            'filelists/Mihoyo/test.txt'
   cmu_path:             'resources/cmu_dictionary'
   vocoder_path:         'hifigan/weights'          #  ['hifigan/weights', 'bigvgan/bigvgan_22khz_80band', 'bigvgan/bigvgan_base_22khz_80band']
 
@@ -30,8 +30,8 @@ model:
 
   tv_encoder: 
     c_in:      80 
-    num_layer: 6
-    c_h:       128
+    num_layer: 10
+    c_h:       192
     c_out:     192
     c_out_g:   192 
     commit_w:  0.25
@@ -42,11 +42,11 @@ model:
     c_h:       192    # match n_feat
     c_out:     192   # match encoder n_channels
     c_out_g:   192   
-    num_layer: 2
+    num_layer: 4
 
   tiv_encoder:
     c_in:      80 
-    num_layer: 6
+    num_layer: 8
     c_h:       128  
     c_out:     64  
 
@@ -57,7 +57,7 @@ model:
     n_layers:           8
     kernel_size:        3
     p_dropout:          0.1
-    n_heads:            2
+    n_heads:            4
     window_size:        4
     use_softmax:        True
     use_decay:          False
@@ -76,9 +76,9 @@ model:
     stride_size:     2        # 2 | 4 | 8
     overlap:         True
     hidden_size:     256     
-    depth:           4        
-    num_heads:       2        
-    mlp_ratio:       2      
+    depth:           16       
+    num_heads:       4        
+    mlp_ratio:       4      
     out_channels:    1
     conv_pos:        16
     conv_pos_groups: 8
@@ -87,9 +87,9 @@ model:
 
 train:
   epoch:      1000
-  batch_size: 20
-  save_epoch: 50
-  syn_every:  50
+  batch_size: 15
+  save_epoch: 25
+  syn_every:  25
   fix_len:    2
   out_size:   True
   lr:         1e-4
@@ -103,4 +103,4 @@ train:
 
 test:
   ema:          False
-  n_spks:       7
+  n_spks:       32
