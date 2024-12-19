@@ -122,40 +122,7 @@ from text import cleaners
 from text.symbols import symbols
 import sys
 
-import phonecodes.phonecode_tables as phonecode_tables
-from phonemizer.backend import EspeakBackend 
-from phonecodes import phonecodes
-
-
-language = "vie"
-
-if language == "en":
-    g2p_lang = "en-us"  # English as spoken in USA
-    expand_abbreviations = lambda x: x
-    phonemizer = "espeak"
-elif language == "vie":
-    g2p_lang = "vi"  # Northern Vietnamese
-    expand_abbreviations = lambda x: x
-    phonemizer = "espeak"
-
-elif language == "vi-ctr":
-    g2p_lang = "vi-vn-x-central"  # Central Vietnamese
-    expand_abbreviations = lambda x: x
-    phonemizer = "espeak"
-
-elif language == "vi-so":
-    g2p_lang = "vi-vn-x-south"  # Southern Vietnamese
-    expand_abbreviations = lambda x: x
-    phonemizer = "espeak"
-
-phonemizer_backend = EspeakBackend(language=g2p_lang,
-                                    punctuation_marks='*;:,.!?¡¿—…()"«»“”~/。【】、‥،؟“”؛',
-                                    preserve_punctuation=True,
-                                    language_switch='remove-flags',
-                                    with_stress=False)
-
-
-print(f'symbols: {symbols}')
+# print(f'symbols: {symbols}')
 _symbol_to_id = {s: i for i, s in enumerate(symbols)}
 _id_to_symbol = {i: s for i, s in enumerate(symbols)}
 
@@ -178,16 +145,14 @@ _curly_re = re.compile(r'(.*?)\{(.+?)\}(.*)')
 
 
 def get_arpabet(word, dictionary):
-    # word_arpabet = dictionary.lookup(word)
-    phones = phonemizer_backend.phonemize([word], strip=True)[0]
-    arpabet = phonecodes.translate_string(phones, phonecode_tables._ipa2arpabet)
-    if arpabet is not None:
-        return '{' + " ".join(arpabet[0]) + '}'
+    word_arpabet = dictionary.lookup(word)
+    if word_arpabet is not None:
+        return "{" + word_arpabet[0] + "}"
     else:
         return word
 
 
-def text_to_sequence(text, cleaner_names=["vietnamese_cleaners"], dictionary=None):
+def text_to_sequence(text, cleaner_names=["english_cleaners"], dictionary=None):
     #TODO: 1. text to IPA, 2. IPA to x-sampa, 3. x-sampa to sequence
     '''Converts a string of text to a sequence of IDs corresponding to the symbols in the text.
 
@@ -202,35 +167,36 @@ def text_to_sequence(text, cleaner_names=["vietnamese_cleaners"], dictionary=Non
     Returns:
       List of integers corresponding to the symbols in the text
     '''
-    sequence    =  []
-    space       =  _symbols_to_sequence(' ')
-    dot         =  _symbols_to_sequence('.')
+    sequence = []
+    space = _symbols_to_sequence(' ')
     # Check for curly braces and treat their contents as ARPAbet:
     while len(text):
-        # print(text)
-        # NOT_UNDERSTAND
-        # m = _curly_re.match(text)
-        # if not m:
-            # clean_text = _clean_text(text, cleaner_names)
-        clean_text = text
-        # if dictionary is not None:
-        #     clean_text = [get_arpabet(w, dictionary) for w in clean_text.split(" ")]
-        #     for i in range(len(clean_text)):
-        #         t = clean_text[i]
-        #         if t.startswith("{"):
-        #             sequence += _arpabet_to_sequence(t[1:-1])
-        #         else:
-        #             sequence += _symbols_to_sequence(t)
-        #         sequence += space
-        #     sequence += dot
-        # else:
-        sequence += _symbols_to_sequence(clean_text)
-        break
+        m = _curly_re.match(text)
+        if not m:
+            # print(f'text: {text}')
+            clean_text = _clean_text(text, cleaner_names)
+            # print(f'clean_text: {clean_text}')
+            if dictionary is not None:
+                clean_text = [get_arpabet(w, dictionary) for w in clean_text.split(" ")]
+                # print(f'clean_text after dictionary: {clean_text}')
+                for i in range(len(clean_text)):
+                    t = clean_text[i]
+                    if t.startswith("{"):
+                        sequence += _arpabet_to_sequence(t[1:-1])
+                    else:
+                        sequence += _symbols_to_sequence(t)
+                    sequence += space
+                # print(f'sequence: {sequence}')
+            else:
+                sequence += _symbols_to_sequence(clean_text)
+            break
+        sequence += _symbols_to_sequence(_clean_text(m.group(1), cleaner_names))
+        sequence += _arpabet_to_sequence(m.group(2))
+        text = m.group(3)
   
     # remove trailing space
     if dictionary is not None:
         sequence = sequence[:-1] if sequence[-1] == space[0] else sequence
-    # print(f'sequence: {sequence}')
     return sequence
 
 

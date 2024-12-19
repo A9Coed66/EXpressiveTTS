@@ -8,6 +8,7 @@ from phonecodes import phonecodes
 
 
 
+
 _whitespace_re = re.compile(r'\s+')
 
 _abbreviations = [(re.compile('\\b%s\\.' % x[0], re.IGNORECASE), x[1]) for x in [
@@ -66,6 +67,17 @@ def transliteration_cleaners(text):
     text = collapse_whitespace(text)
     return text
 
+def remove_asterisk_words(text):
+    words = text.split()
+    cleaned_words = [word for word in words if not ( (word.startswith('*') and word.endswith('*')) or (word == '--') )]
+    return ' '.join(cleaned_words)
+
+def remove_ellipsis_in_words(text):
+    words = text.split()
+    cleaned_words = [word.replace('...', '') for word in words]
+    return ' '.join(cleaned_words)
+
+
 
 def english_cleaners(text):
     text = convert_to_ascii(text)
@@ -73,6 +85,8 @@ def english_cleaners(text):
     text = expand_numbers(text)
     text = expand_abbreviations(text)
     text = collapse_whitespace(text)
+    text = remove_asterisk_words(text)
+    text = remove_ellipsis_in_words(text)
     return text
 #---------------------------------------------------------
 # Add Vietnamese cleaner

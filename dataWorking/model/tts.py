@@ -30,8 +30,10 @@ class DeXTTS(nn.Module):
         self.decoder     = Diffusion(**cfg.decoder, dit_cfg=cfg.dit, n_feats=cfg.n_feats, n_spks=cfg.n_spks, spk_emb_dim=cfg.spk_emb_dim)
         self.conv_sty    = nn.Conv1d(cfg.tv_encoder.c_out_g, cfg.decoder.dim * 2, 1, 1)  # match style dimension to decoder hidden dimension, 2 -  len(mults)
 
+        self.mse_loss = nn.MSELoss()
+
     @torch.no_grad()
-    def forward(self, x, x_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, n_timesteps, temperature=1.0, spk=None, length_scale=1.0):
+    def forward(self, x, x_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, n_timesteps, d_control=1.0, p_control=1.0, e_control=1.0, temperature=1.0, spk=None, length_scale=1.0):
 
         # Get encoder_outputs `mu_x` and log-scaled token durations `logw`
         
@@ -49,7 +51,7 @@ class DeXTTS(nn.Module):
         sty_dec = self.conv_sty(sty_dec)
         
         ref, ref_skips     = self.tiv_encoder(ref, ref_mask)
-        mu_x, logw, x_mask = self.encoder(x, x_lengths, sty_enc, spk=None)
+        mu_x, logw, x_mask = self.encoder(x, x_lengths, sty_enc, spk=spk, d_control=d_control, p_control=p_control, e_control=e_control)
 
         w             = torch.exp(logw) * x_mask
         w_ceil        = torch.ceil(w) * length_scale
@@ -90,7 +92,9 @@ class DeXTTS(nn.Module):
                         
         # Get encoder_outputs `mu_x` and log-scaled token durations `logw`
         ref, ref_skips     = self.tiv_encoder(ref, ref_mask)  # ref: b, c, t
+        # TODO: lấy thêm tham số trả về để tính loss tại encoder
         mu_x, logw, x_mask = self.encoder(x, x_lengths, sty_enc, spk=None)
+        # print(f'mu_x: {mu_x.shape}, logw: {logw.shape}, x_mask: {x_mask.shape}')
         y_max_length       = y.shape[-1]
         
         y_mask    = sequence_mask(y_lengths, y_max_length).unsqueeze(1).to(x_mask)
@@ -100,6 +104,7 @@ class DeXTTS(nn.Module):
         with torch.no_grad(): 
             const       = -0.5 * math.log(2 * math.pi) * self.n_feats
             factor      = -0.5 * torch.ones(mu_x.shape, dtype=mu_x.dtype, device=mu_x.device)
+            # print(factor.transpose(1, 2).shape, (y ** 2).shape)
             y_square    = torch.matmul(factor.transpose(1, 2), y ** 2)
             y_mu_double = torch.matmul(2.0 * (factor * mu_x).transpose(1, 2), y)
             mu_square   = torch.sum(factor * (mu_x ** 2), 1).unsqueeze(-1)
@@ -110,7 +115,10 @@ class DeXTTS(nn.Module):
 
         # Compute loss between predicted log-scaled durations and those obtained from MAS
         logw_    = torch.log(1e-8 + torch.sum(attn.unsqueeze(1), -1)) * x_mask
+        # TODO: tính pitch/energy của audio đê để tính loss
         dur_loss = duration_loss(logw, logw_, x_lengths)
+        # p_loss = self.mse_loss(pitch_prediction, pitch_target)
+        # e_loss = self.mse_loss(energy_prediction, energy_target)
 
         # Cut a small segment of mel-spectrogram in order to increase batch size
         if not isinstance(out_size, type(None)):
