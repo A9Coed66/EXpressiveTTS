@@ -63,12 +63,16 @@ def test(cfg, sample_size):
         lf0         = item['lf0'].unsqueeze(0).to(cfg.device)
         lf0_lengths = torch.LongTensor([lf0.shape[-1]]).to(cfg.device)
         spk         = item['spk'].item()
-        
+        d_control   = cfg.d_control
+        p_control   = cfg.p_control
+        e_control   = cfg.e_control
+
+
         wav_path    = item['filepath'].replace('/mel/','/trim_wav/').replace('-mel-', '-wav-').replace('.npy', '.wav')
         emotion     = item['emotion']
 
         with torch.no_grad():
-            y_enc, y_dec, attn = model(x, x_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, spk=None, n_timesteps=cfg.n_timesteps, temperature=1.5)
+            y_enc, y_dec, attn = model(x, x_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, d_control, p_control, e_control, spk=None, n_timesteps=cfg.n_timesteps, temperature=1.5)
             audio = (vocoder(y_dec).cpu().squeeze().clamp(-1, 1).numpy() * MAX_VALUE).astype(np.int16)
 
         syn_save_path  = f'{cfg.eval_path}/syn/spk_{spk}_{i}_{emotion}.wav'
@@ -148,7 +152,7 @@ class Tester:
             emotion     = item['emotion']
 
             with torch.no_grad():
-                y_enc, y_dec, attn = self.model(x, x_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, spk=None, n_timesteps=self.cfg.n_timesteps, temperature=1.5)
+                y_enc, y_dec, attn = self.model(x, x_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, spk=spk, n_timesteps=self.cfg.n_timesteps, temperature=1.5)
                 audio = (self.vocoder(y_dec).cpu().squeeze().clamp(-1, 1).numpy() * MAX_VALUE).astype(np.int16)
 
             # syn_save_path  = f'{self.cfg.sample_path}/syn/spk_{spk}_{i}_{emotion}.wav'

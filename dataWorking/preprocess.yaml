@@ -1,10 +1,10 @@
-dataset: "LJSpeech"
+dataset: "Mihoyo"
 
 path:
-  corpus_path: "/home/ming/Data/LJSpeech-1.1"
+  corpus_path: "/home2/tuannd/tuanlha/PreprocessedData/raw_path"
   lexicon_path: "lexicon/librispeech-lexicon.txt"
-  raw_path: "./raw_data/LJSpeech"
-  preprocessed_path: "./preprocessed_data/LJSpeech"
+  raw_path: "/home2/tuannd/tuanlha/PreprocessedData/raw_data"
+  preprocessed_path: "/home2/tuannd/tuanlha/PreprocessedData/preprocessed"
 
 preprocessing:
   val_size: 512

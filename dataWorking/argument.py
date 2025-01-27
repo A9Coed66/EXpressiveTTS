@@ -17,6 +17,9 @@ def get_config():
     parser.add_argument('--env', type=str, default='local', help='Enviornment')
     parser.add_argument('--test_checkpoint', type=str, default='test', help='Exp number')
     parser.add_argument('--test_file', type=str, default='./test_sentence/haveasip_sentence.txt', help='path to a file with texts to synthesize')
+    parser.add_argument('--d_control', type=float, default=1.0, help='Control the duration')
+    parser.add_argument('--p_control', type=float, default=1.0, help='Control the pitch')
+    parser.add_argument('--e_control', type=float, default=1.0, help='Control the energy')
     
     arguments = parser.parse_args()
     

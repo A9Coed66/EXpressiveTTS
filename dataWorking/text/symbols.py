@@ -12,21 +12,19 @@ from text import cmudict
 #   'UW0', 'UW1', 'UW2', 'V', 'W', 'Y', 'Z', 'ZH'
 # ]
 
-# _pad        = '_'
-# _punctuation = '!\'(),.:;? '
-# _special = '-\\`<>%@{}*|=~'
-# _letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+_pad        = '_'
+_punctuation = '!\'(),.:;? '
+_special = '-\\`<>%@{}*|='
+_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 
-# # Prepend "@" to ARPAbet symbols to ensure uniqueness:
-# _arpabet = ['@' + s for s in cmudict.valid_symbols]
-# # _arpabet = ['@' + s for s in valid_symbols]
+# Prepend "@" to ARPAbet symbols to ensure uniqueness:
+_arpabet = ['@' + s for s in cmudict.valid_symbols]
+# _arpabet = ['@' + s for s in valid_symbols]
 
 
-# # Export all symbols:
-# symbols = [_pad] + list(_special) + list(_punctuation) + list(_letters) + _arpabet
-symbols = [' ', '#', '-', '1', '2', '3', '4', '5', '6', '7', '8', '9', '@', 'A', 'E', 'G', 'I', 'J', 'M', 'N', 'O', 'S', 'T', 'U', 'V', 'X', 'Z', 'a', 'b', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'v', 'w', 'x', 'z', '{']
+# Export all symbols:
+symbols = [_pad] + list(_special) + list(_punctuation) + list(_letters) + _arpabet
 #symbols: ['_', '-', '!', "'", '(', ')', ',', '.', ':', ';', '?', ' ', 
-
 # 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 
 # 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 
 # '@AA', '@AA0', '@AA1', '@AA2', '@AE', '@AE0', '@AE1', '@AE2', '@AH', '@AH0', '@AH1', '@AH2', '@AO', '@AO0', '@AO1', '@AO2', '@AW', 
