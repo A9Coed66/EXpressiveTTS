@@ -1,15 +1,15 @@
-dataset: "Mihoyo"
+dataset: 'Mihoyo'
 
 path:
-  corpus_path: "/home2/tuannd/tuanlha/Dataset/Mihoyo/RawData/English"
-  lexicon_path: "/kaggle/working/DEX-TTS/DEX-TTS/preprocess/lexicon/new_librispeech-lexicon.txt"
-  raw_path: "/home2/tuannd/tuanlha/PreprocessedData/raw_path"
-  preprocessed_path: "/home2/tuannd/tuanlha/PreprocessedData/preprocessed_data"
+  corpus_path: 'E:/Datasets/Mihoyo/train'
+  lexicon_path: 'E:/AI Project/EXpressiveTTS/dataWorking/preprocess/lexicon/new_librispeech-lexicon.txt'
+  raw_path: 'E:/Datasets/Mihoyo/raw_path'
+  preprocessed_path: 'E:/Datasets/Mihoyo/preprocessed_data'
 
 preprocessing:
   text:
-    text_cleaners: ["english_cleaners"]
-    language: "en"
+    text_cleaners: ['english_cleaners']
+    language: 'en'
   audio:
     sampling_rate: 22050
     max_wav_value: 32768.0
