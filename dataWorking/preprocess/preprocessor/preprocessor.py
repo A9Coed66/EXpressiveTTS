@@ -4,12 +4,9 @@ import json
 
 import tgt
 import librosa
-import soundfile as sfimp
+import soundfile as sf
 import numpy as np
 import pyworld as pw
-import torch
-import torchaudio
-from pyannote.audio import Pipeline
 from scipy.interpolate import interp1d
 from sklearn.preprocessing import StandardScaler
 from tqdm import tqdm
@@ -24,10 +21,6 @@ random.seed(1234)
 
 class Preprocessor:
     def __init__(self, config):
-        self.diarization = Pipeline.from_pretrained(
-            'pyannote/speaker-diarization-3.1',
-            use_auth_token='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'
-        )
         self.config = config
         self.in_dir = config['path']['raw_path']
         self.out_dir = config['path']['preprocessed_path']
@@ -54,7 +47,6 @@ class Preprocessor:
         out_list = []
         speakers = {}
         for i, speaker in enumerate(tqdm(os.listdir(self.in_dir))):
-            
             speakers[speaker] = i
             for wav_name in tqdm(os.listdir(os.path.join(self.in_dir, speaker))):
                 if '.wav' not in wav_name:
@@ -64,32 +56,10 @@ class Preprocessor:
                 out      = self.process_utterance(speaker, basename)
                 out_list.append(out)
 
-    def trim_silence(self, audio_path):
-        wav, sr = librosa.load(audio_path, sr=None)
-        diary = self.diarization(audio_path)
-
-        combined_segments = np.array([])
-        total_duration = 0.0
-        for turn, _, speaker in diary.itertracks(yield_label=True):
-            start = int(turn.start * sr)
-            end = int(turn.end * sr)
-
-            if (turn.end - turn.start) <= 0.1:
-                continue
-
-            segment = wav[start:end]
-            combined_segments = np.concatenate((combined_segments, segment))
-            total_duration += (turn.end - turn.start)
-
-        if total_duration >= 2.0 and total_duration <= 12.0:
-            return combined_segments, True
-        else:
-            return combined_segments, False
-
 ############################################
-    def process_utterance(self, basename):
-        wav_path  = os.path.join(self.in_dir, '{}.wav'.format(basename))
-        text_path = os.path.join(self.in_dir, '{}.lab'.format(basename))
+    def process_utterance(self, speaker, basename):
+        wav_path  = os.path.join(self.in_dir, speaker, '{}.wav'.format(basename))
+        text_path = os.path.join(self.in_dir, speaker, '{}.lab'.format(basename))
 
         ########################################################################
         '''
@@ -119,13 +89,8 @@ class Preprocessor:
         ########################################################################
 
         # Read and trim wav files   
-        wav, sr     = librosa.load(wav_path)
-        wav, frag   = self.trim_silence(wav_path)
-
-        if not frag:
-            return None
-        
-        wav         = wav.astype(np.float32)
+        wav, _ = librosa.load(wav_path)
+        wav    = wav.astype(np.float32)
 
         # Read raw text
         with open(text_path, 'r') as f:
@@ -136,13 +101,13 @@ class Preprocessor:
         
         # Save files
 ##################################################################
-        wav_filename = '{}-wav.wav'.format( basename)
+        wav_filename = '{}-wav-{}.wav'.format(speaker, basename)
         sf.write(os.path.join(self.out_dir, 'trim_wav', wav_filename), wav, self.sampling_rate)  
         
-        mel_filename = '{}-mel.npy'.format(basename)
+        mel_filename = '{}-mel-{}.npy'.format(speaker, basename)
         np.save(os.path.join(self.out_dir, 'mel', mel_filename), mel_spectrogram.T)
         
-        wav_filename = '{}-wav.wav'.format(basename)
+        wav_filename = '{}-wav-{}.wav'.format(speaker, basename)
         wav_path     = os.path.join(self.out_dir, 'trim_wav', wav_filename)
         
         wav, fs = sf.read(wav_path)
@@ -158,8 +123,8 @@ class Preprocessor:
         lf0                   = f0.copy()
         lf0[nonzeros_indices] = np.log(f0[nonzeros_indices]) # for f0(Hz), lf0 > 0 when f0 != 0
         
-        lf0_filename = '{}-lf0.npy'.format(basename)
+        lf0_filename = '{}-lf0-{}.npy'.format(speaker, basename)
         np.save(os.path.join(self.out_dir, 'lf0', lf0_filename), lf0)
         
 ##################################################################
-        return '|'.join([basename, raw_text])
+        return '|'.join([basename, speaker, raw_text])
