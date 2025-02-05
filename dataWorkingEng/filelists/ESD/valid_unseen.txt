@@ -1,0 +1,838 @@
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000385.npy|the name really is the agedaged man.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000306.npy|please invite tom if there is not requires.|8|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000746.npy|they'd never know i'd regular ran away.|1|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001729.npy|and his heart wagged with joy like a lamb's tail.|4|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001232.npy|age forty five if a day a lie.|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000381.npy|all smile were real and the happier the more sincere .|1|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001081.npy|all smile were real and the happier the more sincere .|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001104.npy|are you a regular darkey really?|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001429.npy|rat came and replied on the leaves.|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000937.npy|what would they do the end of the year?|1|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000993.npy|he is old fashioned but he is the best men.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001571.npy|i say neither yea nor nay.|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000263.npy|she said in subdued voice.|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000556.npy|still you owe it a duty.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001358.npy|perhaps you think there is a queer title for this chapter.|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000725.npy|she is now choosing skirt to wear.|5|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000611.npy|after a while he perceived both giants.|1|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001363.npy|give me a fine fat goose.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001051.npy|the nine the eggs, i keep.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001177.npy|cos i know i had some honey.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001626.npy|and the next day. nurse will be released.|4|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001422.npy|and what are doves. and what are doves.|6|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001297.npy|she and i are running a neck and neck race.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000890.npy|and they were sandy yellow brownish all over.|6|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000091.npy|we expected tom would jump for joy.|6|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000357.npy|i'm as bad as i can be.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000394.npy|take courage all isn't lost yet.|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001259.npy|a raging fire was in his eyes.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000200.npy|that cloth does not look worth much!|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000806.npy|i guess it's a choice feast.|3|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000558.npy|however, somebody killed something.|8|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001575.npy|all this we have won by our labour.|3|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001015.npy|it's how to say hi do you with tom's answer.|4|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001597.npy|fur flew through the air, teeth gnashed.|4|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000035.npy|the name really is the agedaged man.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000625.npy|you shouldn't have pricked him with your horn.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001056.npy|andy what's the guy to gimble.|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000686.npy|over them swooped the eagles.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000368.npy|then sadly it is much farther.|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001411.npy|chapter ten a warm welcome.|4|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001165.npy|he might call it, for example.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001310.npy|as soon as she went in, there was disorder.|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000658.npy|perhaps you think that is a queer title for this chapter.|1|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000703.npy|that i owe my thanks to you.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001250.npy|that cloth does not look like worth much!|1|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000813.npy|mister lawson saw george last night.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000533.npy|fresh pain seized paul's body.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000097.npy|confess that you opened the thirteenth door.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001255.npy|fear neither root nor sprout!|1|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001291.npy|we have showed his shark tooth.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000114.npy|a half pounds of flour and two ounces suet.|6|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000092.npy|does the one that wins get the crowned?|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001341.npy|the end of february fourteenth.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000313.npy|give me a fine fat goose.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001236.npy|she jump at the tail and bite it savagely.|1|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001610.npy|it weighs seven point five kilogram.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000423.npy|how suspicious this fox.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000548.npy|i'd shoot myself. a pause.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001276.npy|and the next day. nurse will be released.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000691.npy|enough,you a foolish chatter.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000196.npy|clear are your eyes and bright your breath!|9|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001379.npy|and his heart wagged with joy like a lamb's tail.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001298.npy|in which piglet meets a elephant.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001590.npy|and they were sandy yellow brownish all over.|5|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000185.npy|the new born baby is stolen as we go.|8|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001125.npy|i'd far rather go without them than eat them!|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000897.npy|fur flew through the air, teeth gnashed.|1|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000097.npy|confess that you opened the thirteenth door.|4|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001164.npy|a half pounds of flour and two ounces suet.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001105.npy|a deafening chirruping rent the air.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000022.npy|and what are doves. and what are doves.|8|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000361.npy|chapter ten a warm welcome.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000368.npy|then sadly it is much farther.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000679.npy|and his heart wagged with joy like a lamb's tail.|1|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001709.npy|he owed mister lawson, i can't tell you how.|3|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000508.npy|it looks much better.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001307.npy|i would scoff at these followers.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001704.npy|how do you like you dirty bird!|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000432.npy|a fair jaw cracker dwarf language must be!|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001491.npy|we expected tom would jump for joy.|6|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001177.npy|cos i know i had some honey.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000134.npy|rare rabbit had a little apron.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000180.npy|toast from the bread fruit tree.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000927.npy|born once every one hundred years, dies in flames!|4|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001236.npy|she jump at the tail and bite it savagely.|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000948.npy|in which piglet meets a elephant.|1|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000433.npy|be off now as quick as you may!|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000062.npy|tom, went on eeyore gloomily.|4|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000634.npy|chapter eighteen, the return journey.|1|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001157.npy|tom and michael woke up the next morning.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000497.npy|and there you'll find a snap dragon fly.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000317.npy|at length they came to a sharp bend.|1|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001261.npy|from each cake, there sprang a huge dog.|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001422.npy|and what are doves. and what are doves.|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001237.npy|an hour out of guildford town.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001206.npy|the eye could not catch them.|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001243.npy|please hire me after you.|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001488.npy|in my opinion that-is a good idea!|6|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000979.npy|these words behind the ears is nonsense.|5|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001693.npy|he is old fashioned but he is the best of men.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001387.npy|but mom i'm not certain about.|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000420.npy|tom now let our arrows fly!|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000991.npy|the end of february fourteenth.|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001613.npy|let it give us a chance, my precious.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000876.npy|she just smiled calmly, mother knows that is the best smile.|4|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000543.npy|please hire me after you.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001095.npy|the nastiest things they saw were the cobwebs.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000207.npy|what am i, i'm a racer, son of god.|8|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001123.npy|how suspicious this fox.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001574.npy|i pay half a crown a week extra.|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000002.npy|i did go, and made many prisoners.|4|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000191.npy|i make her quite nervy at times.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001655.npy|this was the twenty fifth of november, seventeen eighty three.|3|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000869.npy|sam waved his arm vaguely.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000155.npy|this speech roused dame ilse to anger.|8|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001600.npy|that cloth does not look like worth much!|6|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000645.npy|i know how to obey orders.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001428.npy|she had said, so that one could keep up a conversation!|5|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001142.npy|does the one that wins get the crowned?|1|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000844.npy|we all see panda on tv or in the zoo.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001577.npy|tom fell with a cloven head.|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000733.npy|this used to be jerry's occupation.|3|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001059.npy|on the twenty second of last march.|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000633.npy|they had been named tom and jerry.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000634.npy|chapter eighteen, the return journey.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001372.npy|a special pot too.|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000655.npy|the fisherman and his wife see george every day.|9|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000890.npy|and they were sandy yellow brownish all over.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000152.npy|guilty for what do you rule?|8|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000052.npy|from august eighteenth, of their divorce.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001353.npy|i am loath to see him go.|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001380.npy|she keeps saying i'm hers.|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001137.npy|a hippo lives in the zoo.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000797.npy|confess that you opened the thirteenth door.|3|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000606.npy|i must have two to fetch and carry.|8|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000051.npy|said the american to the chinese.|6|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001579.npy|daisy creams with pink edges.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001170.npy|our king george is labourers.|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000864.npy|his large mouth curled into a sneer.|4|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000420.npy|tom now let our arrows fly!|9|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001531.npy|it must come sometimes to jam a day.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000610.npy|as soon as she went in, there was disorder.|9|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001720.npy|goat billy asked the old chinese guy.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000845.npy|reed by the living pool!|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000387.npy|i think it'll encourage me.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000737.npy|i think it'll encourage me.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000545.npy|a boat put out on the bay.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000364.npy|annie please please don't hurt me!|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000687.npy|but mom i'm not certain about.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001274.npy|do you know the lid opens?|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000887.npy|an hour out of guildford town.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001358.npy|perhaps you think there is a queer title for this chapter.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000704.npy|they went up to the dark mass job had pointed out.|5|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000029.npy|rat came and replied on the leaves.|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000663.npy|give me a fine fat goose.|8|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000966.npy|we may join with that power.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001710.npy|why it is just like the round egg which sounds thin.|4|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001034.npy|another one, ten thousand dollars.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000931.npy|he told me that i ought to change.|6|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000782.npy|a fair jaw cracker dwarf language must be!|1|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001359.npy|he owed mister lawson, i can't tell you how.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001686.npy|one two three, where is your breakfast.|3|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001513.npy|mister lawson saw george last night.|4|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001670.npy|chew leaves quickly, said rabbit.|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001708.npy|perhaps you think is a queer title for this chapter.|6|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000533.npy|fresh pain seized paul's body.|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000434.npy|by hook or by crook.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001321.npy|i say i will be emperor.|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000725.npy|she is now choosing skirt to wear.|4|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000718.npy|then sadly it is much farther.|6|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001598.npy|i'd shoot myself. a pause.|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001243.npy|please hire me after you.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000560.npy|it weighs seven point five kilogram.|8|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000159.npy|such tunes are joy to dancing fay.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000951.npy|the ladybug told them proudly.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001598.npy|i'd shoot myself. a pause.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001565.npy|they were going fast, with a light clip.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001676.npy|can your name be more hilarious?|6|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000659.npy|he owed mister lawson, i can't tell you how.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001088.npy|hold up my chin, slow and solid.|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000395.npy|the nastiest things they saw were the cobwebs.|9|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000368.npy|then sadly it is much farther.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000605.npy|this was the twenty fifth of november, seventeen eighty three.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000822.npy|am i an absolute pauper?|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000103.npy|the elephant and the carpenter is the longest.|1|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000750.npy|rabbit gave dog a hurrying up sort of nudge.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000102.npy|this is jack, the relatives of tom.|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001616.npy|it isn't picked at all.|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000759.npy|zero four three a silver shilling is journey.|3|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001273.npy|pick, pick, pick!|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000573.npy|pick, pick, pick!|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000414.npy|and we are so thirsty!|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001655.npy|this was the twenty fifth of november, seventeen eighty three.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001443.npy|story twenty nine a boy and a monkey.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000455.npy|he was killed by an arrow.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000800.npy|well anyhow it didn't rain, he said.|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001254.npy|the song is really louding on a gate.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000340.npy|so tom saw night as it were broad daylight.|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001236.npy|she jump at the tail and bite it savagely.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001598.npy|i'd shoot myself. a pause.|3|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000388.npy|hold up my chin, slow and solid.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000393.npy|story twenty nine a boy and a monkey.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001300.npy|her kind and firm glance.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000599.npy|you may imagine how i gape.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000669.npy|how could i dig burrows with short toe nails?|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000802.npy|this is jack, the relatives of tom.|4|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000335.npy|but things haven't change yet.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001301.npy|the ladybug told them proudly.|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000526.npy|she just smiled calmly, mother knows that is the best smile.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000479.npy|a large flat ferry boat was moored beside-it.|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000073.npy|how suspicious this fox.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001109.npy|zero four three a silver shilling is journey.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001201.npy|all the way to china is home.|1|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001710.npy|why it is just like the round egg which sounds thin.|3|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000183.npy|fresh pain seized paul's body.|8|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000179.npy|daisy creams with pink edges.|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000704.npy|they went up to the dark mass job had pointed out.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001416.npy|mister share man, i move for a division.|3|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000524.npy|i pay half a crown a week extra.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001215.npy|they were going fast, with a light clip.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000306.npy|please invite tom if there is not requires.|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000516.npy|they ate beef the butcher shop.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000359.npy|on the twenty second of last march.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000659.npy|he owed mister lawson, i can't tell you how.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001682.npy|alice i won't forget it again.|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001562.npy|i lent george three pounds.|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001353.npy|i am loath to see him go.|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001679.npy|these words behind the ears is nonsense.|6|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001234.npy|we have been fine, haven't we?|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000589.npy|this is the way that snakes always talk.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001090.npy|in which fox loses a tail and its elder sister finds one.|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001140.npy|and they did push so!|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000576.npy|and the next day. nurse will be released.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001264.npy|but what about this thing, sticky!|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001715.npy|it's to say how do you do with tom's answer.|5|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001335.npy|the straw, charcoal and the pea.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001254.npy|the song is really louding on a gate.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001034.npy|another one, ten thousand dollars.|3|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001396.npy|i am going to go back home.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000538.npy|now quicker the fiddle went.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001060.npy|a nauseous draught.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000843.npy|pussy can sit by the fire and sing.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001355.npy|the fisherman and his wife see george every day.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001576.npy|she just smiled calmly, mother knows that the best smile.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000641.npy|the end of february fourteenth.|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000225.npy|her existence makes him pleasant.|4|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000063.npy|asteroid three hundred and twenty five.|4|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000308.npy|perhaps you think that is a queer title for this chapter.|4|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001571.npy|i say neither yea nor nay.|5|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000354.npy|they went up to the dark mass job had pointed out.|8|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000282.npy|alice i won't forget it again.|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000776.npy|the hag looked in the stove.|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000761.npy|midyear is day, shire year.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001674.npy|because he was a man with infinite resource and sagacity.|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001071.npy|as rich as peter's son in law!|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000709.npy|on the twenty second of last march.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000261.npy|after a while he perceived both giants.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001322.npy|no admittance except on party business.|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000698.npy|dear customer,welcome to our ship.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001379.npy|and his heart wagged with joy like a lamb's tail.|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000660.npy|why it is just like the round egg which sounds thin.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001402.npy|i did go, and made many prisoners.|3|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000626.npy|can your name be more hilarious?|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001128.npy|the art quite safe with me.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001637.npy|what would they do at the end of the year?|4|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001310.npy|as soon as she went in, there was disorder.|1|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000129.npy|a large flat ferry boat was moored beside it.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001124.npy|come on my jack in the boxes!|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000790.npy|and they did push so!|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000463.npy|mister lawson saw george last night.|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000297.npy|how tom and jerry went to visit mister sam.|4|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000959.npy|the song is called ways and means.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001281.npy|he told me that i ought to change.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000340.npy|so tom saw night as it were broad daylight.|9|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001417.npy|why has the egg not broken?|6|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000623.npy|i'd just as soon swim your way as others do.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001201.npy|all the way to china is home.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000843.npy|pussy can sit by the fire and sing.|1|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001356.npy|please invite tom if there is not requires.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000785.npy|suppose i take grandmother a fresh vegetable.|3|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001085.npy|the name really is the agedaged man.|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001078.npy|she had said, so that one could keep up a conversation!|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000920.npy|her paw went into your eye?|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000940.npy|both sides were softly curved.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001218.npy|i said you looked like an egg, sir.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001044.npy|lucy, a clever farmer.|6|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001168.npy|look out! said alice.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000060.npy|that i am a born nurse.|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001183.npy|i smell the breath of an english.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000878.npy|and vowed he'd change the pigtail's place.|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001052.npy|i did go, and made many many prisoners.|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000051.npy|said the american to the chinese.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001706.npy|please invite tom if there is not requires.|6|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000250.npy|her kind and firm glance.|4|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000569.npy|but the tune isn't his own invention.|8|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001356.npy|please invite tom if there is not requires.|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001704.npy|how do you like you dirty bird!|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001488.npy|in my opinion that-is a good idea!|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001106.npy|your midget wife never can sing a song.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000406.npy|your midget wife never can sing a song.|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000844.npy|we all see panda on tv or in the zoo.|1|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001339.npy|no, said piggy carelessly.|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000626.npy|can your name be more hilarious?|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000101.npy|it's me piglit, help help!|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001619.npy|but the tune isn't his own invention.|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001661.npy|after a while he perceived both giants.|4|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001386.npy|over them swooped the eagles.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000511.npy|that's a full grown colt.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000825.npy|to catch that bulrush root with my paw!|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001230.npy|toast from the bread fruit tree.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000807.npy|tom and michael woke up next morning.|6|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000302.npy|five hundred and one million right?|1|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000231.npy|he told me that i ought to change.|1|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000139.npy|cuckoos is downheaded and cry.|8|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001231.npy|first, issue a reward.|1|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000578.npy|it says no way! shouted daisy.|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000025.npy|she is now choosing skirt to wear.|6|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000624.npy|because he was a man with infinite resource and sagacity.|1|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001462.npy|tom, went on eeyore gloomily.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001358.npy|perhaps you think there is a queer title for this chapter.|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001260.npy|it weighs seven point five kilogram.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000055.npy|a deafening chirruping rent the air.|4|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000745.npy|the nastiest things they saw were the cobwebs.|6|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000238.npy|today isn't an other day.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001424.npy|the football teams give a tea party.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001455.npy|a deafening chirruping rent the air.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001252.npy|that sounds good.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001082.npy|who is been repeating all that hard stuff to you?|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001087.npy|i think it'll encourage me.|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000043.npy|story twenty nine a boy and a monkey.|6|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000085.npy|suppose i take grandmother a fresh vegetable.|1|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000191.npy|i make her quite nervy at times.|4|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000585.npy|if not, i shall go no further.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000879.npy|daisy creams with pink edges.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000180.npy|toast from the bread fruit tree.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000896.npy|clear are your eyes and bright your breath!|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000044.npy|take courage all isn't lost yet.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000557.npy|what am i, i'm a racer, son of god.|9|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000815.npy|he might call it, for example.|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001672.npy|no admittance except on party business.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000686.npy|over them swooped the eagles.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001657.npy|i would scoff at these followers.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000479.npy|a large flat ferry boat was moored beside-it.|8|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001406.npy|andy what's the guy to the gimble.|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000624.npy|because he was a man with infinite resource and sagacity.|9|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000815.npy|he might call it, for example.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000579.npy|the first year they sowed rye.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000425.npy|i'd far rather go without them than eat them!|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000425.npy|i'd far rather go without them than eat them!|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000641.npy|the end of february fourteenth.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000588.npy|today isn't an other day.|9|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000842.npy|wake now my merry tads!|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001170.npy|our king george is labourers.|1|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000948.npy|in which piglet meets a elephant.|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001106.npy|your midget wife never can sing a song.|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001352.npy|five hundred and one million right?|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000703.npy|that i owe my thanks to you.|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001330.npy|your path goes south.|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001310.npy|as soon as she went in, there was disorder.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000626.npy|can your name be more hilarious?|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000951.npy|the ladybug told them proudly.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001686.npy|one two three, where is your breakfast.|4|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001157.npy|tom and michael woke up the next morning.|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000839.npy|cuckoos is downheaded and cry.|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001061.npy|chapter ten a warm welcome.|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001708.npy|perhaps you think is a queer title for this chapter.|4|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001087.npy|i think it'll encourage me.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001349.npy|his hope will cheat him.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001431.npy|all smile were real and the happier the more sincere .|4|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000681.npy|she'll be feverish after so much thinking.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001186.npy|she has eaten the tapioca all of it.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001438.npy|hold up my chin, slow and solid.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001520.npy|our king george is labourers.|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001715.npy|it's to say how do you do with tom's answer.|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001475.npy|i'd far go without them than eat them!|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001214.npy|his large mouth curled into a sneer.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000606.npy|i must have two to fetch and carry.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001141.npy|we expected tom would jump for joy.|1|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001540.npy|what an impetuous boy he is!|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000307.npy|i owe them five hundred dollars.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000108.npy|the squire himself showed perfect.|8|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000606.npy|i must have two to fetch and carry.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001737.npy|but mom i'm not certain about.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001024.npy|and she caught at the brooch.|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000667.npy|at length they came to a sharp bend.|9|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000082.npy|a fair jaw cracker dwarf language must be!|8|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001747.npy|what are you waiting for? man.|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000665.npy|it's hard to say how you do with tom's answer.|8|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001529.npy|a large flat ferry boat was moored beside it.|4|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001532.npy|i thank you for this mercy!|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001251.npy|a lady, is on alice's lap!|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000196.npy|clear are your eyes and bright your breath!|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001018.npy|the name of the song is called haddocks.|1|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000623.npy|i'd just as soon swim your way as others do.|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001163.npy|mister lawson saw george last night.|1|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001450.npy|rabbit gave dog a hurrying up sort of nudge.|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001461.npy|midyear is day, shire year.|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000662.npy|father has yellow eyes.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001288.npy|today isn't any other day.|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000060.npy|that i am a born nurse.|1|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000059.npy|zero four three a silver shilling is journey.|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000521.npy|i say neither yea nor nay.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001323.npy|i'd just as soon swim your way as others do.|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000052.npy|from august eighteenth, of their divorce.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001106.npy|your midget wife never can sing a song.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001241.npy|i make her quite nervy at times.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001088.npy|hold up my chin, slow and solid.|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000613.npy|she said in subdued voice.|1|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000199.npy|captain tom receives an angry letter.|1|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001203.npy|but we are not high yet.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001318.npy|he showed no signs of age.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000461.npy|we nightly dance our heyday guise.|1|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000983.npy|they had been named tom and jerry.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001464.npy|and we are so thirsty!|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001325.npy|you shouldn't have pricked him with your horn.|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000563.npy|let it give us a chance, my precious.|9|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001303.npy|i have a soothsayer.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001209.npy|such tunes are joy to a dancing fay.|1|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000797.npy|confess that you opened the thirteenth door.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001321.npy|i say i will be emperor.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000178.npy|and vowed he'd change the pigtail's place.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000415.npy|tom could hardly speak for laughing.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001422.npy|and what are doves. and what are doves.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001452.npy|from august eighteenth, of their divorce.|6|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000422.npy|how are you, dear child?|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001181.npy|it must come sometimes to jam a day.|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000844.npy|we all see panda on tv or in the zoo.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000848.npy|and on the top of them, came winnie, the cute bear.|4|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000518.npy|i said you looked like an egg, sir.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000475.npy|to catch that bulrush root with my paw!|8|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001175.npy|to catch that bulrush root with my paw!|1|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001143.npy|to buy two pork chops.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000706.npy|andy what's the guy and to gimble.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001494.npy|they found a cow grazing in a field.|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001537.npy|let the glass globe be.|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000840.npy|what an impetuous boy he is!|4|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001424.npy|the football teams give a tea party.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000494.npy|we all see panda on tv or in the zoo.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001533.npy|i smell the breath of an english.|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000775.npy|i'd far rather go without them than eat them!|5|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000541.npy|i make her quite nervous at times.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001391.npy|enough,you a foolish chatter.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000409.npy|zero four three a silver shilling is journey.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001325.npy|you shouldn't have pricked him with your horn.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000926.npy|and the next day. nurse will be released.|3|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000429.npy|all my gum tips gone as well.|9|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000714.npy|annie please please don't hurt me!|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000596.npy|we can not do it sir.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001582.npy|age forty five if a day a lie.|3|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001086.npy|how i hate this foul pool!|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000532.npy|age forty five if a day a lie.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001225.npy|all this have we won by our labour.|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000107.npy|tom and michael woke up next morning.|1|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001368.npy|the name of the song is called haddocks.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001390.npy|so tom saw lastnight as it were broad daylight.|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001193.npy|pussy can sit by the fire and sing.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001648.npy|in which piglet meets an elephant.|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000518.npy|i said you looked like an egg, sir.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000558.npy|however, somebody killed something.|9|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000383.npy|this used to be jerry's occupation.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001556.npy|the eye could not catch them.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000014.npy|annie please please don't hurt me!|1|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000359.npy|on the twenty second of last march.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000942.npy|give me your hand or i will cry harder than before.|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000031.npy|all smile were real and the happier the more sincere .|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000863.npy|how they went to the mountains to eat nuts.|6|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001639.npy|this is the way that snakes always talk.|5|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001511.npy|we nightly dance our heyday guise.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001707.npy|i owe them five hundred dollars.|4|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001261.npy|from each cake, there sprang a huge dog.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001398.npy|dear customer,welcome to our ship.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000989.npy|no, said piggy carelessly.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000463.npy|mister lawson saw george last night.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000812.npy|clown, to call him joey.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001230.npy|toast from the bread fruit tree.|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000285.npy|the straw, charcoal and the pea.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000623.npy|i'd just as soon swim your way as others do.|8|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000535.npy|the new born baby is stolen as we go.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000504.npy|he dreamt them all that.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000831.npy|it must come sometimes to jam a day.|5|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000587.npy|what would they do at the end of the year?|9|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001635.npy|if not, i shall go no further.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001651.npy|the ladybug told them proudly.|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000888.npy|now quicker the fiddle went.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001233.npy|fresh pain seized paul's body.|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001700.npy|six was half way down the room.|3|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000035.npy|the name really is the agedaged man.|6|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001020.npy|goat billy asked the old chinese guy.|3|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000062.npy|tom, went on eeyore gloomily.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000788.npy|in my opinion that is a good idea!|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001302.npy|i am run off my feet.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001217.npy|i toy with my liqueur.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000873.npy|he searched through the box.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001492.npy|does the one that wins get the crowned?|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001063.npy|i have bunburyed all over goat on two separate occasions.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000356.npy|andy what's the gyre and to the gimble.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000634.npy|chapter eighteen, the return journey.|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000309.npy|he owed mister lawson, i can't tell you how.|8|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001324.npy|because he was a man with infinite resource and sagacity.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000301.npy|i'm sure your friends can wait!|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000393.npy|story twenty nine a boy and a monkey.|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001708.npy|perhaps you think is a queer title for this chapter.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000662.npy|father has yellow eyes.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001697.npy|how tom and jerry went to visit mister sam.|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001420.npy|at the roots of a bush of a grass.|5|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000816.npy|no, i burst the balloon!|6|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000864.npy|his large mouth curled into a sneer.|6|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000352.npy|i did go, and made many prisoners.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001308.npy|mum shuts one's mouth up, doesn't it.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001285.npy|if not, i shall go no further.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001125.npy|i'd far rather go without them than eat them!|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001247.npy|fur flew through the air, teeth gnashed.|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000807.npy|tom and michael woke up next morning.|1|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000549.npy|captain tom receives an angry letter.|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001216.npy|they ate beef at the butcher shop.|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001551.npy|all the way to china is home.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001316.npy|we may join with that power.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001340.npy|there goes the shawl again!|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001705.npy|the fisherman and his wife see george every day.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001228.npy|and vowed he'd change the pigtail's place.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000372.npy|and what are doves. and what are doves.|8|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001658.npy|mum shuts one's mouth up, doesn't it.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000313.npy|give me a fine fat goose.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001661.npy|after a while he perceived both giants.|5|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000303.npy|i am loath to see him go.|6|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001210.npy|kitty, can you play chess?|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001512.npy|clown, to call him joey.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001157.npy|tom and michael woke up the next morning.|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001631.npy|he told me that i ought to change.|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000483.npy|i smell the breath of an english.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000590.npy|both sides were softly curved.|1|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000917.npy|you cruelty shall cost your life !|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000896.npy|clear are your eyes and bright your breath!|4|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000305.npy|the fisherman and his wife see george every day.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000702.npy|i did go, and made many prisoners.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000706.npy|andy what's the guy and to gimble.|6|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000523.npy|he searched through the box.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001528.npy|put that rude grasshopper in jail!|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000318.npy|the name of the song is called haddocks.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000663.npy|give me a fine fat goose.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000365.npy|poor tom now is dead!|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001618.npy|i'll send for tom to my boudoir.|4|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000431.npy|and i never had a whooping cough why.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000200.npy|that cloth does not look worth much!|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000331.npy|she'll be feverish after so much thinking.|9|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000031.npy|all smile were real and the happier the more sincere .|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001394.npy|lucy, a clever farmer.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000681.npy|she'll be feverish after so much thinking.|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000146.npy|he said to jack, the chatterer.|6|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000661.npy|i am safe back again.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001071.npy|as rich as peter's son in law!|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001391.npy|enough,you a foolish chatter.|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001569.npy|sam waved his arm vaguely.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001141.npy|we expected tom would jump for joy.|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000856.npy|the eye could not catch them.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001078.npy|she had said, so that one could keep up a conversation!|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000293.npy|he is old fashioned but he is the best of men.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000546.npy|clear are your eyes and bright your breath!|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001176.npy|this turn goes to a hill.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001355.npy|the fisherman and his wife see george every day.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000698.npy|dear customer,welcome to our ship.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001586.npy|she jump at the tail and bite it savagely.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001705.npy|the fisherman and his wife see george every day.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000181.npy|first, issue a reward.|4|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001679.npy|these words behind the ears is nonsense.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001271.npy|i am a selfish sinner.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001219.npy|sam waved his arm vaguely.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000835.npy|i blinked my eyes hard.|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001317.npy|chapter eleven on the doorstep.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001528.npy|put that rude grasshopper in jail!|6|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000973.npy|i'd just as soon swim your way as others do.|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000618.npy|he showed no signs of age.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000601.npy|the ladybug told them proudly.|9|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000879.npy|daisy creams with pink edges.|3|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000663.npy|give me a fine fat goose.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001282.npy|will call her lili, for short.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000546.npy|clear are your eyes and bright your breath!|1|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000744.npy|take courage all isn't lost yet.|3|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001324.npy|because he was a man with infinite resource and sagacity.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000518.npy|i said you looked like an egg, sir.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000031.npy|all smile were real and the happier the more sincere .|8|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000759.npy|zero four three a silver shilling is journey.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001690.npy|there goes the shawl again!|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000020.npy|at the roots of a bush of a grass.|9|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001310.npy|as soon as she went in, there was disorder.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001422.npy|and what are doves. and what are doves.|5|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000647.npy|how tom and jerry went to visit mister sam.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000911.npy|from each cake, there sprang a huge dog.|1|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001065.npy|poor tom now is dead!|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001119.npy|not much use is it, sam?|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000887.npy|an hour out of guildford town.|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000370.npy|at the roots-of a bush of a grass.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000273.npy|i'd just as soon swim your way as others do.|6|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000575.npy|her existence makes him pleasant.|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000974.npy|because he was a man with infinite resource and sagacity.|3|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000656.npy|please invite tom if there is not requires.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001052.npy|i did go, and made many many prisoners.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000100.npy|well anyhow it didn't rain, he said.|6|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000021.npy|as rich as peter's son in law!|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001291.npy|we have showed his shark tooth.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001430.npy|must a name mean something?|6|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001585.npy|the new born baby is stolen as we go.|6|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001613.npy|let it give us a chance, my precious.|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000111.npy|we nightly dance our heyday guise.|1|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000374.npy|the football teams give a tea party.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001666.npy|we may join with that power.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000475.npy|to catch that bulrush root with my paw!|1|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000393.npy|story twenty nine a boy and a monkey.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001684.npy|chapter eighteen, the return journey.|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000286.npy|one two three, where is your breakfast.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000829.npy|a large flat ferry boat was moored beside it.|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001264.npy|but what about this thing, sticky!|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000880.npy|toast from the bread fruit tree.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000970.npy|chew leaves quickly, said rabbit.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001423.npy|i thought you meant how old are you?|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001231.npy|first, issue a reward.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001564.npy|his large mouth curled into a sneer.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000058.npy|the octopus has eight legs.|4|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000610.npy|as soon as she went in, there was disorder.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001625.npy|her existence makes him pleasant.|6|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001348.npy|she come back to the valley.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001491.npy|we expected tom would jump for joy.|3|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001115.npy|tom could hardly speak for laughing.|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001609.npy|a raging fire was in his eyes.|4|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000761.npy|midyear is day, shire year.|5|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001331.npy|he could not help doing so.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000513.npy|how they went to the mountains to eat nuts.|8|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000865.npy|they were going fast, with a light clip.|1|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000031.npy|all smile were real and the happier the more sincere .|6|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000185.npy|the new born baby is stolen as we go.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000481.npy|it must come sometimes to jam a day.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001072.npy|and what are doves. and what are doves.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000016.npy|mister share man, i move for a division.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001297.npy|she and i are running a neck and neck race.|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001664.npy|slam the doors and wedge them!|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001635.npy|if not, i shall go no further.|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000016.npy|mister share man, i move for a division.|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001074.npy|the football teams give a tea party.|1|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000613.npy|she said in subdued voice.|9|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000751.npy|said the american to the chinese.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000107.npy|tom and michael woke up next morning.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000226.npy|and the next day. nurse will be released.|1|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000632.npy|alice i won't forget it again.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000800.npy|well anyhow it didn't rain, he said.|3|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000112.npy|clown, to call him joey.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000227.npy|born once every one hundred years, dies in flames!|1|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000934.npy|hurry up, hurry up!|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000729.npy|rat came and replied on the leaves.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001093.npy|story twenty nine a boy and a monkey.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001588.npy|now quicker the fiddle went.|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000159.npy|such tunes are joy to dancing fay.|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000009.npy|on the twenty second of last march.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000033.npy|this used to be jerry's occupation.|1|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001456.npy|your midget wife can never sing a song.|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001339.npy|no, said piggy carelessly.|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001225.npy|all this have we won by our labour.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000736.npy|how i hate this foul pool!|3|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001308.npy|mum shuts one's mouth up, doesn't it.|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000398.npy|you are not a runaway,who are you?|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000255.npy|this was the twenty fifth of november, seventeen eighty three.|4|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000980.npy|your path now goes south.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001264.npy|but what about this thing, sticky!|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001100.npy|rabbit gave dog a hurrying up sort of nudge.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000155.npy|this speech roused dame ilse to anger.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001491.npy|we expected tom would jump for joy.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000213.npy|let it give us a chance, my precious.|4|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000475.npy|to catch that bulrush root with my paw!|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001513.npy|mister lawson saw george last night.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000660.npy|why it is just like the round egg which sounds thin.|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000962.npy|i believe you are one of them!|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001113.npy|asteroid three hundred and twenty five.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000738.npy|hold up my chin, slow and solid.|4|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001674.npy|because he was a man with infinite resource and sagacity.|4|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000580.npy|your own wife is not at home.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000982.npy|alice i won't forget it again.|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000927.npy|born once every one hundred years, dies in flames!|1|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001178.npy|put that rude grasshopper in jail!|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001439.npy|our thanks to god's oath.|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001713.npy|give me a fine fat goose.|8|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000495.npy|reed by the living pool!|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001388.npy|paul's teeth ached because of lemon.|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001369.npy|how could i dig burrows with short toe nails?|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001081.npy|all smile were real and the happier the more sincere .|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000140.npy|what an impetuous boy he is!|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000971.npy|i say i will be emperor.|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000985.npy|the straw, charcoal and the pea.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000413.npy|asteroid three hundred and twenty five.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001198.npy|and on the top of them, came winnie, the cute bear.|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001111.npy|midyear is day, shire year.|1|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000309.npy|he owed mister lawson, i can't tell you how.|9|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001098.npy|you are not a runaway,who are you?|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001390.npy|so tom saw lastnight as it were broad daylight.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000728.npy|she had said, so that no one could keep up a conversation!|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001055.npy|clear than clear water!|2|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001211.npy|that's a full grown colt.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001689.npy|no, said piggy carelessly.|3|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000129.npy|a large flat ferry boat was moored beside it.|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000320.npy|goat billy asked the old chinese guy.|8|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001311.npy|after a while he perceived both giants.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000074.npy|come on my jack in the boxes!|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001479.npy|all my gum tips gone as well.|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000529.npy|daisy creams with pink edges.|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001250.npy|that cloth does not look like worth much!|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000002.npy|i did go, and made many prisoners.|6|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000818.npy|look out! said alice.|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000884.npy|we have been fine, haven't we?|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001174.npy|you know, answers to the name of tom's son.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001454.npy|are you a regular darkey really?|3|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000044.npy|take courage all isn't lost yet.|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000694.npy|lucy, a clever farmer.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001320.npy|chew leaves quickly, said rabbit.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000111.npy|we nightly dance our heyday guise.|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000878.npy|and vowed he'd change the pigtail's place.|3|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000094.npy|they found a cow grazing in a field.|1|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000761.npy|midyear is day, shire year.|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000630.npy|your path now goes south.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000286.npy|one two three, where is your breakfast.|4|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000226.npy|and the next day. nurse will be released.|8|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001110.npy|that i am a born nurse.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001224.npy|i pay half a crown a week extra.|1|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000486.npy|she has eaten the tapioca all of it.|1|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000272.npy|no admittance except on party business.|4|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001205.npy|this speech roused dame ilse to anger.|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000402.npy|from august eighteenth, of their divorce.|9|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001431.npy|all smile were real and the happier the more sincere .|3|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001615.npy|he likes dragons very much.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000980.npy|your path now goes south.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001607.npy|who what am i, a racer, son of god.|5|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000514.npy|his large mouth curled into a sneer.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000791.npy|we expected tom would jump for joy.|3|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000536.npy|she jump at the tail and bite it savagely.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000374.npy|the football teams give a tea party.|9|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000219.npy|but the tune isn't his own invention.|1|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000257.npy|i would scoff at these followers.|1|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000136.npy|she has eaten the tapioca all-of it.|4|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001675.npy|you shouldn't have pricked him with your horn.|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001684.npy|chapter eighteen, the return journey.|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000490.npy|what an impetuous boy he is!|8|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000782.npy|a fair jaw cracker dwarf language must be!|3|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000136.npy|she has eaten the tapioca all-of it.|6|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000197.npy|fur flew through the air, teeth gnashed.|1|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001330.npy|your path goes south.|1|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000155.npy|this speech roused dame ilse to anger.|9|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001137.npy|a hippo lives in the zoo.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000319.npy|how could i dig burrows with short toe nails?|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000633.npy|they had been named tom and jerry.|8|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000001.npy|the nine the eggs, i keep.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001370.npy|goat billy asked the old chinese guy.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000808.npy|the squire himself showed perfect.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001709.npy|he owed mister lawson, i can't tell you how.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001533.npy|i smell the breath of an english.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000214.npy|but what about this thing, sticky!|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000655.npy|the fisherman and his wife see george every day.|8|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000770.npy|tom now let our arrows fly!|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000947.npy|she and i are running a neck and neck race.|4|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000305.npy|the fisherman and his wife see george every day.|8|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001333.npy|they had been named tom and jerry.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000307.npy|i owe them five hundred dollars.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000861.npy|that's a full grown colt.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000364.npy|annie please please don't hurt me!|1|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000319.npy|how could i dig burrows with short toe nails?|1|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000958.npy|mum shuts one's mouth up, doesn't it.|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000543.npy|please hire me after you.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001216.npy|they ate beef at the butcher shop.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000838.npy|but one requires the explorer to furnish proofs.|6|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000901.npy|a lady, is on alice's lap!|3|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000429.npy|all my gum tips gone as well.|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001059.npy|on the twenty second of last march.|9|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001270.npy|her paw went into your eye?|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000625.npy|you shouldn't have pricked him with your horn.|1|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000518.npy|i said you looked like an egg, sir.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001409.npy|on the twenty second of last march.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001246.npy|clear are your eyes and bright your breath!|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000009.npy|on the twenty second of last march.|9|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000598.npy|in which piglet meets an elephant.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000187.npy|an hour out of guildford town.|4|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001638.npy|today isn't any other day.|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001324.npy|because he was a man with infinite resource and sagacity.|1|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001002.npy|five hundred and one million right?|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000905.npy|fear neither root nor sprout!|8|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000210.npy|it weighs seven point five kilogram.|8|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000062.npy|tom, went on eeyore gloomily.|5|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001750.npy|do you have anything in mind?|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000225.npy|her existence makes him pleasant.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001685.npy|the straw, charcoal and the pea.|3|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000097.npy|confess that you opened the thirteenth door.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001177.npy|cos i know i had some honey.|3|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000242.npy|give me your hand or i will cry harder than before.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001104.npy|are you a regular darkey really?|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000175.npy|all this we have won by our labour.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001524.npy|you know, answers to the name of tom's son.|4|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000727.npy|monster made a deep bow.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_000275.npy|you shouldn't have pricked him with your horn.|9|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000563.npy|let it give us a chance, my precious.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001258.npy|however, somebody killed something.|1|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001334.npy|chapter eighteen, the return journey.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001555.npy|this speech roused dame ilse to anger.|9|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000474.npy|you know, answers to the name of tom's son.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001088.npy|hold up my chin, slow and solid.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000469.npy|the owl flew into a bush.|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000859.npy|such tunes are joy to a dancing fay.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000182.npy|age forty five if a day a lie.|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000821.npy|finn and the fairy shoemaker.|2|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001313.npy|she said in subdued voice.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_001381.npy|she'll be feverish after so much thinking.|5|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001639.npy|this is the way that snakes always talk.|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001133.npy|be off now as quick as you may!|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000438.npy|in my opinion that is a good idea!|6|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001247.npy|fur flew through the air, teeth gnashed.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000831.npy|it must come sometimes to jam a day.|4|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_000137.npy|let this glass globe be.|6|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000498.npy|and on the top of them, came winnie, the cute bear.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001162.npy|clown, to call him joey.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000494.npy|we all see panda on tv or in the zoo.|5|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000616.npy|we may join with that power.|2|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001543.npy|pussy can sit by the fire and sing.|6|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0016-mel-0016_000898.npy|i'd shoot myself. a pause.|5|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_001648.npy|in which piglet meets an elephant.|3|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001378.npy|it would be a hard choice.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001318.npy|he showed no signs of age.|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_000379.npy|rat came and replied on the leaves.|8|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0017-mel-0017_001140.npy|and they did push so!|6|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_000196.npy|clear are your eyes and bright your breath!|2|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000466.npy|no, i burst the balloon!|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_001096.npy|they'd never know i'd regular ran away.|4|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000102.npy|this is jack, the relatives of tom.|1|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000295.npy|i know how to obey orders.|3|Neutral
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000540.npy|and they were sandy yellow brownish all over.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000384.npy|a divine wrath made her blue eyes awful.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0020-mel-0020_001035.npy|but things haven't change yet.|9|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_000724.npy|the football teams give a tea party.|1|Happy
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0013-mel-0013_001669.npy|but show me now your map!|2|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000513.npy|how they went to the mountains to eat nuts.|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0015-mel-0015_000582.npy|will call her lili, for short.|4|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0012-mel-0012_001624.npy|do you know the lid opens?|1|Surprise
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000550.npy|that cloth does not look worth much!|3|Angry
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0019-mel-0019_001190.npy|who an impetuous boy he is!|8|Sad
+/home2/tuannd/tuanlha/PreprocessedDataESD/mel/0014-mel-0014_000403.npy|he was still in the forest!|3|Angry
