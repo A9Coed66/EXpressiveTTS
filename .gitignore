@@ -2,3 +2,8 @@ data_verifed/
 data_unverified/
 dataRawProcess/
 raw_path/
+dataWorkingEng/checkpoints/
+dataWorkingEng/syn_samples/
+dataWorkingEng/syn_save/
+dataWorkingEng/hifigan/
+dataWorkingVie/hifigan/

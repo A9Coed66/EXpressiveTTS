@@ -175,10 +175,10 @@ def text_to_sequence(text, cleaner_names=["english_cleaners"], dictionary=None):
         if not m:
             # print(f'text: {text}')
             clean_text = _clean_text(text, cleaner_names)
-            # print(f'clean_text: {clean_text}')
+            print(f'clean_text: {clean_text}')
             if dictionary is not None:
                 clean_text = [get_arpabet(w, dictionary) for w in clean_text.split(" ")]
-                # print(f'clean_text after dictionary: {clean_text}')
+                print(f'clean_text after dictionary: {clean_text}')
                 for i in range(len(clean_text)):
                     t = clean_text[i]
                     if t.startswith("{"):

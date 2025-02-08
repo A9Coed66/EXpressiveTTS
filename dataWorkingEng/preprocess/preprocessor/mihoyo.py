@@ -43,7 +43,7 @@ def prepare_align(config):
             
             # Check if audio duration is less than 1 second
             duration = len(wav) / sampling_rate
-            if duration < 1.0:
+            if duration < 1.0 or duration > 12.5:
                 # print(f"Skipping {wav_path} because duration is less than 1 second.")
                 continue
 
