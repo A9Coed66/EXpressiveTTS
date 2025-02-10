@@ -4,6 +4,7 @@ import numpy as np
 import torch
 from torch.utils.data import Dataset, DataLoader 
 
+import json
 from text import text_to_sequence, cmudict
 from text.symbols import symbols
 from src.utils import parse_filelist, intersperse
@@ -43,8 +44,9 @@ class TextMelSpeakerDataset(Dataset):
         sty     = self.get_feat_from_path(filepath, self.sty_type)
         lf0     = self.get_lf0_from_path(filepath)
         speaker = self.get_speaker(speaker)
+        (p_avg, p_rng, e_avg) = self.get_target_from_path(filepath)
         
-        return (text, mel, ref, sty, lf0, speaker)
+        return (text, mel, ref, sty, lf0, speaker, p_avg, p_rng, e_avg)
     
     def get_feat_from_path(self, filepath, feat_type):
         if feat_type == 'mel':
@@ -70,7 +72,7 @@ class TextMelSpeakerDataset(Dataset):
         return lf0
     
     def get_lf0_from_path(self, filepath):
-        filepath = filepath.replace('/mel/', '/lf0/').replace('-mel-', '-lf0-')
+        filepath = filepath.replace('/mel', '/lf0').replace('-mel-', '-lf0-')
         lf0      = np.load(filepath)
         lf0      = self.normalize_lf0(lf0)
         lf0      = torch.Tensor(lf0)
@@ -89,6 +91,16 @@ class TextMelSpeakerDataset(Dataset):
     def get_speaker(self, speaker):
         speaker = torch.LongTensor([int(speaker)])
         return speaker
+    
+    def get_target_from_path(self, filepath):
+        filepath = filepath.replace('/mel', '/target').replace('-mel-', '-target-').replace('.npy','.json')
+        with open(filepath, 'r') as f:
+            data = json.load(f)
+        p_avg, p_rng, e_avg = data['pitch_avg'], data['pitch_std'], data['energy_avg']
+        p_avg = torch.Tensor([p_avg])
+        p_rng = torch.Tensor([p_rng])
+        e_avg = torch.Tensor([e_avg])
+        return (p_avg, p_rng, e_avg)
     
     def sample_test_batch(self, size):
         idx = np.random.choice(range(len(self)), size=size, replace=False)
@@ -114,24 +126,25 @@ class TextMelSpeakerDataset(Dataset):
         sty     = self.get_feat_from_path(filepath, self.sty_type)
         lf0     = self.get_lf0_from_path(filepath)
         speaker = self.get_speaker(speaker)
+        (p_avg, p_rng, e_avg) = self.get_target_from_path(filepath)
         
         if len(emotion) != 0:
             emotion = emotion[0]
         else:
             emotion = 'None'
-        item = {'y': mel, 'x': text, 'ref': ref, 'sty':sty, 'lf0':lf0, 'spk': speaker, 'filepath':filepath, 'emotion':emotion, 'raw_text': raw_text}
+        item = {'y': mel, 'x': text, 'ref': ref, 'sty':sty, 'lf0':lf0, 'spk': speaker, 'filepath':filepath, 'emotion':emotion, 'raw_text': raw_text, 'pitch_avg':p_avg, 'pitch_std':p_rng, 'energy_avg':e_avg}
         return item
     
     def __getitem__(self, index):
         
-        text, mel, ref, sty, lf0, speaker = self.get_data(self.filelist[index])        
+        text, mel, ref, sty, lf0, speaker, p_avg, p_rng, e_avg = self.get_data(self.filelist[index])        
             
         ref     = self.augment(ref, aug_type=self.aug_type[0], time_mask_para=self.ref_tm, freq_mask_para=self.fm)
         lf0     = self.augment(lf0, aug_type=self.aug_type[1], time_mask_para=27, freq_mask_para=50)
         sty     = self.augment(sty, aug_type=self.aug_type[2], time_mask_para=self.sty_tm, freq_mask_para=self.fm)
         
         ## ref --> TIV, sty --> TV (we name the variable not to be confused)
-        item = {'y': mel, 'x': text, 'ref':ref, 'sty':sty, 'lf0':lf0, 'spk': speaker}
+        item = {'y': mel, 'x': text, 'ref':ref, 'sty':sty, 'lf0':lf0, 'spk': speaker, 'pitch_avg':p_avg, 'pitch_std':p_rng, 'energy_avg':e_avg}
         
         return item
 
@@ -148,24 +161,29 @@ class TextMelSpeakerBatchCollate(object):
         ref_max_length = max([item['ref'].shape[-1] for item in batch])
         sty_feats      = batch[0]['sty'].shape[-2]
         sty_max_length = max([item['sty'].shape[-1] for item in batch])
-        lf0_max_length = max([item['lf0'].shape[-1] for item in batch])
+        lf0_max_length = max([item['lf0'].shape[-1] for item in batch]) 
 
         y   = torch.zeros((B, n_feats, y_max_length), dtype=torch.float32)
         x   = torch.zeros((B, x_max_length), dtype=torch.long)
         ref = torch.zeros((B, ref_feats, ref_max_length), dtype=torch.float32)
         sty = torch.zeros((B, sty_feats, sty_max_length), dtype=torch.float32)
         lf0 = torch.zeros((B, lf0_max_length), dtype=torch.float32)
+        pitch_avg, pitch_rng, energy_avg = torch.zeros((B, 1), dtype=torch.float32), torch.zeros((B, 1), dtype=torch.float32), torch.zeros((B, 1), dtype=torch.float32)
         spk = []
         y_lengths, x_lengths, ref_lengths, sty_lengths, lf0_lengths = [], [], [], [], []
 
         for i, item in enumerate(batch):
-            y_, x_, spk_, ref_, sty_, lf0_ = item['y'], item['x'], item['spk'], item['ref'], item['sty'], item['lf0']
+            y_, x_, spk_, ref_, sty_, lf0_, p_avg_, p_rng_, e_avg_ = item['y'], item['x'], item['spk'], item['ref'], item['sty'], item['lf0'], item['pitch_avg'], item['pitch_std'], item['energy_avg']
             y_lengths.append(y_.shape[-1])
             x_lengths.append(x_.shape[-1])
             ref_lengths.append(ref_.shape[-1])
             sty_lengths.append(sty_.shape[-1])
             lf0_lengths.append(lf0_.shape[-1])
             spk.append(spk_)
+
+            pitch_avg[i] = p_avg_
+            pitch_rng[i] = p_rng_
+            energy_avg[i] = e_avg_
             y[i, :, :y_.shape[-1]]     = y_
             x[i, :x_.shape[-1]]        = x_
             ref[i, :, :ref_.shape[-1]] = ref_
@@ -178,4 +196,5 @@ class TextMelSpeakerBatchCollate(object):
         sty_lengths = torch.LongTensor(sty_lengths)
         lf0_lengths = torch.LongTensor(lf0_lengths)
         spk         = torch.cat(spk, dim=0)
-        return {'x': x, 'x_lengths': x_lengths, 'y': y, 'y_lengths': y_lengths, 'spk': spk, 'ref':ref, 'ref_lengths':ref_lengths, 'sty':sty, 'sty_lengths':sty_lengths, 'lf0':lf0, 'lf0_lengths':lf0_lengths}
+        return {'x': x, 'x_lengths': x_lengths, 'y': y, 'y_lengths': y_lengths, 'spk': spk, 'ref':ref, 'ref_lengths':ref_lengths, 'sty':sty, 'sty_lengths':sty_lengths, 'lf0':lf0, 'lf0_lengths':lf0_lengths, 'pitch_avg': pitch_avg,
+        'pitch_std': pitch_rng, 'energy_avg': energy_avg}

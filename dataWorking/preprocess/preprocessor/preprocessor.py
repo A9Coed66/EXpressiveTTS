@@ -42,6 +42,7 @@ class Preprocessor:
         os.makedirs((os.path.join(self.out_dir, 'trim_wav')), exist_ok=True)
         os.makedirs((os.path.join(self.out_dir, 'lf0')), exist_ok=True)
         os.makedirs((os.path.join(self.out_dir, 'mel')), exist_ok=True)
+        os.makedirs((os.path.join(self.out_dir, "target")), exist_ok=True)
 
         print('Processing Data ...')
         out_list = []
@@ -57,6 +58,10 @@ class Preprocessor:
                 out_list.append(out)
 
 ############################################
+    def calculate_average_energy(self, wav, sr):
+        abs_signal = np.abs(wav)
+        energy = np.sum(abs_signal ** 2) / len(abs_signal)
+        return energy
     def process_utterance(self, speaker, basename):
         wav_path  = os.path.join(self.in_dir, speaker, '{}.wav'.format(basename))
         text_path = os.path.join(self.in_dir, speaker, '{}.lab'.format(basename))
@@ -89,7 +94,7 @@ class Preprocessor:
         ########################################################################
 
         # Read and trim wav files   
-        wav, _ = librosa.load(wav_path)
+        wav, sr = librosa.load(wav_path)
         wav    = wav.astype(np.float32)
 
         # Read raw text
@@ -98,17 +103,17 @@ class Preprocessor:
 
         # Compute mel-scale spectrogram and energy
         mel_spectrogram, _ = Audio.tools.get_mel_from_wav(wav, self.STFT)
-        
+        energy_avg = self.calculate_average_energy(wav, sr)
         # Save files
 ##################################################################
-        wav_filename = '{}-wav-{}.wav'.format(speaker, basename)
-        sf.write(os.path.join(self.out_dir, 'trim_wav', wav_filename), wav, self.sampling_rate)  
+        wav_filename = "{}-wav-{}.wav".format(speaker, basename)
+        sf.write(os.path.join(self.out_dir, "trim_wav", wav_filename), wav, self.sampling_rate)  
         
-        mel_filename = '{}-mel-{}.npy'.format(speaker, basename)
-        np.save(os.path.join(self.out_dir, 'mel', mel_filename), mel_spectrogram.T)
+        mel_filename = "{}-mel-{}.npy".format(speaker, basename)
+        np.save(os.path.join(self.out_dir, "mel", mel_filename), mel_spectrogram.T)
         
-        wav_filename = '{}-wav-{}.wav'.format(speaker, basename)
-        wav_path     = os.path.join(self.out_dir, 'trim_wav', wav_filename)
+        wav_filename = "{}-wav-{}.wav".format(speaker, basename)
+        wav_path     = os.path.join(self.out_dir, "trim_wav", wav_filename)
         
         wav, fs = sf.read(wav_path)
         if fs != self.sampling_rate:
@@ -122,9 +127,18 @@ class Preprocessor:
         nonzeros_indices      = np.nonzero(f0)
         lf0                   = f0.copy()
         lf0[nonzeros_indices] = np.log(f0[nonzeros_indices]) # for f0(Hz), lf0 > 0 when f0 != 0
+        pitch_avg, pitch_std  = np.mean(f0[nonzeros_indices]), np.std(f0[nonzeros_indices])
         
-        lf0_filename = '{}-lf0-{}.npy'.format(speaker, basename)
-        np.save(os.path.join(self.out_dir, 'lf0', lf0_filename), lf0)
+        lf0_filename = "{}-lf0-{}.npy".format(speaker, basename)
+        np.save(os.path.join(self.out_dir, "lf0", lf0_filename), lf0)
+
+        target_dict = {
+            "pitch_avg": float(pitch_avg),
+            "pitch_std": float(pitch_std),
+            "energy_avg": float(energy_avg)
+        }
+        with open(os.path.join(self.out_dir, "target", "{}-target-{}.json".format(speaker, basename)), "w") as f:
+            json.dump(target_dict, f)
         
 ##################################################################
-        return '|'.join([basename, speaker, raw_text])
+        return "|".join([basename, speaker, raw_text])

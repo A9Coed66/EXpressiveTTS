@@ -42,3 +42,15 @@ def generate_path(duration, mask):
 def duration_loss(logw, logw_, lengths):
     loss = torch.sum((logw - logw_)**2) / torch.sum(lengths)
     return loss
+
+def pitch_loss(p_prediction, p_avg_target, p_std_target):
+    p_prediction_avg = p_prediction.mean()
+    p_prediction_std = p_prediction.std()
+    p_avg_loss = torch.log(torch.sum((p_prediction_avg - p_avg_target)**2))
+    p_std_loss = torch.log(torch.sum((p_prediction_std - p_std_target)**2))
+    return (p_avg_loss, p_std_loss)
+
+def energy_loss(e_prediction, e_avg_target):
+    e_prediction_avg = e_prediction.mean()
+    e_avg_loss = torch.sum((e_prediction_avg - e_avg_target)**2)
+    return e_avg_loss

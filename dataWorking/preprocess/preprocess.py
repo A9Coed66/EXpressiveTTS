@@ -20,10 +20,10 @@ def main(config):
     #     haveasip.prepare_align(config)
     # if "Visec" in config["dataset"]:
     #     visec.prepare_align(config)
-    if "LMH_final" in config["dataset"]:
-        lmh_final.prepare_align(config)
-    if "TTH_final" in config["dataset"]:
-        tth_final.prepare_align(config)
+    # if "LMH_final" in config["dataset"]:
+    #     lmh_final.prepare_align(config)
+    # if "TTH_final" in config["dataset"]:
+    #     tth_final.prepare_align(config)
 
     preprocessor = Preprocessor(config)
     preprocessor.build_from_path()

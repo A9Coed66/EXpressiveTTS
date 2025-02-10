@@ -7,8 +7,9 @@ import torch.nn.functional as F
 from model import monotonic_align
 from model.ref_encoder import *
 from model.text_encoder import TextEncoder
+from model.prosody_encoder import ProsodyEncoder
 from model.diffusion import Diffusion
-from model.utils import sequence_mask, generate_path, duration_loss, fix_len_compatibility
+from model.utils import sequence_mask, generate_path, duration_loss, fix_len_compatibility, pitch_loss, energy_loss
 
 
 class DeXTTS(nn.Module):
@@ -27,6 +28,7 @@ class DeXTTS(nn.Module):
         self.tiv_encoder = TIVEncoder(**cfg.tiv_encoder)
         
         self.encoder     = TextEncoder(**cfg.encoder, n_vocab=cfg.n_vocab, n_feats=cfg.n_feats, n_spks=cfg.n_spks, spk_emb_dim=cfg.spk_emb_dim)
+        self.prosody     = ProsodyEncoder()
         self.decoder     = Diffusion(**cfg.decoder, dit_cfg=cfg.dit, n_feats=cfg.n_feats, n_spks=cfg.n_spks, spk_emb_dim=cfg.spk_emb_dim)
         self.conv_sty    = nn.Conv1d(cfg.tv_encoder.c_out_g, cfg.decoder.dim * 2, 1, 1)  # match style dimension to decoder hidden dimension, 2 -  len(mults)
 
@@ -50,6 +52,16 @@ class DeXTTS(nn.Module):
         
         ref, ref_skips     = self.tiv_encoder(ref, ref_mask)
         mu_x, logw, x_mask = self.encoder(x, x_lengths, sty_enc, spk=None)
+        print(f'mu_x.shape {mu_x.shape}')
+        print(mu_x.shape)
+        (
+            mu_x, 
+            pitch_prediction, 
+            energy_prediction
+        ) = self.prosody(
+            mu_x.transpose(1,2), 
+            x_mask
+        )
 
         w             = torch.exp(logw) * x_mask
         w_ceil        = torch.ceil(w) * length_scale
@@ -73,7 +85,7 @@ class DeXTTS(nn.Module):
 
         return enc_out, dec_out, attn[:, :, :y_max_length]
 
-    def compute_loss(self, x, x_lengths, y, y_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, spk=None, out_size=None, mask_ratio=0):
+    def compute_loss(self, x, x_lengths, y, y_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, p_avg, p_std, e_avg, spk=None, out_size=None, mask_ratio=0):
         
         ref_mask   = torch.unsqueeze(sequence_mask(ref_lengths, ref.size(2)), 1).to(ref.dtype) 
         lf0_mask   = torch.unsqueeze(sequence_mask(lf0_lengths, lf0.size(1)), 1).to(lf0.dtype)    
@@ -91,6 +103,19 @@ class DeXTTS(nn.Module):
         # Get encoder_outputs `mu_x` and log-scaled token durations `logw`
         ref, ref_skips     = self.tiv_encoder(ref, ref_mask)  # ref: b, c, t
         mu_x, logw, x_mask = self.encoder(x, x_lengths, sty_enc, spk=None)
+        print(f'mu_x.shape {mu_x.shape}')
+        print(mu_x.shape)
+        (
+            mu_x, 
+            pitch_prediction, 
+            energy_prediction
+        ) = self.prosody(
+            mu_x, 
+            x_mask
+        )
+        p_avg_loss, p_rng_loss = pitch_loss(pitch_prediction, p_avg, p_std)
+        e_avg_loss = energy_loss(energy_prediction, e_avg)
+        
         y_max_length       = y.shape[-1]
         
         y_mask    = sequence_mask(y_lengths, y_max_length).unsqueeze(1).to(x_mask)
@@ -150,4 +175,4 @@ class DeXTTS(nn.Module):
         prior_loss = torch.sum(0.5 * ((y - mu_y) ** 2 + math.log(2 * math.pi)) * y_mask)
         prior_loss = prior_loss / (torch.sum(y_mask) * self.n_feats)
         
-        return dur_loss, prior_loss, diff_loss, vq_loss
+        return dur_loss, prior_loss, diff_loss, vq_loss, p_avg_loss, p_rng_loss, e_avg_loss
