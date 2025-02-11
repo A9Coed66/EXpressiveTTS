@@ -65,7 +65,7 @@ def main(cfg):
     
     seed_init(seed=cfg.seed)   
     model = DeXTTS(cfg.model).to(cfg.device)
-    ckpt  = torch.load(os.path.join(cfg.weight_path, 'model-val-best.pth'), map_location=cfg.device)
+    ckpt  = torch.load(os.path.join(cfg.weight_path, 'model-train-best.pth'), map_location=cfg.device)
     # ckpt  = torch.load(os.path.join(cfg.weight_path, 'model-train-best.pth'), map_location=cfg.device)
     if cfg.test.ema:
         model.load_state_dict(ckpt['ema'])
@@ -107,7 +107,7 @@ def main(cfg):
             audio = (vocoder(y_dec).cpu().squeeze().clamp(-1, 1).numpy() * MAX_VALUE).astype(np.int16)
 
         basename    = ref_name.split('.')[0]
-        output_name = basename + cfg.input_text + '_syn.wav'
+        output_name = basename + '.wav'
         output_path = os.path.join(cfg.wav_path, '_'+ output_name)
 
         write(output_path, 22050, audio)

@@ -15,5 +15,7 @@ def delete_files_with_underscore(directory):
                 print(f"Failed to delete {file_path}. Reason: {e}")
 
 # Example usage
-directory_path = './syn_samples'
-delete_files_with_underscore(directory_path)
+directory_path_1 = './syn_samples'
+directory_path_2 = './syn_samples_cp'
+delete_files_with_underscore(directory_path_1)    
+delete_files_with_underscore(directory_path_2)    

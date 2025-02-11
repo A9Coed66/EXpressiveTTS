@@ -28,7 +28,11 @@ def prepare_align(config):
             wav_path  = os.path.join(in_dir, speaker, "{}.wav".format(base_name))
 
             with open(text_path) as f:
-                text = f.readline().strip("\n")
+                try:
+                    text = f.readline().strip("\n")
+                except:
+                    print(f"Skipping {text_path} because of empty text.")
+                    continue
             text = _clean_text(text, cleaners)
 
             os.makedirs(os.path.join(out_dir, speaker), exist_ok=True)
@@ -38,7 +42,7 @@ def prepare_align(config):
             
             # Check if audio duration is less than 1 second
             duration = len(wav) / sampling_rate
-            if duration < 1.0:
+            if duration < 1.0 or duration > 12.5:
                 # print(f"Skipping {wav_path} because duration is less than 1 second.")
                 continue
 

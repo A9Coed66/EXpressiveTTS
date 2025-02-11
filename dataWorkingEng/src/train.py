@@ -97,7 +97,7 @@ class Trainer:
         # checkpoint
         # if cfg.resume is not None:
         #     self._resume_checkpoint()
-        self.model.load_state_dict(torch.load(f'/home/tuannd/tuanlha/EXpressiveTTS/dataWorkingEng/checkpoints/DEX-TTS-7-best/model-val-best.pth')['state_dict'])
+        # self.model.load_state_dict(torch.load(f'/home/tuannd/tuanlha/EXpressiveTTS/dataWorkingEng/checkpoints/dataWorkingEng-14/model-val-best.pth')['state_dict'])
     
     def _save_log(self, msg):
         with open(f'{self.cfg.checkpoint}/log.txt', 'a') as f:
