@@ -14,11 +14,12 @@ def main(config):
     # if "ESD" in config["dataset"]:
     #     esd.prepare_align(config)
     #     esd.make_meta_dict(config)
-    if "Mihoyo" in config["dataset"]:
-        prepared_char = mihoyo.prepare_align(config)
+    # if "Mihoyo" in config["dataset"]:
+    #     prepared_char = mihoyo.prepare_align(config)
 
     preprocessor = Preprocessor(config)
-    preprocessor.build_from_path(prepared_char=prepared_char)
+    # preprocessor.build_from_path(prepared_char=prepared_char)
+    preprocessor.build_from_path()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

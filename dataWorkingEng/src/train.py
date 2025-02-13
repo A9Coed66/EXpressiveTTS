@@ -97,7 +97,7 @@ class Trainer:
         # checkpoint
         # if cfg.resume is not None:
         #     self._resume_checkpoint()
-        # self.model.load_state_dict(torch.load(f'/home/tuannd/tuanlha/EXpressiveTTS/dataWorkingEng/checkpoints/dataWorkingEng-14/model-val-best.pth')['state_dict'])
+        self.model.load_state_dict(torch.load(f'/home/tuannd/tuanlha/EXpressiveTTS/dataWorkingEng/checkpoints/dataWorkingEng-15/model-train-best.pth')['state_dict'])
     
     def _save_log(self, msg):
         with open(f'{self.cfg.checkpoint}/log.txt', 'a') as f:
@@ -129,13 +129,14 @@ class Trainer:
         for epoch in range(1, self.cfg.train.epoch+1):
             
             self.model.train()
-            train_dur_loss, train_diff_loss, train_prior_loss, train_vq_loss = self._run_epoch(self.train_loader)             
-            train_loss = (train_dur_loss + train_diff_loss + train_prior_loss + train_vq_loss) / 4
+            train_dur_loss, train_diff_loss, train_prior_loss, train_vq_loss, p_avg_loss, p_rng_loss, e_avg_loss = self._run_epoch(self.train_loader)             
+            train_loss = (train_dur_loss + train_diff_loss + train_prior_loss + train_vq_loss + p_avg_loss + p_rng_loss + e_avg_loss) / 7
 
             self.model.eval()
             with torch.no_grad():
-                val_dur_loss, val_diff_loss, val_prior_loss, val_vq_loss = self._run_epoch(self.val_loader, valid=True)
-                val_loss  = (val_dur_loss + val_diff_loss + val_prior_loss + val_vq_loss) / 4 
+                # val_dur_loss, val_diff_loss, val_prior_loss, val_vq_loss = self._run_epoch(self.val_loader, valid=True)
+                val_dur_loss, val_diff_loss, val_prior_loss, val_vq_loss, val_p_avg_loss, val_p_rng_loss, val_e_avg_loss = self._run_epoch(self.val_loader, valid=True)
+                val_loss  = (val_dur_loss + val_diff_loss + val_prior_loss + val_vq_loss + val_p_avg_loss + val_p_rng_loss + val_e_avg_loss) / 7
 
             if train_loss < best_train_loss:
                 best_train_loss = train_loss
@@ -152,12 +153,14 @@ class Trainer:
             
             
             step = epoch * (len(self.train_loader.dataset) // self.cfg.train.batch_size)
-            msg  = "Epoch: {:03d} | Step: {:03d} | trn loss: {:.4f} | dur loss: {:.4f} | diff loss: {:.4f} | prior loss: {:.4f} | vq loss: {:.4f}\n".format(epoch, step, 
-                                                                                                                                         train_loss, train_dur_loss, 
-                                                                                                                                         train_diff_loss, train_prior_loss, train_vq_loss)
-            msg  += "Epoch: {:03d} | Step: {:03d} | val loss: {:.4f} | dur loss: {:.4f} | diff loss: {:.4f} | prior loss: {:.4f} | vq loss: {:.4f} \n".format(epoch, step, 
-                                                                                                                                         val_loss, val_dur_loss, 
-                                                                                                                                         val_diff_loss, val_prior_loss, val_vq_loss)
+            msg  = "Epoch: {:03d} | Step: {:03d} | trn loss: {:.4f} | dur loss: {:.4f} | diff loss: {:.4f} | prior loss: {:.4f} | vq loss: {:.4f} | p_avg loss: {:.4f} | p_rng loss: {:.4f} | e_avg loss: {:.4f} \n".format(epoch, step, 
+                                                        train_loss, train_dur_loss, 
+                                                        train_diff_loss, train_prior_loss, train_vq_loss, 
+                                                        p_avg_loss, p_rng_loss, e_avg_loss)
+            msg  += "Epoch: {:03d} | Step: {:03d} | val loss: {:.4f} | dur loss: {:.4f} | diff loss: {:.4f} | prior loss: {:.4f} | vq loss: {:.4f} | p_avg loss: {:.4f} | p_rng loss: {:.4f} | e_avg loss: {:.4f} \n".format(epoch, step, 
+                                                        val_loss, val_dur_loss, 
+                                                        val_diff_loss, val_prior_loss, val_vq_loss, 
+                                                        val_p_avg_loss, val_p_rng_loss, val_e_avg_loss)
             print(msg)
             self._save_log(msg+'\n\n')
             
@@ -173,6 +176,10 @@ class Trainer:
                 neptune.log_metric('val diff loss', val_diff_loss)
                 neptune.log_metric('val prior loss', val_prior_loss)
                 neptune.log_metric('val vq loss', val_vq_loss)
+                neptune.log_metric('train p_avg loss', p_avg_loss)
+                neptune.log_metric('train p_rng loss', p_rng_loss)
+                neptune.log_metric('train e_avg loss', e_avg_loss)
+
                 
             if epoch % self.cfg.train.syn_every == 0:
                 print('--- Synthesize samples ---')
@@ -184,6 +191,9 @@ class Trainer:
         total_prior_loss = 0
         total_diff_loss  = 0
         total_vq_loss    = 0
+        total_p_avg_loss = 0
+        total_p_rng_loss = 0
+        total_e_avg_loss = 0
         for i, batch in enumerate(tqdm(data_loader)):
 
             x, x_lengths     = batch['x'].to(self.cfg.device), batch['x_lengths'].to(self.cfg.device)
@@ -191,15 +201,15 @@ class Trainer:
             ref, ref_lengths = batch['ref'].to(self.cfg.device), batch['ref_lengths'].to(self.cfg.device)
             sty, sty_lengths = batch['sty'].to(self.cfg.device), batch['sty_lengths'].to(self.cfg.device)
             lf0, lf0_lengths = batch['lf0'].to(self.cfg.device), batch['lf0_lengths'].to(self.cfg.device)
-            # arousal          = batch['arousal'].to(self.cfg.device)
-            # dominance        = batch['dominance'].to(self.cfg.device)
             spk              = batch['spk'].to(self.cfg.device)
+            pitch_avg        = batch['pitch_avg'].to(self.cfg.device)
+            pitch_rng        = batch['pitch_std'].to(self.cfg.device)
+            energy_avg       = batch['energy_avg'].to(self.cfg.device)
             
             curr_mask_ratio = 0 #self.mask_ratio_fn(self.cur_step / self.total_step)  
             with autocast(enabled=self.cfg.train.amp):
-                # dur_loss, prior_loss, diff_loss, vq_loss = self.model.compute_loss(x, x_lengths, y, y_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, arousal, dominance, spk=None, mask_ratio=curr_mask_ratio, out_size=self.cfg.train.out_size)
-                dur_loss, prior_loss, diff_loss, vq_loss = self.model.compute_loss(x, x_lengths, y, y_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, spk=None, mask_ratio=curr_mask_ratio, out_size=self.cfg.train.out_size, pitch_control = self.cfg.p_control)
-                loss = sum([dur_loss, prior_loss, diff_loss, vq_loss])
+                dur_loss, prior_loss, diff_loss, vq_loss, p_avg_loss, p_rng_loss, e_avg_loss = self.model.compute_loss(x, x_lengths, y, y_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, pitch_avg, pitch_rng, energy_avg, spk=None, mask_ratio=curr_mask_ratio, out_size=self.cfg.train.out_size)
+                loss = sum([dur_loss, prior_loss, diff_loss, vq_loss, p_avg_loss, p_rng_loss, e_avg_loss])
             
                 if not valid:
                     self.optimizer.zero_grad()
@@ -214,6 +224,10 @@ class Trainer:
             total_diff_loss  += diff_loss.item()
             total_prior_loss += prior_loss.item() 
             total_vq_loss    += vq_loss.item() 
+            # Viet tiep not di n
+            total_p_avg_loss += p_avg_loss.item()
+            total_p_rng_loss += p_rng_loss.item()
+            total_e_avg_loss += e_avg_loss.item()
         
-        return total_dur_loss/(i+1), total_diff_loss/(i+1), total_prior_loss/(i+1), total_vq_loss/(i+1)
+        return total_dur_loss/(i+1), total_diff_loss/(i+1), total_prior_loss/(i+1), total_vq_loss/(i+1), total_p_avg_loss/(i+1), total_p_rng_loss/(i+1), total_e_avg_loss/(i+1)
     
