@@ -54,22 +54,28 @@ class VariancePredictor(nn.Module):
             )
         )
 
-        # self.linear_layer = nn.Linear(self.conv_output_size, 1)
-        self.linear_layer = nn.Conv1d(self.conv_output_size, 1, 3, 1, 1)
-        self.activation = nn.ReLU()
+        self.linear_layer = nn.Linear(self.conv_output_size, 1)
+        # self.linear_layer = nn.Conv1d(self.conv_output_size, 1, 3, 1, 1)
+        self.activation = nn.Tanh()
         
 
     def forward(self, encoder_output, mask):
-        out = self.conv_layer(encoder_output)
+        # print(f'Out.shape {encoder_output.shape}')
+        out = self.conv_layer(encoder_output)       # (B, conv_output_size, L)
         # print(f'Out1.shape {out.shape}')
-        out = self.linear_layer(out)
-        out = self.activation(out)
+        # out = out * mask
+        out = self.linear_layer(out.transpose(1, 2))
         # print(f'Out2.shape {out.shape}')
+        # out = self.activation(out)
+        # print(f'Out2.shape {out.shape}')
+        out = self.activation(out)
         out = out.squeeze(-1)
         
+        # print(f'Out2.shape {out}')
+        
 
-        if mask is not None:
-            out = out.masked_fill(mask.bool(), 0.0)
+        # if mask is not None:
+        #     out = out.masked_fill(mask.bool(), 0.0)
         # print(f'Out3.shape {out.shape}')
 
         return out
@@ -126,51 +132,58 @@ class ProsodyEncoder(nn.Module):
         super(ProsodyEncoder, self).__init__()
         # self.pitch_linear = VariancePredictor(model_config)
         # self.energy_linear = VariancePredictor(model_config)
-        self.pitch_predictor = VariancePredictor()
+        # self.pitch_predictor = VariancePredictor()
         self.energy_predictor = VariancePredictor()
 
         self.n_bins = 256
 
-        self.pitch_bins = nn.Parameter(
-                torch.linspace(3.25, 7.65, self.n_bins - 1),
-                requires_grad=False,
-            )
+        # self.pitch_bins = nn.Parameter(
+        #         torch.linspace(-1, 1, self.n_bins - 1),
+        #         requires_grad=False,
+        #     )
         self.energy_bins = nn.Parameter(
-                torch.linspace(0.20, 0.49, self.n_bins - 1),
+                torch.linspace(-1, 1, self.n_bins - 1),
                 requires_grad=False,
             )
 
-        self.pitch_embedding = nn.Embedding(
-            256, 80
-        )
+        # self.pitch_embedding = nn.Embedding(
+        #     256, 80
+        # )
         self.energy_embedding = nn.Embedding(
             256, 80
         )
 
-    def get_pitch_embedding(self, x, target, mask, control):
-        prediction = self.pitch_predictor(x, mask)
-        # print(f'Prediction.shape {prediction.shape}')
-        if target is not None:
-            embedding = self.pitch_embedding(torch.bucketize(target, self.pitch_bins).long())
-        else:
-            prediction = prediction * control
-            embedding = self.pitch_embedding(
-                torch.bucketize(prediction.squeeze(1), self.pitch_bins)
-            )
-            # print(f'Embedding.shape {embedding.shape}')
-        return prediction, embedding.transpose(1, 2)
+    # def get_pitch_embedding(self, x, target, mask, control):
+    #     prediction = self.pitch_predictor(x, mask)
+    #     # print(f'Prediction.shape {prediction.shape}')
+    #     if target is not None:
+    #         embedding = self.pitch_embedding(torch.bucketize(target, self.pitch_bins).long())
+    #     else:
+    #         # print(f'Prediction before change {prediction}')
+    #         prediction = prediction * control
+    #         # print(f'Prediction after change {prediction}')
+    #         embedding = self.pitch_embedding(
+    #             torch.bucketize(prediction.squeeze(1), self.pitch_bins)
+    #         )
+    #         # print(f'Embedding.shape {embedding}')
+    #     return prediction, embedding.transpose(1, 2)
 
     def get_energy_embedding(self, x, target, mask, control):
         prediction = self.energy_predictor(x, mask)
         if target is not None:
             embedding = self.energy_embedding(torch.bucketize(target, self.energy_bins))
         else:
+            # print(f'Prediction before change {prediction}')
             prediction = prediction * control
+            # print(f'Prediction after change {prediction}')
+            # print(f'Prediction shape {prediction.shape}')
             embedding = self.energy_embedding(
-                torch.bucketize(prediction.squeeze(1), self.energy_bins)
+                torch.bucketize(prediction.squeeze(1).detach(), self.energy_bins)
             )
+            # print(f'Prediction shape {prediction.shape}')
+
             # print(f'Embedding.shape {embedding.shape}')
-        return prediction, embedding.transpose(1, 2)
+        return prediction, embedding.transpose(1, 2)*mask
 
     def forward(
         self,
@@ -181,19 +194,45 @@ class ProsodyEncoder(nn.Module):
         p_control=1.0,
         e_control=1.0,
     ):
-        pitch_prediction, pitch_embedding = self.get_pitch_embedding(
-            x, pitch_target, src_mask, p_control
-        )
-        x = x + pitch_embedding
+        # print(e_control)
+        # pitch_prediction, pitch_embedding = self.get_pitch_embedding(
+        #     x, pitch_target, src_mask, p_control
+        # )
+        # print(f'Shape x: {x.shape}, pitch_embedding: {pitch_embedding.shape}')
+        # x = x + pitch_embedding
         energy_prediction, energy_embedding = self.get_energy_embedding(
             x, energy_target, src_mask, e_control
         )
         x = x + energy_embedding
 
         return (
-            pitch_embedding,
             energy_embedding,
-            pitch_prediction,
             energy_prediction,
         )
+    
+    # @torch.no_grad()
+    # def forward(
+    #     self,
+    #     x,
+    #     src_mask,
+    #     pitch_target=None,
+    #     energy_target=None,
+    #     p_control=1.0,
+    #     e_control=1.0,
+    # ):
+    #     pitch_prediction, pitch_embedding = self.get_pitch_embedding(
+    #         x, pitch_target, src_mask, p_control
+    #     )
+    #     x = x + pitch_embedding
+    #     energy_prediction, energy_embedding = self.get_energy_embedding(
+    #         x, energy_target, src_mask, e_control
+    #     )
+    #     x = x + energy_embedding
+
+    #     return (
+    #         pitch_embedding,
+    #         energy_embedding,
+    #         pitch_prediction,
+    #         energy_prediction,
+    #     )
 

@@ -33,8 +33,8 @@ class DeXTTS(nn.Module):
         self.conv_sty    = nn.Conv1d(cfg.tv_encoder.c_out_g, cfg.decoder.dim * 2, 1, 1)  # match style dimension to decoder hidden dimension, 2 -  len(mults)
 
     @torch.no_grad()
-    def forward(self, x, x_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, n_timesteps, temperature=1.0, spk=None, length_scale=1.0, pitch_control = 1.0):
-
+    def forward(self, x, x_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, n_timesteps, temperature=1.0, spk=None, length_scale=1.0, pitch_control = 1.0, p_control = 1.0, e_control = 1.0):
+        # print(f'E_control {e_control}')
         # Get encoder_outputs `mu_x` and log-scaled token durations `logw`
         
         ref_mask   = torch.unsqueeze(sequence_mask(ref_lengths, ref.size(2)), 1).to(ref.dtype) 
@@ -55,15 +55,20 @@ class DeXTTS(nn.Module):
         # print(f'mu_x.shape {mu_x.shape}')
         # print(mu_x.shape)
         (
-            pitch_embedding,
+            # pitch_embedding,
             energy_embedding,
-            pitch_prediction, 
+            # pitch_prediction, 
             energy_prediction
         ) = self.prosody(
             mu_x.detach(), 
-            x_mask
+            None,
+            p_control = p_control,
+            e_control = e_control
         )
-        mu_x = mu_x + pitch_embedding + energy_embedding
+        # print(f'Pitch embedding {pitch_embedding}')
+        print(f'Energy embedding {energy_embedding}')
+        # mu_x = mu_x + pitch_embedding + energy_embedding
+        mu_x = mu_x + energy_embedding
 
         w             = torch.exp(logw) * x_mask
         w_ceil        = torch.ceil(w) * length_scale
@@ -108,18 +113,19 @@ class DeXTTS(nn.Module):
         # print(f'mu_x.shape {mu_x.shape}')
         # print(mu_x.shape)
         (
-            pitch_embedding,
+            # pitch_embedding,
             energy_embedding, 
-            pitch_prediction, 
+            # pitch_prediction, 
             energy_prediction
         ) = self.prosody(
-            mu_x.detach(), 
+            mu_x, 
             x_mask
         )
 
-        mu_x = mu_x + pitch_embedding + energy_embedding
+        # mu_x = mu_x + pitch_embedding + energy_embedding
+        mu_x = mu_x + energy_embedding
 
-        p_avg_loss, p_rng_loss = pitch_loss(pitch_prediction, p_avg, p_std)
+        # p_rng_loss = pitch_loss(pitch_prediction, p_std)
         e_avg_loss = energy_loss(energy_prediction, e_avg)
         
         y_max_length       = y.shape[-1]
@@ -181,4 +187,4 @@ class DeXTTS(nn.Module):
         prior_loss = torch.sum(0.5 * ((y - mu_y) ** 2 + math.log(2 * math.pi)) * y_mask)
         prior_loss = prior_loss / (torch.sum(y_mask) * self.n_feats)
         
-        return dur_loss, prior_loss, diff_loss, vq_loss, p_avg_loss, p_rng_loss, e_avg_loss
+        return dur_loss, prior_loss, diff_loss, vq_loss, e_avg_loss
