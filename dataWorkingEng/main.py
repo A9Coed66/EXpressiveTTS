@@ -65,7 +65,7 @@ if __name__ == "__main__":
         cfg  = Config(os.path.join(cfg.checkpoint, 'base.yaml'))
         cfg  = set_experiment(args, cfg)
     
-    cfg.model.n_vocab  = len(symbols) + 1 if cfg.model.add_blank else len(symbols)
+    cfg.model.n_vocab  = len(symbols) + 1 if cfg.model.add_blank else len(symbols)  # có thêm ~ là vocab nên cần train lại
     if cfg.train.out_size:
         cfg.train.out_size = fix_len_compatibility(cfg.train.fix_len * cfg.preprocess.sample_rate // cfg.preprocess.hop_length) 
     else:

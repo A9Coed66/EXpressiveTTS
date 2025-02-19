@@ -87,9 +87,9 @@ model:
 
 train:
   epoch:      1000
-  batch_size: 16
-  save_epoch: 5
-  syn_every:  5
+  batch_size: 15
+  save_epoch: 25
+  syn_every:  25
   fix_len:    2
   out_size:   True
   lr:         1e-4
@@ -103,4 +103,4 @@ train:
 
 test:
   ema:          False
-  n_spks:       32
+  n_spks:       55

@@ -102,15 +102,8 @@ class Tester:
         
     def synthesize(self, sample_size=20):
 
-        syn_dir = ref_dir = 1
-        syn_path = f'{self.cfg.sample_path}/syn {syn_dir}/'
-        ref_path = f'{self.cfg.sample_path}/ref {ref_dir}/'
-        
-        while os.path.exists(syn_path) or os.path.exists(ref_path):
-            syn_dir += 1
-            ref_dir += 1
-            syn_path = f'{self.cfg.sample_path}/syn {syn_dir}/'
-            ref_path = f'{self.cfg.sample_path}/ref {ref_dir}/'
+        syn_path = f'{self.cfg.sample_path}/syn/'
+        ref_path = f'{self.cfg.sample_path}/ref/'
             
         MakeDir(syn_path)
         MakeDir(ref_path)

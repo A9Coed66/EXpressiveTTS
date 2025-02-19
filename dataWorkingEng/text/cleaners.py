@@ -86,7 +86,7 @@ def english_cleaners(text):
     text = expand_abbreviations(text)
     text = collapse_whitespace(text)
     text = remove_asterisk_words(text)
-    text = remove_ellipsis_in_words(text)
+    # text = remove_ellipsis_in_words(text)
     return text
 #---------------------------------------------------------
 # Add Vietnamese cleaner
