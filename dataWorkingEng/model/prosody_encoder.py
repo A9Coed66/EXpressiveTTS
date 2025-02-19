@@ -2,6 +2,7 @@ import torch
 
 import torch.nn as nn
 from collections import OrderedDict
+import sys
 
 class VariancePredictor(nn.Module):
     """Duration, Pitch and Energy Predictor"""
@@ -56,27 +57,26 @@ class VariancePredictor(nn.Module):
 
         self.linear_layer = nn.Linear(self.conv_output_size, 1)
         # self.linear_layer = nn.Conv1d(self.conv_output_size, 1, 3, 1, 1)
-        self.activation = nn.Tanh()
+        # self.activation = nn.Tanh()
         
 
-    def forward(self, encoder_output, mask):
-        # print(f'Out.shape {encoder_output.shape}')
-        out = self.conv_layer(encoder_output)       # (B, conv_output_size, L)
+    def forward(self, encoder_output, mask):        # encoder_output: (B, H, L), mask: (B, 1, L)
+        out = self.conv_layer(encoder_output)       # (B, H, L)
         # print(f'Out1.shape {out.shape}')
         # out = out * mask
-        out = self.linear_layer(out.transpose(1, 2))
+        out = self.linear_layer(out.transpose(1, 2)) # (B, L, 1)
         # print(f'Out2.shape {out.shape}')
         # out = self.activation(out)
         # print(f'Out2.shape {out.shape}')
-        out = self.activation(out)
-        out = out.squeeze(-1)
+        out = out.squeeze(-1)                        # (B, L)
         
-        # print(f'Out2.shape {out}')
+        # print(f'Out2.shape {out.shape}')
         
 
         # if mask is not None:
         #     out = out.masked_fill(mask.bool(), 0.0)
-        # print(f'Out3.shape {out.shape}')
+        # print(f'Out3.shape {out.shape}, {out}')
+        # sys.exit()
 
         return out
     
@@ -174,12 +174,13 @@ class ProsodyEncoder(nn.Module):
             embedding = self.energy_embedding(torch.bucketize(target, self.energy_bins))
         else:
             # print(f'Prediction before change {prediction}')
-            prediction = prediction * control
+            prediction = prediction + control
+            # prediction = torch.clamp(prediction, min=-1.0, max=1.0)
             # print(f'Prediction after change {prediction}')
             # print(f'Prediction shape {prediction.shape}')
             embedding = self.energy_embedding(
-                torch.bucketize(prediction.squeeze(1).detach(), self.energy_bins)
-            )
+                torch.bucketize(prediction.squeeze(1), self.energy_bins)
+            )   # (B, L, 80)
             # print(f'Prediction shape {prediction.shape}')
 
             # print(f'Embedding.shape {embedding.shape}')

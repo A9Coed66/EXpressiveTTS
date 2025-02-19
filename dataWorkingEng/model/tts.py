@@ -118,7 +118,7 @@ class DeXTTS(nn.Module):
             # pitch_prediction, 
             energy_prediction
         ) = self.prosody(
-            mu_x, 
+            mu_x.detach(), 
             x_mask
         )
 
