@@ -14,7 +14,7 @@ from text import cmudict
 
 _pad        = '_'
 _punctuation = '!\'(),.:;? '
-_special = '-\\`<>%@{}*|=~'
+_special = '-\\`<>%@{}*|='
 _letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 
 # Prepend "@" to ARPAbet symbols to ensure uniqueness:

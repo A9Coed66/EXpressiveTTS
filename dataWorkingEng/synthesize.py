@@ -103,7 +103,7 @@ def main(cfg):
         lf0_lengths = torch.LongTensor([lf0.shape[-1]]).to(cfg.device)
 
         with torch.no_grad():
-            y_enc, y_dec, attn = model(x, x_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, spk=None, n_timesteps=cfg.n_timesteps, temperature=1.5, pitch_control=cfg.p_control)
+            y_enc, y_dec, attn = model(x, x_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, spk=None, n_timesteps=cfg.n_timesteps, temperature=1.5, pitch_control=cfg.p_control, length_scale=cfg.length_scale)
             audio = (vocoder(y_dec).cpu().squeeze().clamp(-1, 1).numpy() * MAX_VALUE).astype(np.int16)
 
         basename    = ref_name.split('.')[0]
@@ -136,5 +136,5 @@ if __name__ == '__main__':
         cfg[key] = args[key]    
     cfg.model.n_vocab  = len(symbols) + 1 if cfg.model.add_blank else len(symbols)
 
-    print(cfg)
+    print(f'cfg.mode.n_vocab: {cfg.model.n_vocab}')
     main(cfg)
