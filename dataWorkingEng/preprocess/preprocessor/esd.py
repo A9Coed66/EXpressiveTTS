@@ -51,9 +51,11 @@ def prepare_align(config):
     for speaker in tqdm(sorted(os.listdir(in_dir))):
         
 
-        if '00' not in speaker:
+        if '000' in speaker:
             continue
-        
+        if speaker == '0010':
+            continue
+        # print(speaker)
         os.makedirs(os.path.join(out_dir, speaker), exist_ok=True)   
         # # wav file list
         

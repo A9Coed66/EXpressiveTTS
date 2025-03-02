@@ -34,8 +34,8 @@ def split_train_val_test(write_path, wav_path, mel_path, spk_dict):
     filelist = sorted(filelist)
     random.shuffle(filelist)
     
-    val_size  = int(0.90 * len(filelist))
-    test_size = int(0.95 * len(filelist))
+    val_size  = int(0.80 * len(filelist))
+    test_size = int(0.90 * len(filelist))
     train_filelist = filelist[:val_size]
     val_filelist   = filelist[val_size:test_size]
     test_filelist  = filelist[test_size:]
