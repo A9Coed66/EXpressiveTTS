@@ -1,7 +1,7 @@
 dataset: "ESD"
 
 path:
-  corpus_path: "/home2/tuannd/tuanlha/Dataset/ESD_raw_data"
+  corpus_path: "/home/tuannd/tuanlha/ESD/Emotion Speech Dataset"
   lexicon_path: "./preprocess/lexicon/new_librispeech-lexicon.txt"
   raw_path: "/home2/tuannd/tuanlha/PreprocessedDataESD/raw_path"
   preprocessed_path: "/home2/tuannd/tuanlha/PreprocessedDataESD"

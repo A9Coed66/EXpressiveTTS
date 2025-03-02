@@ -33,7 +33,7 @@ class DeXTTS(nn.Module):
         self.conv_sty    = nn.Conv1d(cfg.tv_encoder.c_out_g, cfg.decoder.dim * 2, 1, 1)  # match style dimension to decoder hidden dimension, 2 -  len(mults)
 
     @torch.no_grad()
-    def forward(self, x, x_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, n_timesteps, temperature=1.0, spk=None, length_scale=1.0, pitch_control = 1.0, p_control = 1.0, e_control = 1.0):
+    def forward(self, x, x_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, n_timesteps, temperature=1.0, spk=None, length_scale=1.0, pitch_control = 1.0, p_control = 1.0, e_control = 0.0):
         # print(f'E_control {e_control}')
         # Get encoder_outputs `mu_x` and log-scaled token durations `logw`
         
@@ -126,7 +126,7 @@ class DeXTTS(nn.Module):
         mu_x = mu_x + energy_embedding
 
         # p_rng_loss = pitch_loss(pitch_prediction, p_std)
-        e_avg_loss = energy_loss(energy_prediction, e_avg)
+        e_avg_loss = energy_loss(energy_prediction, e_avg, x_mask)
         
         y_max_length       = y.shape[-1]
         

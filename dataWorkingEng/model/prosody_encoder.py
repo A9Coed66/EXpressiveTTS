@@ -192,8 +192,8 @@ class ProsodyEncoder(nn.Module):
         src_mask,
         pitch_target=None,
         energy_target=None,
-        p_control=1.0,
-        e_control=1.0,
+        p_control=0.0,
+        e_control=0.0,
     ):
         # print(e_control)
         # pitch_prediction, pitch_embedding = self.get_pitch_embedding(

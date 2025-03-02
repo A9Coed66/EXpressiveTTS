@@ -51,8 +51,8 @@ def pitch_loss(p_prediction, p_std_target):
     p_std_loss = torch.sum((p_prediction_std - p_std_target)**2)
     return p_std_loss
 
-def energy_loss(e_prediction, e_avg_target):    # e_prediction: (B, L), e_avg_target: (B, 1)
-    e_prediction_avg = e_prediction.mean(dim=1, keepdim=True)
+def energy_loss(e_prediction, e_avg_target, x_mask):    # e_prediction: (B, L), e_avg_target: (B, 1)
+    e_prediction_avg = torch.sum(e_prediction * x_mask, dim=1) / torch.sum(x_mask, dim=1)
     # print({e_prediction_avg, e_avg_target})
-    e_avg_loss = torch.sum((e_prediction_avg - e_avg_target)**2)
+    e_avg_loss = torch.sum((e_prediction_avg - e_avg_target)**2)/15
     return e_avg_loss

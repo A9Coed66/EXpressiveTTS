@@ -12,3 +12,4 @@ dataWorkingEng/audio/
 dataWorkingEng/bigvgan/
 dataWorkingVie/hifigan/
 dataWorkingVie/checkpoints/
+**/__pycache__/
