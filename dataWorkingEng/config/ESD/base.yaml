@@ -55,7 +55,7 @@ model:
     n_layers:           8
     kernel_size:        3
     p_dropout:          0.1
-    n_heads:            2
+    n_heads:            6
     window_size:        4
     use_softmax:        True
     use_decay:          False
@@ -74,7 +74,7 @@ model:
     stride_size:     2        # 2 | 4 | 8
     overlap:         True
     hidden_size:     256     
-    depth:           12       
+    depth:           16       
     num_heads:       4       
     mlp_ratio:       4       
     out_channels:    1
@@ -85,9 +85,9 @@ model:
 
 train:
   epoch:      2000
-  batch_size: 24
-  save_epoch: 25
-  syn_every:  25
+  batch_size: 22
+  save_epoch: 2
+  syn_every:  2
   fix_len:    2
   out_size:   True
   lr:         1e-4

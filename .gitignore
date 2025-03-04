@@ -9,3 +9,4 @@ dataWorkingEng/syn_save/
 dataWorkingEng/hifigan/
 dataWorkingVie/hifigan/
 dataWorkingVie/checkpoints/
+**/__pycache__/
