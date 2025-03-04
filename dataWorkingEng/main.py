@@ -38,9 +38,9 @@ def main(cfg):
         data_loader   = {'train':train_loader, 'valid':val_loader}
 
         trainer = Trainer(data_loader, cfg)
-        with open('/home/tuannd/tuanlha/DEX-TTS-Project/DEX-TTS/DEX-TTS/model.txt', 'w') as f:
+        # with open('/home/tuannd/tuanlha/DEX-TTS-Project/DEX-TTS/DEX-TTS/model.txt', 'w') as f:
             
-            print(trainer.model, file=f)
+        #     print(trainer.model, file=f)
         # stop the program
         # os._exit(0)
         trainer.train()

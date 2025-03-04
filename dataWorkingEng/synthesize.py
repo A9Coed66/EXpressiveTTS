@@ -103,7 +103,7 @@ def main(cfg):
         lf0_lengths = torch.LongTensor([lf0.shape[-1]]).to(cfg.device)
 
         with torch.no_grad():
-            y_enc, y_dec, attn = model(x, x_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, spk=None, n_timesteps=cfg.n_timesteps, temperature=1.5, pitch_control=cfg.p_control, length_scale=cfg.length_scale)
+            y_enc, y_dec, attn = model(x, x_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, spk=None, n_timesteps=cfg.n_timesteps, temperature=1.5, pitch_control=cfg.p_control, length_scale=cfg.length_scale, e_control = cfg.e_control)
             audio = (vocoder(y_dec).cpu().squeeze().clamp(-1, 1).numpy() * MAX_VALUE).astype(np.int16)
 
         basename    = ref_name.split('.')[0]
@@ -126,6 +126,7 @@ if __name__ == '__main__':
     parser.add_argument('--temperature', type=float, default=1.5, help='Temperature')
     parser.add_argument('--length_scale', type=float, default=1.0, help='length scale')
     parser.add_argument('--p_control', type=float, default=1.0, help='pitch control')
+    parser.add_argument('--e_control', type=float, default=1.0, help='pitch control')
     
     args = parser.parse_args()
     

@@ -16,8 +16,8 @@ def main(config):
     #     esd.make_meta_dict(config)
     if "Mihoyo" in config["dataset"]:
         mihoyo.prepare_align(config)
-    # if "HaveASip" in config["dataset"]:
-    #     haveasip.prepare_align(config)
+    if "HaveASip" in config["dataset"]:
+        haveasip.prepare_align(config)
     # if "Visec" in config["dataset"]:
     #     visec.prepare_align(config)
     # if "LMH_final" in config["dataset"]:
