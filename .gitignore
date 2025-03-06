@@ -6,9 +6,6 @@ dataWorkingEng/syn_samples/
 dataWorkingEng/syn_samples_cp/
 dataWorkingEng/syn_save/
 dataWorkingEng/hifigan/
-dataWorkingEng/filelists/
-dataWorkingEng/audio/
-dataWorkingEng/bigvgan/
 dataWorkingVie/hifigan/
 dataWorkingVie/checkpoints/
 **/__pycache__/
