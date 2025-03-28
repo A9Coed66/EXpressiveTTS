@@ -12,8 +12,13 @@ all_results = {}
 # transcription_folder = "transcription_RS1" # Update this path to your transcription folder
 # audio_folder = os.environ.get("AUDIO_FOLDER")
 # transcription_folder = os.environ.get("TRANSCRIPTION_FOLDER")
-root_audio_folder = "/home2/tuannd/tuanlha/EXpressiveTTSDataset/data_unverified/02_concat_audio"
-transcription_folder = "/home2/tuannd/tuanlha/EXpressiveTTSDataset/data_unverified/03_transcription"
+root_audio_folder = "/home4/tuanlha/DataProcessStep/04_denoise"
+transcription_folder = "/home4/tuanlha/DataProcessStep/04_transcription"
+os.makedirs(transcription_folder, exist_ok=True)
+playlist_name = 'Temp'
+root_audio_folder = os.path.join(root_audio_folder, playlist_name)
+transcription_folder = os.path.join(transcription_folder, playlist_name)
+os.makedirs(transcription_folder, exist_ok=True)
 
 device = "cuda"
 threads = 8
@@ -22,6 +27,7 @@ chunk_size = 8  # inference with chunks of 16 seconds. Default is 30
 compute_type = "float16"  # change to "int8" if low on GPU memory (may reduce accuracy)
 model_name = "mad1999/pho-whisper-large-ct2"
 model = whisperx.load_model(model_name, device,
+                            device_index=3,
                             compute_type=compute_type, language='vi',
                             threads=threads,
                             asr_options={"beam_size":10,

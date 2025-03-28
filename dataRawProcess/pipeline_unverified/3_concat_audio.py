@@ -3,89 +3,101 @@ import pandas as pd
 import os
 import librosa
 import soundfile as sf
+import logging
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+# Setup logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('concat_audio.log'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
 
 parser = argparse.ArgumentParser(description="Remove collision script")
-parser.add_argument("--data_path", type=str, default='/home2/tuannd/tuanlha/EXpressiveTTSDataset/data_unverified', help="Path to the data directory")
-parser.add_argument("--save_path", type=str, default=f'/home2/tuannd/tuanlha/EXpressiveTTSDataset/data_unverified/02_concat_audio', help="Path to the save directory")
+parser.add_argument("--source_audio_path", type=str, default='/home4/tuanlha/DataTest', help="Path to the source audio directory")
+parser.add_argument("--data_path", type=str, default='/home4/tuanlha/DataProcessStep/02_no_collision', help="Path to the data directory")
+parser.add_argument("--save_path", type=str, default=f'/home4/tuanlha/DataProcessStep/03_concat_audio', help="Path to the save directory")
+parser.add_argument("--min_segment_length", type=float, default=0.5, help="Length of segment to keep")
+parser.add_argument("--min_length", type=float, default=0.5, help="Length of segment to keep")
+parser.add_argument("--playlist_name", type=str, default='Temp', help="Name of the playlist")
 args = parser.parse_args()
 
+def get_processed_episodes(folder_path):
+    """Get set of already processed episodes from plalist folder"""
+    return [f.split(' ')[0] for f in os.listdir(folder_path)]
 
 def check_exist(episode, folder):
     '''Check if diary logs already exist
     exist:      return True
     not exist:  return False'''
     return episode in [dir for dir in os.listdir(folder)]
-    # current_episode = [file_name for file_name in os.listdir(folder)]
-    # if episode in current_episode:
-    #     return True
-    # return False
 
 def create_audio(audio_path, episode, speaker, q):
-    save_path = args.save_path
-
+    save_path = os.path.join(args.save_path, args.playlist_name, os.path.splitext(episode)[0])
     os.makedirs(save_path, exist_ok=True)
-
     start, end = q[0], q[-1]
-    # print(start, end)
+    if end - start < args.min_length:
+        return
     y, sr = librosa.load(audio_path, offset=start, duration=end - start)
-    sf.write(f'{save_path}/{speaker} - {round(start,2)} - {round(end,2) }.wav', y, sr)
+    sf.write(os.path.join(save_path, f'{speaker} - {round(start,2)} - {round(end,2)}.wav'), y, sr)
+
+def process_episode(dir_n, processed_episodes):
+    episode = dir_n.split(' ')[0]
+    if episode in processed_episodes:
+        logger.info(f"Episode {episode} already processed")
+        return
+
+    logger.info(f"Processing episode {episode}")
+    print(f"Bat dau: {episode}")
+
+    file_path = os.path.join(args.data_path, args.playlist_name, dir_n)
+    with open(file_path, 'rb') as f:
+        data = json.load(f)
+
+    audio_path = os.path.join(args.source_audio_path, f'{os.path.splitext(dir_n)[0]}.mp3')
+    if not os.path.exists(audio_path):
+        print(f"Thieu {audio_path}")
+        return
+
+    q = []
+    current_speaker = None
+    for item in data:
+        start, end, speaker = item[0][0], item[0][1], item[1]
+        if not q:
+            q = [start, end]
+            current_speaker = speaker
+        elif speaker == current_speaker:
+            if start - q[-1] < args.min_segment_length:
+                q[-1] = end
+            else:
+                create_audio(audio_path, dir_n, current_speaker, q)
+                q = [start, end]
+        else:
+            create_audio(audio_path, dir_n, current_speaker, q)
+            q = [start, end]
+            current_speaker = speaker
+    if q:
+        create_audio(audio_path, dir_n, current_speaker, q)
 
 def concat_audio_unverified():
-    data_path = args.data_path
-    
-    for dir_n in os.listdir(f'{data_path}/01_logs_no_col'):    #logs_chunk_0.json
-        # dataframe from verified speaker
+    data_path = os.path.join(args.data_path, args.playlist_name)
+    save_folder_path = os.path.join(args.save_path, args.playlist_name)
+    os.makedirs(args.save_path, exist_ok=True)
+    os.makedirs(save_folder_path, exist_ok=True)
 
-        # Check if file is already processed
-        episode = dir_n.split('-')[0]
-        #Kiem tra xem tap da dich chua
-        if check_exist(episode, f'{data_path}/02_concat_audio'):
-            print(f"Skip {episode}")
-            continue
-        print(f"Bat dau: {episode}")
+    processed_episodes = get_processed_episodes(save_folder_path)
+    no_collision_log = [f for f in os.listdir(data_path) if f.endswith('.json')]
+    logger.info(f"Found {len(no_collision_log)} diary files to process")
+    logger.info(f"{len(processed_episodes)} episodes already processed")
 
-        file_path = os.path.join(f'{data_path}/01_logs_no_col', dir_n)
-        with open(file_path, 'rb') as f:
-            data = json.load(f)
-
-        # Kiem tra xem co audio path chua
-        audio_path = os.path.join(f'/home2/tuannd/tuanlha/HaveASipDataset', f'{dir_n[:-5]}.mp3')
-        if not os.path.exists(audio_path):
-            print(f"Thieu {audio_path}")
-            continue
-        # new df to get data audio after concat
-        # new_df = pd.DataFrame(columns=['episode', 'audio_path', 'model_label', 'start', 'end'])
-        
-        q = []
-        current_speaker = None
-        for item in data:
-            if not q:
-                q = [item[0][0], item[0][1]]
-                current_speaker = item[1]
-
-            elif item[1] == current_speaker:   
-                if item[0][0] - q[-1] < 1: # neu khoang cach 2 wav nho va cung nguoi nois
-                    q[-1] = item[0][1]
-                else:
-                    # new_row = {'episode': episode, 'audio_path': f'{data_path}/02_concat_audio/{episode}/{current_speaker}-{round(q[0],2)}-{round(q[-1],2) }.mp3', 'model_label': current_speaker, 'start': round(q[0],2), 'end': round(q[-1],2)}
-                    # new_df = pd.concat([new_df, pd.DataFrame([new_row])], ignore_index=True)
-                    create_audio(audio_path, episode, current_speaker, q)
-                    q = [item[0][0], item[0][1]]
-            else:                               # neu la nguoi khac
-                # new_row = {'episode': episode, 'audio_path': f'{data_path}/02_concat_audio/{episode}/{current_speaker}-{round(q[0],2)}-{round(q[-1],2) }.mp3', 'model_label': current_speaker, 'start': round(q[0],2), 'end': round(q[-1],2)}
-                # new_df = pd.concat([new_df, pd.DataFrame([new_row])], ignore_index=True)
-                create_audio(audio_path, episode, current_speaker, q)
-                q = [item[0][0], item[0][1]]
-                current_speaker = item[1]      
-        # TODO: hậu xử lí nếu q vẫn còn
-        if q and q[-1]-q[0]>1:
-            # new_row = {'episode': episode, 'audio_path': f'{data_path}/02_concat_audio/{episode}/{current_speaker} - {round(q[0],2)} - {round(q[-1],2) }.mp3', 'model_label': current_speaker, 'start': round(q[0],2), 'end': round(q[-1],2)}
-            # new_df = pd.concat([new_df, pd.DataFrame([new_row])], ignore_index=True)
-            create_audio(audio_path, episode, current_speaker, q)
-        # save_csv_path = f'../../data_unverified/02_logs_concat'
-        # os.makedirs(save_csv_path, exist_ok=True)              
-        # new_df.to_csv(f'{save_csv_path}/{dir_n[:-5]}.csv', index=False)
-    return
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        futures = [executor.submit(process_episode, dir_n, processed_episodes) for dir_n in no_collision_log]
+        for future in as_completed(futures):
+            future.result()
 
 concat_audio_unverified()
