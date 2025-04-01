@@ -29,10 +29,14 @@ parser = argparse.ArgumentParser(description="Diarization script")
 parser.add_argument("--data_path", type=str, default='/home4/tuanlha/DataTest', help="Path to the data directory")
 parser.add_argument("--save_path", type=str, default='/home4/tuanlha/DataProcessStep/01_diary', help="Path to the save directory")
 #TODO: Change the default value of playlist_name to '00_diary'
-parser.add_argument("--playlist_name", type=str, default='playlist', help="Name of the playlist")
+parser.add_argument("--playlist_name", type=str, default='Temp', help="Name of the playlist")
 parser.add_argument("--num_workers", type=int, default=4, help="Number of workers to use")
-parser.add_argument("--device", type=str, default='0', help="GPU device ID")
+parser.add_argument("--device", type=str, default='3', help="GPU device ID")
 args = parser.parse_args()
+
+if args.playlist_name is not None:
+    args.save_path = os.path.join(args.save_path, args.playlist_name)
+    args.data_path = os.path.join(args.data_path, args.playlist_name)
 
 # Check GPU
 check_gpu_available(int(args.device))
@@ -97,8 +101,10 @@ def create_diarization():
     logger.info(f"Found {len(files)} audio files to process")
     
     # Process files with progress bar
-    with ThreadPoolExecutor(max_workers=args.num_workers) as executor:
-        list(tqdm(executor.map(process_file, files), total=len(files)))
+    for file in files:
+        process_file(file)
+    # with ThreadPoolExecutor(max_workers=args.num_workers) as executor:
+    #     list(tqdm(executor.map(process_file, files), total=len(files)))
 
 if __name__ == "__main__":
     start_time = datetime.now()

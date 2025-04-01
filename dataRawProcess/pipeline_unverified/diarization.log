@@ -43,3 +43,102 @@
 2025-03-25 02:49:36,582 - INFO - Completed 15 TÓM TẮT ｜ TOÀN BỘ JOJO'S PART 7： STEEL BALL RUN - ĐUA NGỰA ẢO ĐÉT! 
 2025-03-25 02:52:45,394 - INFO - Completed 14 Toàn bộ về Jojo trong hơn 3 tiếng ｜ Recap Xàm： Jojo 
 2025-03-25 02:52:45,414 - INFO - Completed in 1:20:32.044454
+2025-03-30 23:50:45,866 - INFO - Using GPU 0: Tesla V100-PCIE-32GB
+2025-03-30 23:50:45,870 - INFO - Loading diarization model...
+2025-03-30 23:50:46,635 - INFO - Applied quirks (see `speechbrain.utils.quirks`): [disable_jit_profiling, allow_tf32]
+2025-03-30 23:50:46,636 - INFO - Excluded quirks specified by the `SB_DISABLE_QUIRKS` environment (comma-separated list): []
+2025-03-30 23:50:48,623 - INFO - Starting diarization at 2025-03-30 23:50:48.622936
+2025-03-30 23:50:48,623 - INFO - Found 0 audio files to process
+2025-03-30 23:50:48,626 - INFO - Completed in 0:00:00.003486
+2025-03-30 23:51:37,451 - INFO - Using GPU 3: Tesla V100-SXM2-32GB
+2025-03-30 23:51:37,452 - INFO - Loading diarization model...
+2025-03-30 23:51:38,235 - INFO - Applied quirks (see `speechbrain.utils.quirks`): [disable_jit_profiling, allow_tf32]
+2025-03-30 23:51:38,235 - INFO - Excluded quirks specified by the `SB_DISABLE_QUIRKS` environment (comma-separated list): []
+2025-03-30 23:51:39,981 - INFO - Starting diarization at 2025-03-30 23:51:39.980958
+2025-03-30 23:51:39,981 - INFO - Found 0 audio files to process
+2025-03-30 23:51:39,983 - INFO - Completed in 0:00:00.002054
+2025-03-30 23:56:41,726 - INFO - Using GPU 3: Tesla V100-SXM2-32GB
+2025-03-30 23:56:41,726 - INFO - Loading diarization model...
+2025-03-30 23:56:42,453 - INFO - Applied quirks (see `speechbrain.utils.quirks`): [allow_tf32, disable_jit_profiling]
+2025-03-30 23:56:42,453 - INFO - Excluded quirks specified by the `SB_DISABLE_QUIRKS` environment (comma-separated list): []
+2025-03-30 23:56:44,322 - INFO - Starting diarization at 2025-03-30 23:56:44.322112
+2025-03-30 23:56:44,322 - CRITICAL - Fatal error: [Errno 2] No such file or directory: '/home4/tuanlha/DataTest/playlist'
+Traceback (most recent call last):
+  File "/home4/tuanlha/EXpressiveTTS/dataRawProcess/pipeline_unverified/1_diary.py", line 112, in <module>
+    create_diarization()
+  File "/home4/tuanlha/EXpressiveTTS/dataRawProcess/pipeline_unverified/1_diary.py", line 100, in create_diarization
+    files = get_audio_files(args.data_path)
+  File "/home4/tuanlha/EXpressiveTTS/dataRawProcess/pipeline_unverified/1_diary.py", line 56, in get_audio_files
+    f for f in os.listdir(directory)
+FileNotFoundError: [Errno 2] No such file or directory: '/home4/tuanlha/DataTest/playlist'
+2025-03-30 23:56:44,323 - INFO - Completed in 0:00:00.001108
+2025-03-30 23:57:04,730 - INFO - Using GPU 3: Tesla V100-SXM2-32GB
+2025-03-30 23:57:04,731 - INFO - Loading diarization model...
+2025-03-30 23:57:05,527 - INFO - Applied quirks (see `speechbrain.utils.quirks`): [allow_tf32, disable_jit_profiling]
+2025-03-30 23:57:05,528 - INFO - Excluded quirks specified by the `SB_DISABLE_QUIRKS` environment (comma-separated list): []
+2025-03-30 23:57:07,115 - INFO - Starting diarization at 2025-03-30 23:57:07.115088
+2025-03-30 23:57:07,115 - INFO - Found 19 audio files to process
+2025-03-30 23:57:07,116 - INFO - Processing 19 Toàn bộ về Jojo trong hơn 3 tiếng ｜ Recap Xàm： Jojo 
+2025-03-30 23:57:07,117 - INFO - Processing 1 GIẢNG VIÊN BỊ CHỈ TRÍCH VÌ CHẤM 0 ĐIỂM CHO BÀI THI A.I 
+2025-03-30 23:57:07,118 - INFO - Processing 2 Phần tranh biện cực ＂gắt＂ thu hút hàng triệu lượt xem ｜ Trường Teen 2019 ｜ Trích đoạn tập 10 
+2025-03-30 23:57:07,123 - INFO - Processing 5 Can You Fool A Self Driving Car？ 
+2025-03-30 23:58:18,460 - INFO - Completed 1 GIẢNG VIÊN BỊ CHỈ TRÍCH VÌ CHẤM 0 ĐIỂM CHO BÀI THI A.I 
+2025-03-30 23:58:18,486 - INFO - Processing 8 Chủ nghĩa KHẮC KỶ và trào lưu CHILL GUY：Làm sao sống BÌNH THẢN nhưng không TRỐN CHẠY？｜Nguyễn Hữu Trí 
+2025-03-30 23:58:37,675 - INFO - Completed 2 Phần tranh biện cực ＂gắt＂ thu hút hàng triệu lượt xem ｜ Trường Teen 2019 ｜ Trích đoạn tập 10 
+2025-03-30 23:58:37,726 - INFO - Processing 13 Ta có biết mình đang ăn gì mỗi ngày không？ ｜ Tiến sĩ Châu Ngọc Điệp ｜ Diễn Giả Phan Đăng 
+2025-03-31 00:00:13,527 - INFO - Completed 5 Can You Fool A Self Driving Car？ 
+2025-03-31 00:00:13,558 - INFO - Processing 14 Nguyễn Thuỵ Đan： Người hiện đại mang âm hưởng cổ thi ｜ Diễn Giả Phan Đăng 
+2025-03-31 00:02:24,897 - INFO - Completed 8 Chủ nghĩa KHẮC KỶ và trào lưu CHILL GUY：Làm sao sống BÌNH THẢN nhưng không TRỐN CHẠY？｜Nguyễn Hữu Trí 
+2025-03-31 00:02:24,931 - INFO - Processing 4 Song ca khi ở nhà một mình vào ngày Giáng Sinh  ｜ Siêu tổng hợp： Home Alone ( 2 phần ) 
+2025-03-31 00:04:38,174 - INFO - Completed 4 Song ca khi ở nhà một mình vào ngày Giáng Sinh  ｜ Siêu tổng hợp： Home Alone ( 2 phần ) 
+2025-03-31 00:04:38,212 - INFO - Processing 6 Những Ván Game DÀI Nhất Thế Giới 
+2025-03-31 00:07:44,447 - INFO - Completed 6 Những Ván Game DÀI Nhất Thế Giới 
+2025-03-31 00:07:44,476 - INFO - Processing 9 Ngôi trường dành cho các Conan： Recap xàm Danganronpa The Anime 
+2025-03-31 00:09:08,005 - INFO - Completed 13 Ta có biết mình đang ăn gì mỗi ngày không？ ｜ Tiến sĩ Châu Ngọc Điệp ｜ Diễn Giả Phan Đăng 
+2025-03-31 00:09:08,034 - INFO - Processing 10 Từ newbie, tôi triệu hồi ra ＂ Hầu Gái ＂ mạnh nhất ｜ Fate⧸Stay Night： Unlimited Blade Works phần 1 
+2025-03-31 00:09:34,393 - INFO - Completed in 0:12:27.278655
+2025-03-31 00:09:52,375 - INFO - Using GPU 3: Tesla V100-SXM2-32GB
+2025-03-31 00:09:52,375 - INFO - Loading diarization model...
+2025-03-31 00:09:53,167 - INFO - Applied quirks (see `speechbrain.utils.quirks`): [allow_tf32, disable_jit_profiling]
+2025-03-31 00:09:53,168 - INFO - Excluded quirks specified by the `SB_DISABLE_QUIRKS` environment (comma-separated list): []
+2025-03-31 00:09:55,594 - INFO - Starting diarization at 2025-03-31 00:09:55.594243
+2025-03-31 00:09:55,595 - INFO - Found 19 audio files to process
+2025-03-31 00:09:55,595 - INFO - Processing 19 Toàn bộ về Jojo trong hơn 3 tiếng ｜ Recap Xàm： Jojo 
+2025-03-31 01:35:42,322 - INFO - Completed 19 Toàn bộ về Jojo trong hơn 3 tiếng ｜ Recap Xàm： Jojo 
+2025-03-31 01:35:42,341 - INFO - Processing 1 GIẢNG VIÊN BỊ CHỈ TRÍCH VÌ CHẤM 0 ĐIỂM CHO BÀI THI A.I 
+2025-03-31 01:36:26,548 - INFO - Completed 1 GIẢNG VIÊN BỊ CHỈ TRÍCH VÌ CHẤM 0 ĐIỂM CHO BÀI THI A.I 
+2025-03-31 01:36:26,563 - INFO - Processing 2 Phần tranh biện cực ＂gắt＂ thu hút hàng triệu lượt xem ｜ Trường Teen 2019 ｜ Trích đoạn tập 10 
+2025-03-31 01:37:13,192 - INFO - Completed 2 Phần tranh biện cực ＂gắt＂ thu hút hàng triệu lượt xem ｜ Trường Teen 2019 ｜ Trích đoạn tập 10 
+2025-03-31 01:37:13,207 - INFO - Processing 5 Can You Fool A Self Driving Car？ 
+2025-03-31 01:39:14,669 - INFO - Completed 5 Can You Fool A Self Driving Car？ 
+2025-03-31 01:39:14,684 - INFO - Processing 8 Chủ nghĩa KHẮC KỶ và trào lưu CHILL GUY：Làm sao sống BÌNH THẢN nhưng không TRỐN CHẠY？｜Nguyễn Hữu Trí 
+2025-03-31 01:42:14,115 - INFO - Completed 8 Chủ nghĩa KHẮC KỶ và trào lưu CHILL GUY：Làm sao sống BÌNH THẢN nhưng không TRỐN CHẠY？｜Nguyễn Hữu Trí 
+2025-03-31 01:42:14,131 - INFO - Processing 13 Ta có biết mình đang ăn gì mỗi ngày không？ ｜ Tiến sĩ Châu Ngọc Điệp ｜ Diễn Giả Phan Đăng 
+2025-03-31 01:52:30,108 - INFO - Completed 13 Ta có biết mình đang ăn gì mỗi ngày không？ ｜ Tiến sĩ Châu Ngọc Điệp ｜ Diễn Giả Phan Đăng 
+2025-03-31 01:52:30,142 - INFO - Processing 14 Nguyễn Thuỵ Đan： Người hiện đại mang âm hưởng cổ thi ｜ Diễn Giả Phan Đăng 
+2025-03-31 02:01:09,277 - INFO - Completed 14 Nguyễn Thuỵ Đan： Người hiện đại mang âm hưởng cổ thi ｜ Diễn Giả Phan Đăng 
+2025-03-31 02:01:09,293 - INFO - Processing 4 Song ca khi ở nhà một mình vào ngày Giáng Sinh  ｜ Siêu tổng hợp： Home Alone ( 2 phần ) 
+2025-03-31 02:02:55,288 - INFO - Completed 4 Song ca khi ở nhà một mình vào ngày Giáng Sinh  ｜ Siêu tổng hợp： Home Alone ( 2 phần ) 
+2025-03-31 02:02:55,303 - INFO - Processing 6 Những Ván Game DÀI Nhất Thế Giới 
+2025-03-31 02:05:18,518 - INFO - Completed 6 Những Ván Game DÀI Nhất Thế Giới 
+2025-03-31 02:05:18,533 - INFO - Processing 9 Ngôi trường dành cho các Conan： Recap xàm Danganronpa The Anime 
+2025-03-31 02:08:23,053 - INFO - Completed 9 Ngôi trường dành cho các Conan： Recap xàm Danganronpa The Anime 
+2025-03-31 02:08:23,068 - INFO - Processing 10 Từ newbie, tôi triệu hồi ra ＂ Hầu Gái ＂ mạnh nhất ｜ Fate⧸Stay Night： Unlimited Blade Works phần 1 
+2025-03-31 02:12:15,327 - INFO - Completed 10 Từ newbie, tôi triệu hồi ra ＂ Hầu Gái ＂ mạnh nhất ｜ Fate⧸Stay Night： Unlimited Blade Works phần 1 
+2025-03-31 02:12:15,343 - INFO - Processing 11 Tâm Sự Cùng Đinh Đoàn-Chị Gái U70 Qua Đêm Với Bạn Trai, Vô Tình Phát Hiện Bí Mật Đáng Ngờ 
+2025-03-31 02:18:21,602 - INFO - Completed 11 Tâm Sự Cùng Đinh Đoàn-Chị Gái U70 Qua Đêm Với Bạn Trai, Vô Tình Phát Hiện Bí Mật Đáng Ngờ 
+2025-03-31 02:18:21,618 - INFO - Processing 17 Giả lập quản lý team LMHT này CUỐN đến mức tôi đã chơi 10 NGÀY LIÊN TIẾP (Esport Godfather) 
+2025-03-31 02:31:04,347 - INFO - Completed 17 Giả lập quản lý team LMHT này CUỐN đến mức tôi đã chơi 10 NGÀY LIÊN TIẾP (Esport Godfather) 
+2025-03-31 02:31:04,364 - INFO - Processing 18 TÓM TẮT ｜ TOÀN BỘ JOJO'S PART 7： STEEL BALL RUN - ĐUA NGỰA ẢO ĐÉT! 
+2025-03-31 03:18:05,230 - INFO - Completed 18 TÓM TẮT ｜ TOÀN BỘ JOJO'S PART 7： STEEL BALL RUN - ĐUA NGỰA ẢO ĐÉT! 
+2025-03-31 03:18:05,245 - INFO - Processing 15 Tâm Sự Cùng Đinh Đoàn-Trái Ngang Cuộc Tình： Mẹ Và Con Gái Yêu Chung 1 Người 
+2025-03-31 03:29:34,611 - INFO - Completed 15 Tâm Sự Cùng Đinh Đoàn-Trái Ngang Cuộc Tình： Mẹ Và Con Gái Yêu Chung 1 Người 
+2025-03-31 03:29:34,626 - INFO - Processing 16 Game thủ thành nhưng TÔI LÀ PHE PHẢN DIỆN (Maze Keeper #1) 
+2025-03-31 03:41:24,095 - INFO - Completed 16 Game thủ thành nhưng TÔI LÀ PHE PHẢN DIỆN (Maze Keeper #1) 
+2025-03-31 03:41:24,110 - INFO - Processing 3 Drama Lê Tuấn Khang tuần vừa qua thật điên rồ... (cả Dino sasuke nữa) 
+2025-03-31 03:42:18,717 - INFO - Completed 3 Drama Lê Tuấn Khang tuần vừa qua thật điên rồ... (cả Dino sasuke nữa) 
+2025-03-31 03:42:18,733 - INFO - Processing 7 Testing The World's Smartest Crow 
+2025-03-31 03:45:08,829 - INFO - Completed 7 Testing The World's Smartest Crow 
+2025-03-31 03:45:08,843 - INFO - Processing 12 Đừng quên đếm sĩ số lớp vào đầu năm học, nếu không thì ... ｜ Recap xàm： Another 
+2025-03-31 03:50:53,185 - INFO - Completed 12 Đừng quên đếm sĩ số lớp vào đầu năm học, nếu không thì ... ｜ Recap xàm： Another 
+2025-03-31 03:50:53,199 - INFO - Completed in 3:40:57.605421

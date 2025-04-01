@@ -1,0 +1,58 @@
+{
+    "data_path": "/home4/tuanlha/DataProcessStep",
+    "source_path": "/home4/tuanlha/DataTest",
+    "playlist_name": "Temp",
+    "device": "cuda",
+    "device_id": 0,
+    "save_step": {
+        "standardization": {
+            "folder_name": "00_standardization",
+            "file_format": "wav",
+            "channel": "mono",
+            "sample_rate": 24000,
+            "bit_depth": 16,
+            "normalize": true
+        },
+        "diarization": {
+            "folder_name": "01_diary"
+        },
+        "remove_collision": {
+            "folder_name": "02_remove_collision",
+            "min_segment_length": 0.3
+        },
+        "concat_audio":{
+            "folder_name": "03_concat_audio",
+            "min_silence_length": 0.2,
+            "min_segment_length": 0.5
+        },
+        "speaker_filter": {
+            "folder_name": "04_transcript",
+            "threshold": 0.05
+        },
+        "denoise": {
+            "folder_name": "05_denoise"
+        },
+        "transcript": {
+            "folder_name": "06_transcript"
+        },
+        "topic_modeling": {
+            "folder_name": "07_topic_modeling"
+        },
+        "emotion_predict": {
+            "folder_name": "08_emotion_predict"
+        },
+        "style_predict": {
+            "folder_name": "09_style_predict"
+        },
+        "validate": {
+            "folder_name": "10_validate"
+        },
+        "text_clean": {
+            "folder_name": "11_text_clean"
+        },
+        "data_selection": {
+            "folder_name": "12_data_selection"
+        }
+    },
+    "huggingface_token": "<HUGGINGFACE_ACCESS_TOKEN>"
+}
