@@ -5,7 +5,8 @@ from pyannote.audio import Pipeline
 from utils.logger import Logger
 import psutil
 from concurrent.futures import ThreadPoolExecutor
-
+import torchaudio
+from audio_processing.audio_utils import standardize
 logger = Logger.get_logger()
 
 def limit_cpu_cores(cores):
@@ -52,17 +53,12 @@ def diarization_results(results, cfg, device_id):
     
     return diary_results
 
-def save_diarization_results(diary_results, save_path):
+def save_diarization_results(diary_results, playlist_name, basename):
     """Save diarization results to disk"""
-    for item in diary_results:
-        name = item['name']
-        diary = item['diary']
-        # embeddings = item['embeddings']
-
-        file_path = os.path.join(save_path, f'{name}.pkl')
-        if not os.path.exists(file_path):
-            with open(file_path, 'wb') as f:
-                pickle.dump(diary, f)
+    os.makedirs(os.path.join('./00_diarization', playlist_name), exist_ok=True)
+    save_path = os.path.join('./00_diarization', playlist_name, f'{basename}.pkl')
+    with open(save_path, 'wb') as f:
+        pickle.dump(diary_results, f)
     logger.info(f"Diarization results saved to {save_path}")
 
 def process_clean_diary(diary):
@@ -115,21 +111,33 @@ def clean_diarization_results(diary_results, cfg):
     logger.info("Diarization results cleaned")
     return cleaned_diarys
 
-def process_audio_diarization(audio_files, cfg, playlist_name):
+def process_audio_diarization(args, cfg):
     # Standardize audio
-    results = standardize_audio(audio_files=episode_path,
-                                cfg=cfg,
-                                playlist_name=args.playlist_name,
-                                is_save=False)
-
-    # Get diarization results
-    diary_results = diarization_results(results=results,
-                                              cfg=cfg,
-                                              device_id=cuda_id)
-    diary = [item["diary"] for item in diary_results]
-    cleaned_diary = clean_diarization_results(diary_results=diary, cfg=0)
-
-    # Create sub audio and denoise
-    save_sub_audio(results, cleaned_diary, args.playlist_name, cfg)
-    
-    pass
+    secret = "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"
+    pipeline = Pipeline.from_pretrained(
+        "pyannote/speaker-diarization-3.1",
+        use_auth_token=secret).to(torch.device(f"cuda:{args.cuda_id}"))
+    logger.info("Diarization model loaded")
+    # Get list episode name
+    episode_list = sorted(os.listdir(os.path.join(args.data_path, args.playlist_name)))
+    episode_name = [os.path.basename(ep).rsplit('.', 1)[0] for ep in episode_list]
+    sample_rate = cfg["save_step"]["standardization"]["sample_rate"]
+    for episode in episode_list:
+        episode_path = os.path.join(args.data_path, args.playlist_name, episode)
+        logger.info("Processing episode: %s", episode)
+        # Get audio file
+        data = standardize(episode_path, cfg)
+        waveform = data["waveform"]
+        #Push waveform to GPU
+        try:
+            waveform = torch.from_numpy(waveform).unsqueeze(0).to(f'cuda:{args.cuda_id}')
+        except RuntimeError as e:
+            if "CUDA out of memory" in str(e):
+                logger.warning(f"GPU {args.cuda_id} is out of memory. Skipping {episode.rsplit('.', 1)[0]}.")
+                continue
+        # Get diarization results
+        diary = pipeline({'waveform': waveform, 'sample_rate': sample_rate})
+        # Save diarization results
+        save_diarization_results(diary, args.playlist_name, os.path.basename(episode).rsplit('.', 1)[0])
+        logger.info("Done processing episode: %s", episode)
+        torch.cuda.empty_cache()
