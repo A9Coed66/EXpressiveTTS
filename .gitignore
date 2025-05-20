@@ -1,6 +1,15 @@
 data_verifed/
 data_unverified/
 raw_path/
+dataRawProcess/00_standardization
+dataRawProcess/01_cleaned_diarization
+dataRawProcess/02_embeddings
+dataRawProcess/03_concat_audio
+dataRawProcess/04_denoise
+dataRawProcess/04_vad
+dataRawProcess/05_data_extract
+dataRawProcess/05_transcript
+dataRawProcess/01_raw_diarization
 dataWorkingEng/checkpoints/
 dataWorkingEng/syn_samples/
 dataWorkingEng/syn_samples_cp/

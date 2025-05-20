@@ -321,3 +321,82 @@ def calculate_audio_stats(
             valid_audio_stats.append((idx, duration))
 
     return valid_audio_stats, all_audio_stats
+
+def get_mp3_duration_ffprobe(file_path):
+    """Lấy thời lượng file MP3 bằng ffprobe (nhanh nhất)"""
+    cmd = [
+        'ffprobe', 
+        '-v', 'error',
+        '-show_entries', 'format=duration',
+        '-of', 'default=noprint_wrappers=1:nokey=1',
+        file_path
+    ]
+    try:
+        output = subprocess.check_output(cmd).decode('utf-8').strip()
+        return float(output)
+    except Exception as e:
+        print(f"Lỗi: {e}")
+        return None
+
+def sort_files_by_audio_length(folder_path):
+    """
+    Sắp xếp tên file theo thứ tự tăng dần của độ dài audio.
+    Args:
+        folder_path (str): Đường dẫn thư mục chứa các file audio.
+    Returns:
+        list: Danh sách tên file được sắp xếp theo độ dài audio tăng dần.
+    """
+    audio_files = []
+    file_durations = {}
+    # Lấy danh sách file audio trong thư mục
+    for file_name in os.listdir(folder_path):
+        if file_name.lower().endswith(('.mp3', '.wav', '.flac', '.aac')):
+            file_path = os.path.join(folder_path, file_name)
+            try:
+                duration = get_mp3_duration_ffprobe(file_path)
+                file_durations[file_name] = duration
+            except Exception as e:
+                print(f"Lỗi khi xử lý {file_name}: {str(e)}")
+    # Sắp xếp file theo độ dài audio
+    sorted_files = sorted(file_durations.items(), key=lambda x: x[1])
+    return [file[0] for file in sorted_files]
+
+def label(data_path, playlist_name):
+    sorted_files = sort_files_by_audio_length(os.path.join(data_path, playlist_name))
+
+    pattern = re.compile(r'\[.*?\]')
+    for index, filename in enumerate(sorted_files, start=1):
+        # Tạo tên mới với số đánh số ở đầu
+        new_name = f"{index:02d} {filename}"
+        # Xóa phần [*] của tên file
+        new_name = re.sub(pattern, '', new_name).strip()
+        # Đường dẫn đầy đủ của file cũ và file mới
+        old_file = os.path.join(data_path, playlist_name, filename)
+        new_file = os.path.join(data_path, playlist_name, new_name)
+        # Đổi tên file
+        os.rename(old_file, new_file)
+        print(f"Đã đổi tên {filename} thành {new_name}")
+
+def check_exists(step_path, playlist_name, episode_name, type='dir'):
+    """
+    Check if the directory exists, if not, create it.
+    """
+    results = episode_name.copy()
+    if type=='dir':
+        for episode in episode_name:
+            episode_path = os.path.join(step_path, playlist_name, episode)
+            if os.path.exists(episode_path):
+                results.remove(episode)
+                print(f"Directory {episode} already exists.")
+        return results
+    elif type=='file':
+        all_files = os.listdir(os.path.join(step_path, playlist_name))
+        file_basename = [os.path.basename(file).rsplit('.', 1)[0] for file in all_files]
+        print(file_basename)
+        for episode in episode_name:
+            if episode in file_basename:
+                results.remove(episode)
+                print(f"File {episode} already exists.")
+        return results
+            
+                     
