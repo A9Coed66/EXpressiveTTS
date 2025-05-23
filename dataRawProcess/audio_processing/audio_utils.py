@@ -5,6 +5,7 @@ import soundfile as sf
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from utils.logger import Logger
 from utils.manage_memory import set_cpu_affinity
+import pickle
 from utils.tool import check_exists
 
 logger = Logger.get_logger()
@@ -101,6 +102,7 @@ def save_sub_audio(results, clean_diary, playlist_name, cfg):
         futures = []
         os.makedirs('./03_concat_audio', exist_ok=True)
         os.makedirs(f'./03_concat_audio/{playlist_name}', exist_ok=True)
+
         for result, diary in zip(results, clean_diary):
             print(os.path.join(f'./03_concat_audio/{playlist_name}', os.path.basename(result["name"]).rsplit('.', 1)[0]))
             if os.path.exists(os.path.join(f'./03_concat_audio/{playlist_name}', os.path.basename(result["name"]).rsplit('.', 1)[0])):
@@ -111,6 +113,62 @@ def save_sub_audio(results, clean_diary, playlist_name, cfg):
             os.makedirs(os.path.join(f'./03_concat_audio/{playlist_name}', os.path.basename(result["name"]).rsplit('.', 1)[0]), exist_ok=True)
             for segment in diary:
                 futures.append(executor.submit(process_segment, result, segment, sr))
+        for future in as_completed(futures):
+            future.result()  # Ensure all tasks are completed
+    logger.info("Saved sub-audio segments based on cleaned diarization results")
+
+def save_sub_audio(args, cfg):
+    """
+    Save sub-audio segments based on the cleaned diarization results.
+
+    Args:
+        results (list): List of processed audio results.
+        clean_diary (list): List of cleaned diarization results.
+    """
+    sr = cfg["save_step"]["standardization"]["sample_rate"]
+    def process_segment(waveform, episode, segment, sr):
+        """
+        Process and save a single audio segment.
+
+        Args:
+            result (dict): Processed audio result containing waveform and name.
+            segment (list): A segment containing start time, end time, and speaker.
+            sr (int): Sample rate of the audio.
+        """
+        start, end = segment[0]
+        start = round(start, 2)
+        end = round(end, 2)
+        speaker = segment[1]
+        start_sample = int(start * sr)
+        end_sample = int(end * sr)
+        sub_audio = waveform[start_sample:end_sample]
+        sub_audio_path = f"./03_concat_audio/{args.playlist_name}/{episode}/{speaker}_{start}_{end}.wav"
+        sf.write(sub_audio_path, sub_audio, sr)
+
+    logger.info("Saving sub-audio segments based on cleaned diarization results...")
+
+
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        futures = []
+        os.makedirs('./03_concat_audio', exist_ok=True)
+        os.makedirs(f'./03_concat_audio/{args.playlist_name}', exist_ok=True)
+        
+        episode_list = sorted(os.listdir(os.path.join(args.data_path, args.playlist_name)))
+        episode_name = [os.path.basename(ep).rsplit('.', 1)[0] for ep in episode_list]
+        for episode in episode_name:
+            waveform , sr = sf.read(os.path.join('./00_standardization', args.playlist_name, f"{episode}.wav"))
+            print(os.path.join(f'./03_concat_audio/{args.playlist_name}', episode))
+            if os.path.exists(os.path.join(f'./03_concat_audio/{args.playlist_name}', episode)):
+                print("Already have it, skipping")
+                continue
+            os.makedirs(os.path.join(f'./03_concat_audio/{args.playlist_name}', episode), exist_ok=True)
+
+            # Create directory for each audio file
+            diary_path = os.path.join('./01_clean_diarization', args.playlist_name, f"{episode}.pkl")
+            with open(diary_path, 'rb') as f:
+                diary = pickle.load(f)
+            for segment in diary:
+                futures.append(executor.submit(process_segment, waveform, episode, segment, sr))
         for future in as_completed(futures):
             future.result()  # Ensure all tasks are completed
     logger.info("Saved sub-audio segments based on cleaned diarization results")

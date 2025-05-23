@@ -7,8 +7,17 @@ import psutil
 from concurrent.futures import ThreadPoolExecutor
 import torchaudio
 from audio_processing.audio_utils import standardize
+import numpy as np
 logger = Logger.get_logger()
+from utils.tool import check_exists
+import soundfile as sf
 
+secret      = "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"
+pipeline    = Pipeline.from_pretrained(
+            "pyannote/speaker-diarization-3.1",
+            use_auth_token=secret)
+
+logger.info("Diarization model loaded")
 def limit_cpu_cores(cores):
     """Limit process to specific CPU cores"""
     try:
@@ -61,10 +70,14 @@ def save_diarization_results(diary_results, playlist_name, basename):
         pickle.dump(diary_results, f)
     logger.info(f"Diarization results saved to {save_path}")
 
-def process_clean_diary(diary):
+def process_clean_diary(cfg, playlist_name, episode_name):
     processed_log = []
-    
     queue_segment = []
+
+    # Load diarization results
+    episode_diary_path = os.path.join('./00_diarization', playlist_name, f'{episode_name}.pkl')
+    with open(episode_diary_path, 'rb') as f:
+        diary = pickle.load(f)
 
     conflict = True
     # Step 1: seperate by time
@@ -90,38 +103,67 @@ def process_clean_diary(diary):
     if queue_segment:
         processed_log.append(queue_segment)
 
-    #FIXME Step 2: filter minimum segment length
-    MIN_SEGMENT_LENGTH = 1
-    SILENT_THRESHOLD   = 1
+    #FIXME Step 2: filter minimum segment length and merge segments
+    MIN_SEGMENT_LENGTH = cfg["save_step"]["diarization"]["min_segment_length"]
+    SILENT_THRESHOLD   = cfg["save_step"]["diarization"]["silent_threshold"]
+    MAX_SEGMENT_LENGTH = cfg["save_step"]["diarization"]["max_segment_length"]
     filter_segments_length = [item for item in processed_log if item[0][1] - item[0][0] > MIN_SEGMENT_LENGTH]
+    final_segments = []
+    last_speaker = None
+    for segment in filter_segments_length:
+        last_speaker = final_segments[-1][1] if final_segments else None
+        if last_speaker is None or last_speaker != segment[1]:
+            final_segments.append(segment)
+            continue
+        ## Mặc định đã tồn tại last speaker và speaker giống cái trước
+        if segment[0][1] - final_segments[-1][0][0] > MAX_SEGMENT_LENGTH:
+            final_segments.append(segment)
+        elif segment[0][0] - final_segments[-1][0][1] < SILENT_THRESHOLD:
+            final_segments[-1][0][1] = segment[0][1]
+        else:
+            final_segments.append(segment)
+
+    # Step 3: save segments
+    os.makedirs(os.path.join('./01_clean_diarization', playlist_name), exist_ok=True)
+    save_path = os.path.join('./01_clean_diarization', playlist_name, f'{episode_name}.pkl')
+    with open(save_path, 'wb') as f:
+        pickle.dump(final_segments, f)
+    logger.info(f"Cleaned diarization results saved to {save_path}")
+
+
     return filter_segments_length
 
-def clean_diarization_results(diary_results, cfg):
+def clean_diarization_results(args, cfg):
     """Clean and process diarization that each segment has only one speaker
     
     Args:
         diary_results (list): List of diarization results []
         cfg (dict): Configuration dictionary
     """
+    step_path = './00_diarization'
+    episode_list = sorted(os.listdir(os.path.join(args.data_path, args.playlist_name)))
+    episode_name = [os.path.basename(ep).rsplit('.', 1)[0] for ep in episode_list]
+    episode_name = check_exists(step_path, args.playlist_name, episode_name, type='file')
 
-
-    with ThreadPoolExecutor(max_workers=2) as executor:
-        cleaned_diarys = list(executor.map(process_clean_diary, diary_results))
+    for episode in episode_name:
+        process_clean_diary(cfg, args.playlist_name, episode)
 
     logger.info("Diarization results cleaned")
-    return cleaned_diarys
+    return 
 
 def process_audio_diarization(args, cfg):
     # Standardize audio
-    secret = "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"
-    pipeline = Pipeline.from_pretrained(
-        "pyannote/speaker-diarization-3.1",
-        use_auth_token=secret).to(torch.device(f"cuda:{args.cuda_id}"))
-    logger.info("Diarization model loaded")
+    pipeline.to(torch.device(f"cuda:{args.cuda_id}"))
     # Get list episode name
+
+    step_path = './00_diarization'
     episode_list = sorted(os.listdir(os.path.join(args.data_path, args.playlist_name)))
     episode_name = [os.path.basename(ep).rsplit('.', 1)[0] for ep in episode_list]
     sample_rate = cfg["save_step"]["standardization"]["sample_rate"]
+    episode_name = check_exists(step_path, args.playlist_name, episode_name, type='file')
+    
+    os.makedirs(os.path.join('./00_diarization', args.playlist_name), exist_ok=True)
+
     for episode in episode_list:
         episode_path = os.path.join(args.data_path, args.playlist_name, episode)
         logger.info("Processing episode: %s", episode)
@@ -140,4 +182,9 @@ def process_audio_diarization(args, cfg):
         # Save diarization results
         save_diarization_results(diary, args.playlist_name, os.path.basename(episode).rsplit('.', 1)[0])
         logger.info("Done processing episode: %s", episode)
+        standardize_path = os.path.join('./00_standardization', args.playlist_name)
+        os.makedirs(standardize_path, exist_ok=True)
+        standardize_audio_path = os.path.join(standardize_path, f"{os.path.basename(episode).rsplit('.', 1)[0]}.wav")
+        sf.write(standardize_audio_path, np.ravel(waveform.cpu().numpy()), sample_rate)
+        # sf.write(standardize_audio_path, waveform, sample_rate)
         torch.cuda.empty_cache()
