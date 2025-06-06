@@ -5,6 +5,7 @@
 
 from concurrent.futures import ThreadPoolExecutor
 import json
+from functools import partial
 import os
 import librosa
 import numpy as np
@@ -360,6 +361,28 @@ def sort_files_by_audio_length(folder_path):
     # Sắp xếp file theo độ dài audio
     sorted_files = sorted(file_durations.items(), key=lambda x: x[1])
     return [file[0] for file in sorted_files]
+
+def get_episode_duration(episode_path):
+    total_duration = 0
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        futures = []
+        for file_name in os.listdir(episode_path):
+            if file_name.lower().endswith(('.mp3', '.wav', '.flac', '.aac')):
+                file_path = os.path.join(episode_path, file_name)
+                futures.append(executor.submit(get_mp3_duration_ffprobe, file_path))
+        
+        for future in futures:
+            duration = future.result()
+            if duration is not None:
+                total_duration += duration
+    # for file_name in os.listdir(episode_path):
+    #     if file_name.lower().endswith(('.mp3', '.wav', '.flac', '.aac')):
+    #         file_path = os.path.join(episode_path, file_name)
+    #         duration = get_mp3_duration_ffprobe(file_path)
+    #         if duration is not None:
+    #             total_duration += duration
+    return total_duration
+
 
 def label(data_path, playlist_name):
     sorted_files = sort_files_by_audio_length(os.path.join(data_path, playlist_name))

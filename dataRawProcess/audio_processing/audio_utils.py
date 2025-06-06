@@ -17,7 +17,7 @@ def standardize(audio, cfg):
     """Preprocess single audio file"""
     if isinstance(audio, str):
         name = os.path.basename(audio)
-        audio = AudioSegment.from_file(audio)
+        audio = AudioSegment.from_file(f'{audio}.wav')
     else:
         raise ValueError("Invalid audio type")
 

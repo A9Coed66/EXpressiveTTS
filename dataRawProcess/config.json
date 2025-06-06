@@ -3,7 +3,7 @@
     "source_path": "/home4/tuanlha/DataTest",
     "playlist_name": "Temp",
     "device": "cuda",
-    "device_id": 0,
+    "device_id": 1,
     "save_step": {
         "standardization": {
             "folder_name": "00_standardization",
@@ -14,7 +14,10 @@
             "normalize": true
         },
         "diarization": {
-            "folder_name": "01_diary"
+            "folder_name": "01_diary",
+            "min_segment_length": 1,
+            "silent_threshold": 1,
+            "max_segment_length": 15
         },
         "remove_collision": {
             "folder_name": "02_remove_collision",

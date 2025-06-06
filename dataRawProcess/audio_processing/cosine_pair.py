@@ -26,6 +26,7 @@ import seaborn as sns
 from pathlib import Path
 import random
 import json
+from concurrent.futures import ThreadPoolExecutor
 
 
 
@@ -155,46 +156,74 @@ def get_audio_embeddings(episode_path, playlist, episode_name, speaker_dict):
     return speaker_embeddings
 
 def saiba_momoi():
-    # Create metadata speaker from all episode
     audio_path = './04_vad'
-    # metadata = pd.DataFrame(columns=['playlist_name', 'episode', 'speaker', 'embeddings'])
-    data = {}
+    metadata_path = './metadata.json'
+    if os.path.exists(metadata_path):
+        with open(metadata_path, 'r', encoding='utf-8') as f:
+            data = json.load(f) 
+    else:
+        data = {}
+        
     for playlist in os.listdir(audio_path):
-        data[playlist] = {}
+        if playlist not in data or data[playlist] is None:
+            data[playlist] = {}
+
         playlist_path = os.path.join(audio_path, playlist)
         for episode in os.listdir(playlist_path):
-            data[playlist][episode] = {}
+            if episode not in data[playlist] or data[playlist][episode] is None:
+                data[playlist][episode] = {}
+            else:
+                continue
             episode_path = os.path.join(playlist_path, episode)
             speaker_dict = get_audio_file(episode_path, playlist, episode)
             speaker_embeddings = get_audio_embeddings(episode_path, playlist, episode, speaker_dict)
             for speaker, embedding in speaker_embeddings.items():
                 data[playlist][episode][speaker] = embedding.tolist()
+        
                 
     # metadata.to_csv('/home4/tuanlha/EXpressiveTTS/dataRawProcess/metadata.csv', index=False)
     # Save metadata to JSON file
     with open('/home4/tuanlha/EXpressiveTTS/dataRawProcess/metadata.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
             
-    #       in each episode
-    #           get random 20 audio
-    #           get average of 20 audio embeddings
 
 
     # compute similarity between all episode
 def saibamomoi_2():
+    
+    def process_audio_file(file_path):
+        frequency, signal = wavfile.read(file_path)
+        signal = torch.tensor(signal.reshape(1, -1)).to('cuda')
+        embedding = classifier.encode_batch(signal)
+        return file_path, embedding.tolist()
+    
     audio_path = './04_vad'
-    data = {}
+    metadata_path = './metadata_2.json'
+    if os.path.exists(metadata_path):
+        with open(metadata_path, 'r', encoding='utf-8') as f:
+            data = json.load(f) 
+    else:
+        data = {}
+
     for playlist in os.listdir(audio_path):
+        if playlist not in data or data[playlist] is None:
+            data[playlist] = {}
         playlist_path = os.path.join(audio_path, playlist)
         for episode in os.listdir(playlist_path):
+            if episode not in data[playlist] or data[playlist][episode] is None:
+                data[playlist][episode] = {}
+            else:
+                continue
             episode_path = os.path.join(playlist_path, episode)
-            for audio_file in os.listdir(episode_path):
-                if audio_file.endswith('.wav'):
-                    audio_path = os.path.join(episode_path, audio_file)
-                    frequency, signal = wavfile.read(audio_path)
-                    signal = torch.tensor(signal.reshape(1,-1)).to('cuda')
-                    embedding = classifier.encode_batch(signal)
-                    data[audio_path] = embedding.tolist()
+            audio_files = [
+                os.path.join(episode_path, audio_file)
+                for audio_file in os.listdir(episode_path)
+                if audio_file.endswith('.wav')
+            ]
+            with ThreadPoolExecutor(max_workers=8) as executor:
+                results = executor.map(process_audio_file, audio_files)
+                for file_path, embedding in results:
+                    data[playlist][episode][os.path.basename(file_path)] = embedding[0][0]
 
     # Save metadata to JSON file
     with open('/home4/tuanlha/EXpressiveTTS/dataRawProcess/metadata_2.json', 'w', encoding='utf-8') as f:
