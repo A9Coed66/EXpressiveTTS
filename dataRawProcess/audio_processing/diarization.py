@@ -11,6 +11,7 @@ import numpy as np
 logger = Logger.get_logger()
 from utils.tool import check_exists
 import soundfile as sf
+from pydub import AudioSegment
 
 secret      = "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"
 pipeline    = Pipeline.from_pretrained(
@@ -146,30 +147,30 @@ def process_clean_diary(args, cfg, playlist_name, episode_name):
     # Step 1: segment_type: [start, end, speaker, is_start, is_end]
     last_end = None
     single_segment = []
-    pre_queue = []
+    pre_segment = []
     current_queue = []
     for turn, _, speaker in diary.itertracks(yield_label=True):
-        pre_queue = current_queue.copy() if current_queue else []
+        pre_segment = current_queue.copy() if current_queue else []
         if last_end is None or turn.start > last_end:
-            if pre_queue:
-                single_segment.append(pre_queue)
+            if pre_segment:
+                single_segment.append(pre_segment)
             current_queue = [turn.start, turn.end, speaker, True, True]
         else:   # turn.start <= last_end
             # Xử lý pre_queue
-            if turn.start > pre_queue[0]:
-                single_segment.append([pre_queue[0], turn.start, pre_queue[2], pre_queue[3], False])
+            if turn.start > pre_segment[0]:
+                single_segment.append([pre_segment[0], turn.start, pre_segment[2], pre_segment[3], False])
             else:
                 pass
             
             # Xử lý current_queue
-            if turn.end < pre_queue[0]:
+            if turn.end < pre_segment[0]:
                 pass
-            elif turn.end < pre_queue[1]:
+            elif turn.end < pre_segment[1]:
                 current_queue[0] = turn.end
                 current_queue[3] = False
-                current_queue[2] = pre_queue[2]
+                current_queue[2] = pre_segment[2]
             else: #turn.end >= pre_queue[1]
-                current_queue = [pre_queue[1], turn.end, speaker, False, True]
+                current_queue = [pre_segment[1], turn.end, speaker, False, True]
         last_end = max(turn.end, last_end) if last_end is not None else turn.end
         
 
@@ -237,7 +238,7 @@ def clean_diarization_results(args, cfg):
 
     
     step_path = './01_clean_diarization'
-    episode_list = sorted(os.listdir(os.path.join(args.data_path, args.playlist_name)))
+    episode_list = sorted(os.listdir(os.path.join('./00_standardization', args.playlist_name)))
     episode_name = [os.path.basename(ep).rsplit('.', 1)[0] for ep in episode_list]
     episode_name = check_exists(step_path, args.playlist_name, episode_name, type='file')
 
@@ -253,35 +254,71 @@ def process_audio_diarization(args, cfg):
     # Get list episode name
     
     os.makedirs(os.path.join('./00_diarization', args.playlist_name), exist_ok=True)
-
-    step_path = './00_diarization'
-    episode_list = sorted(os.listdir(os.path.join(args.data_path, args.playlist_name)))
-    episode_name = [os.path.basename(ep).rsplit('.', 1)[0] for ep in episode_list]
-    episode_name = check_exists(step_path, args.playlist_name, episode_name, type='file')
-    
     sample_rate = cfg["save_step"]["standardization"]["sample_rate"]
 
-    for episode in episode_name:
-        episode_path = os.path.join(args.data_path, args.playlist_name, episode)
-        logger.info("Processing episode: %s", episode)
-        # Get audio file
-        data = standardize(episode_path, cfg)
-        waveform = data["waveform"]
-        #Push waveform to GPU
-        try:
-            waveform = torch.from_numpy(waveform).unsqueeze(0).to(f'cuda:{args.cuda_id}')
-        except RuntimeError as e:
-            if "CUDA out of memory" in str(e):
-                logger.warning(f"GPU {args.cuda_id} is out of memory. Skipping {episode.rsplit('.', 1)[0]}.")
-                continue
-        # Get diarization results
-        diary = pipeline({'waveform': waveform, 'sample_rate': sample_rate})
-        # Save diarization results
-        save_diarization_results(diary, args.playlist_name, episode)
-        logger.info("Done processing episode: %s", episode)
-        standardize_path = os.path.join('./00_standardization', args.playlist_name)
-        os.makedirs(standardize_path, exist_ok=True)
-        standardize_audio_path = os.path.join(standardize_path, f'{episode}.wav')
-        sf.write(standardize_audio_path, np.ravel(waveform.cpu().numpy()), sample_rate)
-        # sf.write(standardize_audio_path, waveform, sample_rate)
-        torch.cuda.empty_cache()
+    try:
+        step_path = './00_diarization'
+        episode_list = sorted(os.listdir(os.path.join(args.data_path, args.playlist_name)))
+        episode_name = [os.path.basename(ep).rsplit('.', 1)[0] for ep in episode_list]
+        episode_name = check_exists(step_path, args.playlist_name, episode_name, type='file')
+
+        for episode in episode_name:
+            episode_path = os.path.join(args.data_path, args.playlist_name, episode)
+            logger.info("Processing episode: %s", episode)
+            # Get audio file
+            data = standardize(episode_path, cfg)
+            waveform = data["waveform"]
+            #Push waveform to GPU
+            try:
+                waveform = torch.from_numpy(waveform).unsqueeze(0).to(f'cuda:{args.cuda_id}')
+            except RuntimeError as e:
+                if "CUDA out of memory" in str(e):
+                    logger.warning(f"GPU {args.cuda_id} is out of memory. Skipping {episode.rsplit('.', 1)[0]}.")
+                    continue
+            # Get diarization results
+            diary = pipeline({'waveform': waveform, 'sample_rate': sample_rate})
+            # Save diarization results
+            save_diarization_results(diary, args.playlist_name, episode)
+            logger.info("Done processing episode: %s", episode)
+            standardize_path = os.path.join('./00_standardization', args.playlist_name)
+            os.makedirs(standardize_path, exist_ok=True)
+            standardize_audio_path = os.path.join(standardize_path, f'{episode}.wav')
+            sf.write(standardize_audio_path, np.ravel(waveform.cpu().numpy()), sample_rate)
+            # sf.write(standardize_audio_path, waveform, sample_rate)
+            torch.cuda.empty_cache()
+    except Exception as e:
+        print(e)
+        episode_list = sorted(os.listdir(os.path.join('./00_standardization', args.playlist_name)))
+
+        episode_name = [os.path.basename(ep).rsplit('.', 1)[0] for ep in episode_list]
+        for episode in episode_name:
+            episode_path = os.path.join('./00_standardization', args.playlist_name, episode)
+            logger.info("Processing episode: %s", episode)
+            # Get audio file
+            data = AudioSegment.from_file(f'{episode_path}.wav')
+            waveform = np.array(data.get_array_of_samples(), dtype=np.float32)
+            waveform /= np.max(np.abs(waveform))  # Normalize
+            #Push waveform to GPU
+            try:
+                waveform = torch.from_numpy(waveform).unsqueeze(0).to(f'cuda:{args.cuda_id}')
+            except RuntimeError as e:
+                if "CUDA out of memory" in str(e):
+                    logger.warning(f"GPU {args.cuda_id} is out of memory. Skipping {episode.rsplit('.', 1)[0]}.")
+                    continue
+            # Get diarization results
+            diary = pipeline({'waveform': waveform, 'sample_rate': sample_rate})
+            # Save diarization results
+            save_diarization_results(diary, args.playlist_name, episode)
+            logger.info("Done processing episode: %s", episode)
+            standardize_path = os.path.join('./00_standardization', args.playlist_name)
+            os.makedirs(standardize_path, exist_ok=True)
+            standardize_audio_path = os.path.join(standardize_path, f'{episode}.wav')
+            sf.write(standardize_audio_path, np.ravel(waveform.cpu().numpy()), sample_rate)
+            # sf.write(standardize_audio_path, waveform, sample_rate)
+            torch.cuda.empty_cache()
+
+        logger.error(f"OMFG Error processing audio diarization: {e}")
+
+    
+
+    

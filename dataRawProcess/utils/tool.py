@@ -384,21 +384,23 @@ def get_episode_duration(episode_path):
     return total_duration
 
 
-def label(data_path, playlist_name):
-    sorted_files = sort_files_by_audio_length(os.path.join(data_path, playlist_name))
+def safe_name(data_path, playlist_name):
+    if not os.path.exists(os.path.join(data_path, playlist_name)):
+        data_path = '/home4/tuanlha/EXpressiveTTS/dataRawProcess/00_standardization'
 
-    pattern = re.compile(r'\[.*?\]')
-    for index, filename in enumerate(sorted_files, start=1):
-        # Tạo tên mới với số đánh số ở đầu
-        new_name = f"{index:02d} {filename}"
-        # Xóa phần [*] của tên file
-        new_name = re.sub(pattern, '', new_name).strip()
-        # Đường dẫn đầy đủ của file cũ và file mới
-        old_file = os.path.join(data_path, playlist_name, filename)
-        new_file = os.path.join(data_path, playlist_name, new_name)
-        # Đổi tên file
-        os.rename(old_file, new_file)
-        print(f"Đã đổi tên {filename} thành {new_name}")
+    for filename in os.listdir(os.path.join(data_path, playlist_name)):
+        # Bỏ qua thư mục con, chỉ xử lý file
+        old_path = os.path.join(data_path, playlist_name, filename)
+
+        if os.path.isfile(old_path):
+            # Loại bỏ ký tự [ và ]
+            new_filename = filename.replace('[', '').replace(']', '')
+            new_path = os.path.join(data_path, playlist_name, new_filename)
+            # Đổi tên nếu tên mới khác tên cũ
+            if new_path != old_path:
+                # Tránh ghi đè file khác (nếu có trùng tên)
+                if not os.path.exists(new_path):
+                    os.rename(old_path, new_path)
 
 def check_exists(step_path, playlist_name, episode_name, type='dir'):
     """

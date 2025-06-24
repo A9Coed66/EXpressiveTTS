@@ -36,67 +36,117 @@ classifier = EncoderClassifier.from_hparams(run_opts={"device":'cuda'}, source="
 def cos_pair(a,b):
   return np.dot(a,b.T)/linalg.norm(a)/linalg.norm(b)
 
-def compare(wav_dir, file_csv):
-    print("Load wav from " + str(wav_dir))
-    list_folder = str(wav_dir) + "/*/"
-    print(list_folder)
-    list_folder = glob.glob(list_folder)
-    classifier = EncoderClassifier.from_hparams(run_opts={"device":'cuda'}, source="speechbrain/spkrec-ecapa-voxceleb", savedir="pretrained_models/spkrec-ecapa-voxceleb")
-    #min_mat save min cosine pair of 1 wav; min_path save path of wav
-    min_mat = []
-    min_path = []
-    for le in range(len(list_folder)):
-        x = glob.glob(str(list_folder[le]) +  '*.wav')
+# def analyze_wav_min_cosine(wav_dir, file_csv):
+#     print("Load wav from " + str(wav_dir))
+#     list_folder = str(wav_dir) + "/*/"
+#     print(list_folder)
+#     list_folder = glob.glob(list_folder)
+#     # classifier = EncoderClassifier.from_hparams(run_opts={"device":'cuda'}, source="speechbrain/spkrec-ecapa-voxceleb", savedir="pretrained_models/spkrec-ecapa-voxceleb")
+#     #min_mat save min cosine pair of 1 wav; min_path save path of wav
+#     min_mat = []
+#     min_path = []
+#     for le in range(len(list_folder)):
+#         x = glob.glob(str(list_folder[le]) +  '*.wav')
         
-        for _ in range(len(x)):
-            frequency, signal = wavfile.read(x[_])
-            slice_length = 1.2 # in seconds
-            overlap = 0.2 # in seconds
-            slices = np.arange(0, len(signal)/frequency, slice_length-overlap, dtype=np.float32)
-            i = 0
-            audio = []
-            matrix_audio = []
-            for start, end in zip(slices[:-1], slices[1:]):
-                i = i + 1
-                start_audio = start * frequency
-                end_audio = (end + overlap)* frequency
-                audio_slice = signal[int(start_audio): int(end_audio)]
-                audio_slice = audio_slice.reshape(1,-1)
-                audio_slice = torch.tensor(audio_slice).to('cuda')
-                audio_slice = classifier.encode_batch(audio_slice)
-                audio_slice = audio_slice.detach().cpu().squeeze()
-                audio.append(audio_slice)
+#         for _ in range(len(x)):
+#             frequency, signal = wavfile.read(x[_])
+#             slice_length = 1.2 # in seconds
+#             overlap = 0.2 # in seconds
+#             slices = np.arange(0, len(signal)/frequency, slice_length-overlap, dtype=np.float32)
+#             i = 0
+#             audio = []
+#             matrix_audio = []
+#             global_embedding = classifier.encode_batch(torch.tensor(signal.reshape(1,-1)).to('cuda'))
+#             for start, end in zip(slices[:-1], slices[1:]):
+#                 i = i + 1
+#                 start_audio = start * frequency
+#                 end_audio = (end + overlap)* frequency
+#                 audio_slice = signal[int(start_audio): int(end_audio)]
+#                 audio_slice = audio_slice.reshape(1,-1)
+#                 audio_slice = torch.tensor(audio_slice).to('cuda')
+#                 audio_slice = classifier.encode_batch(audio_slice)
+#                 audio_slice = audio_slice.detach().cpu().squeeze()
+#                 audio.append(audio_slice)
+#             try:
+#                 matrix_audio = [ [0]*(len(audio)) for i in range(len(audio))]
+#                 for i in range(len(audio)):
+#                     for j in range(len(audio)):
+#                         matrix_audio[i][j]=(cos_pair(audio[i], audio[j]))
+#                         # print(matrix_audio)
+#                 mymin = min([min(r) for r in matrix_audio])
+#                 min_mat.append(mymin)
+#                 min_path.append(x[_])
+#             except:
+#                 print(x[_]) 
+#                 os.remove(x[_])
+#         print(le)
+
+#     data = []
+#     for i in range(len(min_mat)):
+#         data.append([min_mat[i],min_path[i]])
+#     print(data)
+
+
+#     data = pd.DataFrame([min_mat,min_path]) #Each list would be added as a row
+#     data = data.transpose() #To Transpose and make each rows as columns
+#     data.columns=['MinCos','Path'] #Rename the columns
+#     print("Save csv to " + str(file_csv))
+#     my_file = Path(file_csv)
+#     try:
+#         data.to_csv(file_csv, index=False)
+#     except:
+#         print("No dir name " + str(file_csv))
+#     finally:
+#         torch.cuda.empty_cache()
+denoise_path = '/home4/tuanlha/EXpressiveTTS/dataRawProcess/04_denoise'
+json_dir = '/home4/tuanlha/EXpressiveTTS/dataRawProcess/07_speaker_embedding'
+
+def analyze_wav_min_cosine(playlist_name):
+    print("Load wav from " + str(playlist_name))
+    playlist_path = os.path.join(denoise_path, playlist_name)
+    # list_folder = glob.glob(str(playlist_path) + "/*/")
+    # result_dict = {}
+
+    for episode in os.listdir(playlist_path):
+        if os.path.exists(os.path.join(json_dir, playlist_name, f"{episode}.json")):
+            print(f"Skipping {episode} as it already exists in JSON.")
+            continue
+
+        os.makedirs(os.path.join(json_dir, playlist_name), exist_ok=True)
+        episode_path = os.path.join(playlist_path, episode)
+        
+        result_dict = {}
+        cnt = 0
+        for wav_name in os.listdir(episode_path):
             try:
-                matrix_audio = [ [0]*(len(audio)) for i in range(len(audio))]
-                for i in range(len(audio)):
-                    for j in range(len(audio)):
-                        matrix_audio[i][j]=(cos_pair(audio[i], audio[j]))
-                        # print(matrix_audio)
-                mymin = min([min(r) for r in matrix_audio])
-                min_mat.append(mymin)
-                min_path.append(x[_])
-            except:
-                print(x[_]) 
-                os.remove(x[_])
-        print(le)
+                # Đọc file WAV
+                wav_path = os.path.join(episode_path, wav_name)
+                frequency, signal = wavfile.read(wav_path)
+                speaker_id = wav_name.split('_')[1]  # Lấy ID người nói từ tên thư mục
+                
+                # Tính global embedding cho toàn bộ file
+                global_embedding = classifier.encode_batch(
+                    torch.tensor(signal.reshape(1,-1)).to('cuda')
+                ).detach().cpu().squeeze().tolist()  # Chuyển sang list để lưu JSON
+                # Lưu vào dictionary
+                # print(speaker_id, global_embedding)
+                result_dict[cnt] = {
+                    'wav_name': wav_name,
+                    'speaker_id': speaker_id,
+                    'global_embedding': global_embedding
+                }
+                cnt += 1
 
-    data = []
-    for i in range(len(min_mat)):
-        data.append([min_mat[i],min_path[i]])
-    print(data)
+            except Exception as e:
+                print(f"Error processing {wav_name}: {str(e)}")
 
-
-    data = pd.DataFrame([min_mat,min_path]) #Each list would be added as a row
-    data = data.transpose() #To Transpose and make each rows as columns
-    data.columns=['MinCos','Path'] #Rename the columns
-    print("Save csv to " + str(file_csv))
-    my_file = Path(file_csv)
-    try:
-        data.to_csv(file_csv)
-    except:
-        print("No dir name " + str(file_csv))
-    finally:
+        # Lưu ra file JSON
+        json_file = os.path.join(json_dir, playlist_name, f"{episode}.json")
+        with open(json_file, 'w', encoding='utf-8') as f:
+            json.dump(result_dict, f, ensure_ascii=False, indent=4)
+    
         torch.cuda.empty_cache()
+        print(f"Saved results to {json_file}")
 
     
 
@@ -228,3 +278,55 @@ def saibamomoi_2():
     # Save metadata to JSON file
     with open('/home4/tuanlha/EXpressiveTTS/dataRawProcess/metadata_2.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
+
+
+import os
+import json
+from concurrent.futures import ThreadPoolExecutor
+from scipy.io import wavfile
+import torch
+
+def saibamomoi_3(playlist_name):
+    audio_path = f'./04_denoise/{playlist_name}'
+    metadata_dir = './06_metadata/'
+    os.makedirs(metadata_dir, exist_ok=True)
+
+    # Khởi tạo dict lưu trữ theo cấu trúc: dict[playlist_name][episode_name][wav_name] = embeddings
+    all_data = {playlist_name: {}}
+
+    def process_audio_file(file_path):
+        frequency, signal = wavfile.read(file_path)
+        signal = torch.tensor(signal.reshape(1, -1)).to('cuda')
+        embedding = classifier.encode_batch(signal)
+        return os.path.basename(file_path), embedding.tolist()
+
+    def process_episode_file(episode):
+        episode_path = os.path.join(audio_path, episode)
+        episode_data = {}
+
+        audio_files = [
+            os.path.join(episode_path, audio_file)
+            for audio_file in os.listdir(episode_path)
+            if audio_file.endswith('.wav')
+        ]
+
+        with ThreadPoolExecutor(max_workers=4) as executor:
+            results = executor.map(process_audio_file, audio_files)
+            for wav_name, embedding in results:
+                # Lấy phần tử embedding đầu tiên theo cấu trúc embedding[0][0]
+                episode_data[wav_name] = embedding[0][0]
+
+        return episode, episode_data
+
+    list_episode = os.listdir(audio_path)
+    for episode in list_episode:
+        episode_name, episode_data = process_episode_file(episode)
+        all_data[playlist_name][episode_name] = episode_data
+
+    # Lưu toàn bộ dict ra file JSON
+    metadata_path = os.path.join(metadata_dir, f'{playlist_name}_metadata.json')
+    with open(metadata_path, 'w', encoding='utf-8') as f:
+        json.dump(all_data, f, ensure_ascii=False, indent=4)
+
+# Gọi hàm với playlist_name cụ thể
+# saibamomoi_3('ten_playlist_cua_ban')

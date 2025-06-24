@@ -14,6 +14,7 @@ def parse_args(args_list=None):
     parser.add_argument("--cuda_id", type=int, default=0, help="CUDA device ID")
     parser.add_argument("--label_audio", type=bool, default=False, help="Label audio files")
     parser.add_argument("--remove_minority", type=bool, default=False, help="Remove minority speakers in diarization")
+    parser.add_argument("--no_source", type=bool, default=False, help="")
 
     if args_list is not None:
         return parser.parse_args(args_list)

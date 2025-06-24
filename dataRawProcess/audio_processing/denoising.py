@@ -60,7 +60,7 @@ def denoise(args, cfg):
     """
     logger.info("Loading DeepFilterNet model...")
     model, df_state, _, _ = init_df()
-    episode_list = sorted(os.listdir(os.path.join(args.data_path, args.playlist_name)))
+    episode_list = sorted(os.listdir(os.path.join('./00_standardization', args.playlist_name)))
     episode_name = [os.path.basename(ep).rsplit('.', 1)[0] for ep in episode_list]
 
     os.makedirs("./04_denoise", exist_ok=True)

@@ -130,7 +130,7 @@ def transcript(args, cfg, is_save=False):
                                             #"temperatures": [0.6, 0.7, 0.8, 0.9, 1.0],
                                             "suppress_numerals": True})
     step_path = './06_transcript'
-    episode_list = sorted(os.listdir(os.path.join(args.data_path, args.playlist_name)))
+    episode_list = sorted(os.listdir(os.path.join('./00_standardization', args.playlist_name)))
     episode_name = [os.path.basename(ep).rsplit('.', 1)[0] for ep in episode_list]
     episode_name = check_exists(step_path, args.playlist_name, episode_name, type='file')
 

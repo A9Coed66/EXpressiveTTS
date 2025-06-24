@@ -122,7 +122,7 @@ def vad(args, cfg):
     os.makedirs(step_path, exist_ok=True)
     os.makedirs(os.path.join(step_path, playlist_name), exist_ok=True)
     
-    episode_list = sorted(os.listdir(os.path.join(args.data_path, args.playlist_name)))
+    episode_list = sorted(os.listdir(os.path.join('./00_standardization', args.playlist_name)))
     episode_name = [os.path.basename(ep).rsplit('.', 1)[0] for ep in episode_list]
     episode_name = check_exists(step_path, playlist_name, episode_name, type='file')
     
@@ -218,37 +218,6 @@ def sileroVAD_pipelien(episode_name, playlist_name):
         os.makedirs(episode_path, exist_ok=True)
         
 
-
-# def create_sub_vad(args, cfg):
-#     # lam viec voi tung episode
-
-#     playlist_name = args.playlist_name
-#     episode_list = sorted(os.listdir(os.path.join(args.data_path, args.playlist_name)))
-#     episode_name = [os.path.basename(ep).rsplit('.', 1)[0] for ep in episode_list]
-
-#     folder_path = f'./04_vad_extract/{playlist_name}'
-#     save_folder_path = f'./04_vad/{playlist_name}'
-#     os.makedirs(save_folder_path, exist_ok=True)
-#     for episode in episode_name:
-#         os.makedirs(os.path.join(save_folder_path, episode), exist_ok=True)
-#         dataframe_path = os.path.join(folder_path, episode + '.csv')
-#         df = pd.read_csv(dataframe_path)
-#         for index, row in df.iterrows():
-#             file_path = row['path']
-#             file_name = os.path.basename(file_path).rsplit('.', 1)[0]
-#             y, sr = sf.read(file_path)
-#             assert sr == 48000, f"Expected sample rate of 48000, but got {sr}"
-#             timestamps = row['timestamps']
-#             timestamps = timestamps.replace("'", '"')
-#             timestamps = json.loads(timestamps)
-#             h = 0
-#             for subtime in timestamps:
-#                 start = subtime['start']*3
-#                 end = subtime['end']*3
-#                 sub_audio = y[int(start):int(end)]
-#                 sf.write(os.path.join(save_folder_path, episode, f'{file_name}_{h}.wav'), sub_audio, sr)
-                # h+=1
-
 def create_sub_vad(args, cfg):
     # lam viec voi tung episode
 
@@ -259,7 +228,7 @@ def create_sub_vad(args, cfg):
     os.makedirs(save_folder_path, exist_ok=True)
 
 
-    episode_list = sorted(os.listdir(os.path.join(args.data_path, args.playlist_name)))
+    episode_list = sorted(os.listdir(os.path.join('./00_standardization', args.playlist_name)))
     episode_name = [os.path.basename(ep).rsplit('.', 1)[0] for ep in episode_list]
     episode_name = check_exists(step_path, playlist_name, episode_name, type='file')
 
@@ -271,15 +240,31 @@ def create_sub_vad(args, cfg):
             # Load the data from the pickle file
             data_clean = pickle.load(f)
         y, sr = sf.read(os.path.join('./00_standardization', playlist_name, episode + '.wav'))
+        
+        queue = []
         for data_point in data_clean:
+            queue = []
+            
+            for segment in data_point[1]:
+                if not queue:
+                    queue.append(segment)
+                    continue
+
+                if (segment['end'] - queue[-1]['start']) / 16000 > 20:
+                    queue.append(segment)
+                elif (segment['start'] - queue[-1]['end']) / 16000 < 0.25:
+                    queue[-1]['end'] = segment['end']
+                else:
+                    queue.append(segment)
+
             start, end = data_point[0][0], data_point[0][1]
             assert sr == 24000, f"Expected sample rate of 48000, but got {sr}"
             current_audio = y[int(start*sr):int(end*sr)]
 
             cnt = 0
-            for segment in data_point[1]:
+            for segment in queue:
                 speaker = data_point[0][2]
-                seg_start = segment['start'] * 3 /2
+                seg_start = segment['start'] * 3 / 2
                 seg_end = segment['end'] * 3 / 2
                 sub_audio = current_audio[int(seg_start):int(seg_end)]
                 file_name = f"{speaker}_{round(start,2)}_{round(end,2)}_{cnt}.wav"
