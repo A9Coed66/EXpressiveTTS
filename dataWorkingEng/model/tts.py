@@ -33,7 +33,7 @@ class DeXTTS(nn.Module):
         self.conv_sty    = nn.Conv1d(cfg.tv_encoder.c_out_g, cfg.decoder.dim * 2, 1, 1)  # match style dimension to decoder hidden dimension, 2 -  len(mults)
 
     @torch.no_grad()
-    def forward(self, x, x_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, n_timesteps, temperature=1.0, spk=None, length_scale=1.0, pitch_control = 1.0, p_control = 1.0, e_control = 0.0):
+    def forward(self, x, x_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, n_timesteps, temperature=1.0, spk=None, length_scale=1.0, pitch_control = 1.0, p_control = 0.0, e_control = 0.0):
         # print(f'E_control {e_control}')
         # Get encoder_outputs `mu_x` and log-scaled token durations `logw`
         
@@ -60,15 +60,15 @@ class DeXTTS(nn.Module):
             # pitch_prediction, 
             energy_prediction
         ) = self.prosody(
-            mu_x.detach(), 
+            mu_x, 
             None,
             p_control = p_control,
             e_control = e_control
         )
         # print(f'Pitch embedding {pitch_embedding}')
-        print(f'Energy embedding {energy_embedding}')
-        # mu_x = mu_x + pitch_embedding + energy_embedding
+        # print(f'Energy embedding {energy_embedding}')
         mu_x = mu_x + energy_embedding
+        # mu_x = mu_x + energy_embedding + energy_prediction
 
         w             = torch.exp(logw) * x_mask
         w_ceil        = torch.ceil(w) * length_scale
@@ -92,7 +92,7 @@ class DeXTTS(nn.Module):
 
         return enc_out, dec_out, attn[:, :, :y_max_length]
 
-    def compute_loss(self, x, x_lengths, y, y_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, p_avg, p_std, e_avg, spk=None, out_size=None, mask_ratio=0):
+    def compute_loss(self, x, x_lengths, y, y_lengths, ref, ref_lengths, sty, sty_lengths, lf0, lf0_lengths, p_avg, p_std, e_avg, spk=None, out_size=None, mask_ratio=0, pitch_control=1.0):
         
         ref_mask   = torch.unsqueeze(sequence_mask(ref_lengths, ref.size(2)), 1).to(ref.dtype) 
         lf0_mask   = torch.unsqueeze(sequence_mask(lf0_lengths, lf0.size(1)), 1).to(lf0.dtype)    
@@ -101,7 +101,7 @@ class DeXTTS(nn.Module):
         lf0_enc, lf0_dec          = self.lf0_encoder(lf0, lf0_mask)
         sty_enc, sty_dec, vq_loss = self.tv_encoder(sty, sty_mask)
         
-        sty_enc = (sty_enc.sum(dim=-1) / sty_mask.sum(dim=-1)) + (lf0_enc.sum(dim=-1) / lf0_mask.sum(dim=-1))
+        sty_enc = (sty_enc.sum(dim=-1) / sty_mask.sum(dim=-1)) + (lf0_enc.sum(dim=-1) * pitch_control / lf0_mask.sum(dim=-1))
         sty_enc = sty_enc.squeeze(1)
         
         sty_dec = sty_dec + (lf0_dec.sum(dim=-1) / lf0_mask.sum(dim=-1)).unsqueeze(-1)
@@ -118,7 +118,7 @@ class DeXTTS(nn.Module):
             # pitch_prediction, 
             energy_prediction
         ) = self.prosody(
-            mu_x.detach(), 
+            mu_x, 
             x_mask
         )
 
@@ -126,7 +126,9 @@ class DeXTTS(nn.Module):
         mu_x = mu_x + energy_embedding
 
         # p_rng_loss = pitch_loss(pitch_prediction, p_std)
+        # print(f'x_lengths {x_lengths}, e_avg {e_avg}')
         e_avg_loss = energy_loss(energy_prediction, e_avg, x_mask)
+        # p_avg_loss, p_std_loss = pitch_loss(pitch_prediction, p_avg, p_std, x_mask)
         
         y_max_length       = y.shape[-1]
         

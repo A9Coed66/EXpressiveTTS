@@ -10,12 +10,6 @@ class VariancePredictor(nn.Module):
     # def __init__(self, model_config):
     def __init__(self):
         super(VariancePredictor, self).__init__()
-
-        # self.input_size = model_config["transformer"]["encoder_hidden"]
-        # self.filter_size = model_config["variance_predictor"]["filter_size"]
-        # self.kernel = model_config["variance_predictor"]["kernel_size"]
-        # self.conv_output_size = model_config["variance_predictor"]["filter_size"]
-        # self.dropout = model_config["variance_predictor"]["dropout"]
         self.input_size = 80
         self.filter_size = 256 
         self.kernel = 3
@@ -62,19 +56,14 @@ class VariancePredictor(nn.Module):
 
     def forward(self, encoder_output, mask):        # encoder_output: (B, H, L), mask: (B, 1, L)
         out = self.conv_layer(encoder_output)       # (B, H, L)
-        # print(f'Out1.shape {out.shape}')
-        # out = out * mask
         out = self.linear_layer(out.transpose(1, 2)) # (B, L, 1)
-        # print(f'Out2.shape {out.shape}')
-        # out = self.activation(out)
-        # print(f'Out2.shape {out.shape}')
         out = out.squeeze(-1)                        # (B, L)
         
         # print(f'Out2.shape {out.shape}')
         
 
-        # if mask is not None:
-        #     out = out.masked_fill(mask.bool(), 0.0)
+        if mask is not None:
+            out = out * mask.squeeze(1)
         # print(f'Out3.shape {out.shape}, {out}')
         # sys.exit()
 
@@ -167,15 +156,32 @@ class ProsodyEncoder(nn.Module):
     #         )
     #         # print(f'Embedding.shape {embedding}')
     #     return prediction, embedding.transpose(1, 2)
+    def get_pitch_embedding(self, x, target, mask, control):
+        prediction = self.pitch_predictor(x, mask)
+        if target is not None:
+            embedding = self.pitch_embedding(torch.bucketize(target, self.pitch_bins))
+        else:
+            prediction = prediction + control
+            prediction = torch.clamp(prediction, min=-1.0, max=1.0)
+            embedding = self.pitch_embedding(
+                torch.bucketize(prediction.squeeze(1), self.pitch_bins)
+            )
+        if mask is not None:
+            embedding = embedding.transpose(1, 2)*mask
+        else:
+            embedding = embedding.transpose(1, 2)
+        return prediction, embedding
 
     def get_energy_embedding(self, x, target, mask, control):
+        # print(control)
         prediction = self.energy_predictor(x, mask)
         if target is not None:
             embedding = self.energy_embedding(torch.bucketize(target, self.energy_bins))
         else:
             # print(f'Prediction before change {prediction}')
             prediction = prediction + control
-            # prediction = torch.clamp(prediction, min=-1.0, max=1.0)
+            # print(f'Prediction after change {prediction}')
+            prediction = torch.clamp(prediction, min=-1.0, max=1.0)
             # print(f'Prediction after change {prediction}')
             # print(f'Prediction shape {prediction.shape}')
             embedding = self.energy_embedding(
@@ -184,7 +190,11 @@ class ProsodyEncoder(nn.Module):
             # print(f'Prediction shape {prediction.shape}')
 
             # print(f'Embedding.shape {embedding.shape}')
-        return prediction, embedding.transpose(1, 2)*mask
+        if mask is not None:
+            embedding = embedding.transpose(1, 2)*mask
+        else:
+            embedding = embedding.transpose(1, 2)
+        return prediction, embedding
 
     def forward(
         self,
@@ -201,14 +211,19 @@ class ProsodyEncoder(nn.Module):
         # )
         # print(f'Shape x: {x.shape}, pitch_embedding: {pitch_embedding.shape}')
         # x = x + pitch_embedding
+        x = x.detach()
+        # pitch_prediction, pitch_embedding = self.get_pitch_embedding(
+        #     x, pitch_target, src_mask, p_control
+        # )
         energy_prediction, energy_embedding = self.get_energy_embedding(
             x, energy_target, src_mask, e_control
         )
-        x = x + energy_embedding
 
         return (
-            energy_embedding,
-            energy_prediction,
+            # pitch_embedding,
+            energy_embedding, 
+            # pitch_prediction, 
+            energy_prediction
         )
     
     # @torch.no_grad()
@@ -236,4 +251,3 @@ class ProsodyEncoder(nn.Module):
     #         pitch_prediction,
     #         energy_prediction,
     #     )
-
