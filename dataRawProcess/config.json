@@ -16,7 +16,7 @@
         "diarization": {
             "folder_name": "01_diary",
             "min_segment_length": 1,
-            "silent_threshold": 1,
+            "silent_threshold": 0.25,
             "max_segment_length": 15
         },
         "remove_collision": {

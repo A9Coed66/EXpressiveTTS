@@ -144,7 +144,7 @@ def process_clean_diary(args, cfg, playlist_name, episode_name):
         diary = pickle.load(f)
 
 
-    # Step 1: segment_type: [start, end, speaker, is_start, is_end]
+    #NOTE: Step 1 segment_type: [start, end, speaker, is_start, is_end]
     last_end = None
     single_segment = []
     pre_segment = []
@@ -177,7 +177,7 @@ def process_clean_diary(args, cfg, playlist_name, episode_name):
     if current_queue:
         single_segment.append(current_queue)
 
-    #FIXME Step 2: filter minimum segment length and merge segments
+    #NOTE Step 2: filter minimum segment length and merge segments
     # List of segment_type ([start, end, speaker, is_start, is_end], [start, end, speaker, is_start, is_end], ...)
     MIN_SEGMENT_LENGTH = cfg["save_step"]["diarization"]["min_segment_length"]
     SILENT_THRESHOLD   = cfg["save_step"]["diarization"]["silent_threshold"]
@@ -201,8 +201,9 @@ def process_clean_diary(args, cfg, playlist_name, episode_name):
         else:
             final_segments.append(segment)
 
+    #NOTE Step 4: Remove minority speakers
     if args.remove_minority:
-        # Step 4: Remove minority speakers
+        
         speaker_count = {}
         total_duration = 0
         for segment in final_segments:
@@ -213,7 +214,7 @@ def process_clean_diary(args, cfg, playlist_name, episode_name):
             total_duration += segment[1] - segment[0]
         logger.info(f"Speaker count: {speaker_count}")
         # Remove speaker if they have less than 10% of total duration
-        threshold = total_duration * 0.08
+        threshold = total_duration * 0.1 / len(speaker_count)//2 if len(speaker_count) > 1 else 0.0
         final_segments = [seg for seg in final_segments if speaker_count[seg[2]] >= threshold]
     
     # Step 3: save segments

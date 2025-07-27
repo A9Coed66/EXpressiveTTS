@@ -1,14 +1,17 @@
 
 import os, tqdm
 import json
+import sys
+sys.path.append('../')
 from utils.logger import Logger
 import whisperx
 import soundfile as sf
 import torch
 import shutil
 from utils.tool import check_exists
+from utils.tool import get_mp3_duration_ffprobe
 
-logger = Logger()
+logger = Logger.get_logger()
 
 def create_audio(waveform, episode, file_name, text, sample_rate, playlist_name):
     """
@@ -185,16 +188,49 @@ def transcript(args, cfg, is_save=False):
         torch.cuda.empty_cache()
 
 
-def restruct_folder(episodes_name, playlist_name):
-    current_path = f'./04_vad/{playlist_name}'
-    for episode in episodes_name:
-        episode_path = os.path.join(current_path, episode)
+import os
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
-        for segment in os.listdir(episode_path):
-            segment_path = os.path.join(episode_path, segment)
-            for audio_file in os.listdir(segment_path):
-                if audio_file.endswith(".wav"):
-                    src_path = os.path.join(segment_path, audio_file)
-                    dst_path = os.path.join(current_path, episode, f'{segment}_{audio_file}')
-                    shutil.move(src_path, dst_path)
-            os.rmdir(segment_path)
+def process_wav(episode_name, wav_name, transcript_path, episode_path):
+    wav_path = os.path.join(episode_path, wav_name)
+    text_path = os.path.join(transcript_path, episode_name, wav_name.replace('.wav', '.lab'))
+
+    if not os.path.exists(text_path):
+        logger.info(f"Transcript not found for {text_path}")
+        os.remove(wav_path)
+        return
+    with open(text_path, 'r', encoding='utf-8') as f:
+        text = f.read().strip()
+    if len(text) == 0:
+        logger.info(f"Empty transcript for {wav_path}, removing audio file.")
+        os.remove(wav_path)
+        os.remove(text_path)
+        return
+    duration = get_mp3_duration_ffprobe(wav_path)
+    if duration <= 0:
+        logger.info(f"Invalid duration for {wav_path}, removing audio file.")
+        os.remove(wav_path)
+        os.remove(text_path)
+        return
+    words = text.split()
+    words_per_second = len(words) / duration
+    if words_per_second > 10:
+        logger.info(f"Too many words per second ({words_per_second}) for {wav_path}, removing audio file.")
+        os.remove(wav_path)
+        os.remove(text_path)
+        return
+
+def filter_by_transcript(args, cfg):
+    transcript_path = f'./06_transcript/{args.playlist_name}'
+    playlist_path = f'./04_denoise/{args.playlist_name}'
+
+    tasks = []
+    with ThreadPoolExecutor(max_workers=8) as executor:  # Tùy chỉnh số luồng
+        for episode_name in os.listdir(playlist_path):
+            episode_path = os.path.join(playlist_path, episode_name)
+            for wav_name in os.listdir(episode_path):
+                if wav_name.lower().endswith('.wav'):
+                    tasks.append(executor.submit(process_wav, episode_name, wav_name, transcript_path, episode_path))
+        for future in as_completed(tasks):
+            future.result()  # Để bắt lỗi nếu có
+

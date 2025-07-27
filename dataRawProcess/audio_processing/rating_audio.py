@@ -80,7 +80,7 @@ def process_filter_by_rating(args, episode):
     try:
         nisqa_path = os.path.join(csv_path, f'{episode}_NISQA_results.csv')
         df_1 = pd.read_csv(nisqa_path)
-        df_1 = df_1[df_1['mos_pred'] < 3.5]['deg']
+        df_1 = df_1[df_1['mos_pred'] < 3.0]['deg']
         df_1 = df_1.tolist()
     except Exception as e:
         logger.error(f"Error reading NISQA results for episode {episode}: {e}")
@@ -88,7 +88,7 @@ def process_filter_by_rating(args, episode):
 
     wvmos_path = os.path.join(csv_path, f'{episode}_wvmos.csv')
     df_2 = pd.read_csv(wvmos_path)
-    df_2 = df_2[df_2['score']<2.75]['audio_path']
+    df_2 = df_2[df_2['score']<3.0]['audio_path']
     df_2 = df_2.tolist()
 
     folder_path = os.path.join('./04_denoise', args.playlist_name, episode)

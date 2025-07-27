@@ -266,6 +266,10 @@ def create_sub_vad(args, cfg):
                 speaker = data_point[0][2]
                 seg_start = segment['start'] * 3 / 2
                 seg_end = segment['end'] * 3 / 2
+
+                if (seg_end - seg_start)/24000 > 45:
+                    continue
+
                 sub_audio = current_audio[int(seg_start):int(seg_end)]
                 file_name = f"{speaker}_{round(start,2)}_{round(end,2)}_{cnt}.wav"
                 cnt+=1

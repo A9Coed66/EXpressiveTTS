@@ -718,49 +718,51 @@ def main_process():
     if args.label_audio:
         label()
 
-    audio_files = sorted([os.path.join(cfg["source_path"], cfg["playlist_name"], ep) 
-                  for ep in os.listdir(os.path.join(cfg["source_path"], cfg["playlist_name"]))])
-    # print(audio_files)
+    # audio_files = sorted([os.path.join(cfg["source_path"], cfg["playlist_name"], ep) 
+    #               for ep in os.listdir(os.path.join(cfg["source_path"], cfg["playlist_name"]))])
+    # # print(audio_files)
 
-    # Process by batch
-    batch_size = 4
-    for i in range(0, len(audio_files), batch_size):
-        batch = audio_files[i:i+batch_size] #batch: full name path to source
-        episode_name = [os.path.basename(ep).rsplit('.', 1)[0] for ep in batch]
-        print(episode_name)
-        results = standarlization_audio(batch, is_save=True)
+    # # Process by batch
+    # batch_size = 4
+    # for i in range(0, len(audio_files), batch_size):
+    #     batch = audio_files[i:i+batch_size] #batch: full name path to source
+    #     episode_name = [os.path.basename(ep).rsplit('.', 1)[0] for ep in batch]
+    #     print(episode_name)
+    #     results = standarlization_audio(batch, is_save=True)
 
-        #TODO: xóa nhạc nền
+    #     #TODO: xóa nhạc nền
 
-        diary_with_embeddings = speaker_diarization(results, episode_name, is_save=True) # [{diary, embeddings}, {diary, embeddings}, ...]
+    #     diary_with_embeddings = speaker_diarization(results, episode_name, is_save=True) # [{diary, embeddings}, {diary, embeddings}, ...]
 
-        # emebeddings = [diary["embeddings"] for diary in diary_with_embeddings]
-        #NOTE bo buoc nay create_matadata_embeddings(emebeddings, episode_name)
+    #     # emebeddings = [diary["embeddings"] for diary in diary_with_embeddings]
+    #     #NOTE bo buoc nay create_matadata_embeddings(emebeddings, episode_name)
 
-        diarys = [diary["diary"] for diary in diary_with_embeddings]
-        cleaned_diary = clean_diary(diarys, episode_name, is_save=True) # [[[start, end], speaker], [[start, end], speaker], ...]
+    #     diarys = [diary["diary"] for diary in diary_with_embeddings]
+    #     cleaned_diary = clean_diary(diarys, episode_name, is_save=True) # [[[start, end], speaker], [[start, end], speaker], ...]
 
-        save_sub_audio(results, cleaned_diary)
+    #     save_sub_audio(results, cleaned_diary)
 
-        # silero-VAD.py
+    #     denoise(episode_name)
 
-        # cosine_pair.py
+    #     # sileroVAD.py
 
-        # remove.py
+    #     # cosine_pair.py
 
-        denoise(episode_name)
+    #     # remove.py
 
-        # standarlize audio vì rè
-
-        split_by_denoise(episode_name)
-
-        transcript(episode_name, is_save=True)
-
-        #bonus (?) filter_transcipt(episode_name)
         
-        #TODO Kiem tra ngu nghia cua cau 
-        # # filter_audio(episode_name)
-        nisqa(episode_name)
+
+    #     # standarlize audio vì rè
+
+    #     split_by_denoise(episode_name)
+
+    #     transcript(episode_name, is_save=True)
+
+    #     #bonus (?) filter_transcipt(episode_name)
+        
+    #     #TODO Kiem tra ngu nghia cua cau 
+    #     # # filter_audio(episode_name)
+    #     nisqa(episode_name)
 
         
 
