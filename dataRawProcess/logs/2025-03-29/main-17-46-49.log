@@ -1,0 +1,15 @@
+2025-03-29 17:46:49,792 - main - INFO - ENV: CUDA_VISIBLE_DEVICES not set, use default setting
+2025-03-29 17:46:52,792 - main - DEBUG - Torch CUDA: Detected 4 GPUs.
+2025-03-29 17:46:52,802 - main - DEBUG -  * GPU 0: Tesla V100-PCIE-32GB
+2025-03-29 17:46:52,802 - main - DEBUG -  * GPU 1: Tesla V100-PCIE-32GB
+2025-03-29 17:46:52,802 - main - DEBUG -  * GPU 2: Tesla V100-PCIE-32GB
+2025-03-29 17:46:52,802 - main - DEBUG -  * GPU 3: Tesla V100-SXM2-32GB
+2025-03-29 17:46:52,804 - main - DEBUG - Torch: CUDNN version = 90100
+2025-03-29 17:46:52,804 - main - DEBUG - Torch: CUDNN is available.
+2025-03-29 17:46:52,804 - main - DEBUG - ORT: Available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2025-03-29 17:46:52,804 - main - WARNING - ORT: CUDAExecutionProvider is not available. Please install a compatible version of ONNX Runtime. See https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html
+2025-03-29 17:47:04,272 - main - INFO - Batch 1 processed in 11.47 seconds
+2025-03-29 17:47:25,801 - main - INFO - Batch 2 processed in 21.53 seconds
+2025-03-29 17:47:36,775 - main - INFO - Batch 3 processed in 10.96 seconds
+2025-03-29 17:48:28,347 - main - INFO - Batch 4 processed in 51.57 seconds
+2025-03-29 17:48:45,766 - main - INFO - Batch 5 processed in 17.42 seconds

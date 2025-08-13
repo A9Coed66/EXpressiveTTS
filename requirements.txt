@@ -1,5 +1,4 @@
 pydub
-denosier
 librosa
 pyannote.audio
 torchaudio

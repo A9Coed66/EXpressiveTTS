@@ -11,14 +11,14 @@ def main(config):
     #     ljspeech.prepare_align(config)
     # if "VCTK" in config["dataset"]:
     #     vctk.prepare_align(config)
-    if "ESD" in config["dataset"]:
-        # esd.prepare_align(config)
-        esd.make_meta_dict(config)
-    # if "Mihoyo" in config["dataset"]:
-    #     prepared_char = mihoyo.prepare_align(config)
+    # if "ESD" in config["dataset"]:
+    #     esd.prepare_align(config)
+    #     esd.make_meta_dict(config)
+    if "Mihoyo" in config["dataset"]:
+        prepared_char = mihoyo.prepare_align(config)
 
-    # preprocessor = Preprocessor(config)
-    # preprocessor.build_from_path()
+    preprocessor = Preprocessor(config)
+    preprocessor.build_from_path(prepared_char=prepared_char)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

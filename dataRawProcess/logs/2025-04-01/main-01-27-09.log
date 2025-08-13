@@ -1,0 +1,168 @@
+2025-04-01 01:27:09,471 - main - INFO - ENV: CUDA_VISIBLE_DEVICES not set, use default setting
+2025-04-01 01:27:09,503 - main - DEBUG - Torch CUDA: Detected 4 GPUs.
+2025-04-01 01:27:09,714 - main - DEBUG -  * GPU 0: Tesla V100-PCIE-32GB
+2025-04-01 01:27:09,731 - main - DEBUG -  * GPU 1: Tesla V100-PCIE-32GB
+2025-04-01 01:27:09,732 - main - DEBUG -  * GPU 2: Tesla V100-PCIE-32GB
+2025-04-01 01:27:09,732 - main - DEBUG -  * GPU 3: Tesla V100-SXM2-32GB
+2025-04-01 01:27:09,736 - main - DEBUG - Torch: CUDNN version = 90100
+2025-04-01 01:27:09,736 - main - DEBUG - Torch: CUDNN is available.
+2025-04-01 01:27:09,737 - main - DEBUG - ORT: Available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2025-04-01 01:27:09,737 - main - WARNING - ORT: CUDAExecutionProvider is not available. Please install a compatible version of ONNX Runtime. See https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html
+2025-04-01 01:27:13,134 - main - DEBUG - Entering the preprocessing of audio
+2025-04-01 01:27:14,470 - main - DEBUG - Audio file converted to WAV format
+2025-04-01 01:27:14,508 - main - INFO - Calculating the gain needed for the audio: -5.438793727847845 dB
+2025-04-01 01:27:15,160 - main - DEBUG - waveform shape: (11873385,)
+2025-04-01 01:27:15,160 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-04-01 01:27:15,161 - main - INFO - Preprocessing completed in 5.40 seconds
+2025-04-01 01:27:28,279 - main - DEBUG - Entering the preprocessing of audio
+2025-04-01 01:27:31,174 - main - DEBUG - Entering the preprocessing of audio
+2025-04-01 01:27:36,552 - main - DEBUG - Audio file converted to WAV format
+2025-04-01 01:27:36,966 - main - DEBUG - Audio file converted to WAV format
+2025-04-01 01:27:37,099 - main - INFO - Calculating the gain needed for the audio: -0.45996233500998684 dB
+2025-04-01 01:27:38,053 - main - INFO - Calculating the gain needed for the audio: -4.066015995598949 dB
+2025-04-01 01:27:45,908 - main - DEBUG - Entering the preprocessing of audio
+2025-04-01 01:27:50,330 - main - DEBUG - Audio file converted to WAV format
+2025-04-01 01:27:50,436 - main - DEBUG - waveform shape: (49699527,)
+2025-04-01 01:27:50,438 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-04-01 01:27:50,440 - main - INFO - Preprocessing completed in 40.65 seconds
+2025-04-01 01:27:50,552 - main - DEBUG - waveform shape: (55065287,)
+2025-04-01 01:27:50,552 - main - INFO - Calculating the gain needed for the audio: -3.0063723151932393 dB
+2025-04-01 01:27:50,573 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-04-01 01:27:51,164 - main - INFO - Preprocessing completed in 41.32 seconds
+2025-04-01 01:28:06,115 - main - DEBUG - waveform shape: (54113733,)
+2025-04-01 01:28:06,116 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-04-01 01:28:06,116 - main - INFO - Preprocessing completed in 56.30 seconds
+2025-04-01 01:28:06,152 - main - INFO - Batch 1 processed in 56.41 seconds
+2025-04-01 01:28:06,152 - main - INFO - Loading diarization model...
+2025-04-01 01:28:06,152 - main - INFO - Loading diarization model...
+2025-04-01 01:28:12,488 - main - INFO - Diarization model loaded successfully
+2025-04-01 01:30:01,230 - main - INFO - Processed file: 1 GIẢNG VIÊN BỊ CHỈ TRÍCH VÌ CHẤM 0 ĐIỂM CHO BÀI THI A.I .mp3
+2025-04-01 01:37:57,783 - main - INFO - Processed file: 10 Từ newbie, tôi triệu hồi ra ＂ Hầu Gái ＂ mạnh nhất ｜ Fate⧸Stay Night： Unlimited Blade Works phần 1 .mp3
+2025-04-01 01:46:53,459 - main - INFO - Processed file: 11 Tâm Sự Cùng Đinh Đoàn-Chị Gái U70 Qua Đêm Với Bạn Trai, Vô Tình Phát Hiện Bí Mật Đáng Ngờ .mp3
+2025-04-01 01:48:33,084 - main - INFO - Processed file: 12 Đừng quên đếm sĩ số lớp vào đầu năm học, nếu không thì ... ｜ Recap xàm： Another .mp3
+2025-04-01 01:48:33,092 - main - INFO - Diarization model cleared from GPU memory
+2025-04-01 01:48:42,715 - main - DEBUG - Entering the preprocessing of audio
+2025-04-01 01:48:42,751 - main - DEBUG - Entering the preprocessing of audio
+2025-04-01 01:48:49,637 - main - DEBUG - Audio file converted to WAV format
+2025-04-01 01:48:49,789 - main - DEBUG - Audio file converted to WAV format
+2025-04-01 01:48:49,886 - main - INFO - Calculating the gain needed for the audio: 8.070313172540725 dB
+2025-04-01 01:48:50,118 - main - INFO - Calculating the gain needed for the audio: -4.377394917985782 dB
+2025-04-01 01:48:57,288 - main - DEBUG - waveform shape: (68520786,)
+2025-04-01 01:48:57,288 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-04-01 01:48:57,288 - main - INFO - Preprocessing completed in 24.19 seconds
+2025-04-01 01:48:59,237 - main - DEBUG - waveform shape: (77919576,)
+2025-04-01 01:48:59,237 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-04-01 01:48:59,237 - main - INFO - Preprocessing completed in 26.14 seconds
+2025-04-01 01:49:06,197 - main - DEBUG - Entering the preprocessing of audio
+2025-04-01 01:49:06,254 - main - DEBUG - Entering the preprocessing of audio
+2025-04-01 01:49:14,947 - main - DEBUG - Audio file converted to WAV format
+2025-04-01 01:49:14,978 - main - DEBUG - Audio file converted to WAV format
+2025-04-01 01:49:15,400 - main - INFO - Calculating the gain needed for the audio: -4.308261141735521 dB
+2025-04-01 01:49:15,564 - main - INFO - Calculating the gain needed for the audio: 3.0104780233948425 dB
+2025-04-01 01:49:25,325 - main - DEBUG - waveform shape: (89659211,)
+2025-04-01 01:49:25,326 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-04-01 01:49:25,326 - main - INFO - Preprocessing completed in 52.23 seconds
+2025-04-01 01:49:26,755 - main - DEBUG - waveform shape: (90787701,)
+2025-04-01 01:49:26,756 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-04-01 01:49:26,756 - main - INFO - Preprocessing completed in 53.66 seconds
+2025-04-01 01:49:26,965 - main - INFO - Batch 2 processed in 53.87 seconds
+2025-04-01 01:49:26,965 - main - INFO - Loading diarization model...
+2025-04-01 01:49:26,965 - main - INFO - Loading diarization model...
+2025-04-01 01:49:29,397 - main - INFO - Diarization model loaded successfully
+2025-04-01 01:51:32,668 - main - INFO - Processed file: 13 Ta có biết mình đang ăn gì mỗi ngày không？ ｜ Tiến sĩ Châu Ngọc Điệp ｜ Diễn Giả Phan Đăng .mp3
+2025-04-01 01:53:49,601 - main - INFO - Processed file: 14 Nguyễn Thuỵ Đan： Người hiện đại mang âm hưởng cổ thi ｜ Diễn Giả Phan Đăng .mp3
+2025-04-01 01:56:25,758 - main - INFO - Processed file: 15 Tâm Sự Cùng Đinh Đoàn-Trái Ngang Cuộc Tình： Mẹ Và Con Gái Yêu Chung 1 Người .mp3
+2025-04-01 01:59:02,358 - main - INFO - Processed file: 16 Game thủ thành nhưng TÔI LÀ PHE PHẢN DIỆN (Maze Keeper #1) .mp3
+2025-04-01 01:59:02,371 - main - INFO - Diarization model cleared from GPU memory
+2025-04-01 01:59:04,026 - main - DEBUG - Entering the preprocessing of audio
+2025-04-01 01:59:04,594 - main - DEBUG - Audio file converted to WAV format
+2025-04-01 01:59:04,642 - main - INFO - Calculating the gain needed for the audio: 8.083748426013049 dB
+2025-04-01 01:59:06,315 - main - DEBUG - waveform shape: (12682833,)
+2025-04-01 01:59:06,316 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-04-01 01:59:06,316 - main - INFO - Preprocessing completed in 3.87 seconds
+2025-04-01 01:59:18,059 - main - DEBUG - Entering the preprocessing of audio
+2025-04-01 01:59:22,958 - main - DEBUG - Audio file converted to WAV format
+2025-04-01 01:59:23,255 - main - INFO - Calculating the gain needed for the audio: 6.324869115961199 dB
+2025-04-01 01:59:31,284 - main - DEBUG - waveform shape: (99461469,)
+2025-04-01 01:59:31,285 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-04-01 01:59:31,285 - main - INFO - Preprocessing completed in 28.91 seconds
+2025-04-01 01:59:50,486 - main - DEBUG - Entering the preprocessing of audio
+2025-04-01 02:00:01,780 - main - DEBUG - Audio file converted to WAV format
+2025-04-01 02:00:02,406 - main - INFO - Calculating the gain needed for the audio: 4.5306065859598235 dB
+2025-04-01 02:00:26,602 - main - DEBUG - waveform shape: (217967387,)
+2025-04-01 02:00:26,603 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-04-01 02:00:26,603 - main - INFO - Preprocessing completed in 84.23 seconds
+2025-04-01 02:00:36,388 - main - DEBUG - Entering the preprocessing of audio
+2025-04-01 02:00:50,575 - main - DEBUG - Audio file converted to WAV format
+2025-04-01 02:00:51,427 - main - INFO - Calculating the gain needed for the audio: -2.228069594140159 dB
+2025-04-01 02:01:31,712 - main - DEBUG - waveform shape: (287886664,)
+2025-04-01 02:01:31,713 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-04-01 02:01:31,713 - main - INFO - Preprocessing completed in 149.30 seconds
+2025-04-01 02:01:32,171 - main - INFO - Batch 3 processed in 149.80 seconds
+2025-04-01 02:01:32,172 - main - INFO - Loading diarization model...
+2025-04-01 02:01:32,172 - main - INFO - Loading diarization model...
+2025-04-01 02:01:34,685 - main - INFO - Diarization model loaded successfully
+2025-04-01 02:05:17,372 - main - INFO - Processed file: 17 Giả lập quản lý team LMHT này CUỐN đến mức tôi đã chơi 10 NGÀY LIÊN TIẾP (Esport Godfather) .mp3
+2025-04-01 02:12:13,457 - main - INFO - Processed file: 18 TÓM TẮT ｜ TOÀN BỘ JOJO'S PART 7： STEEL BALL RUN - ĐUA NGỰA ẢO ĐÉT! .mp3
+2025-04-01 02:21:54,034 - main - INFO - Processed file: 19 Toàn bộ về Jojo trong hơn 3 tiếng ｜ Recap Xàm： Jojo .mp3
+2025-04-01 02:22:16,373 - main - INFO - Processed file: 2 Phần tranh biện cực ＂gắt＂ thu hút hàng triệu lượt xem ｜ Trường Teen 2019 ｜ Trích đoạn tập 10 .mp3
+2025-04-01 02:22:16,382 - main - INFO - Diarization model cleared from GPU memory
+2025-04-01 02:22:18,191 - main - DEBUG - Entering the preprocessing of audio
+2025-04-01 02:22:18,823 - main - DEBUG - Audio file converted to WAV format
+2025-04-01 02:22:18,862 - main - INFO - Calculating the gain needed for the audio: -5.9157967558714315 dB
+2025-04-01 02:22:19,131 - main - DEBUG - waveform shape: (12750821,)
+2025-04-01 02:22:19,131 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-04-01 02:22:19,131 - main - INFO - Preprocessing completed in 2.74 seconds
+2025-04-01 02:22:20,834 - main - DEBUG - Entering the preprocessing of audio
+2025-04-01 02:22:22,024 - main - DEBUG - Audio file converted to WAV format
+2025-04-01 02:22:22,106 - main - INFO - Calculating the gain needed for the audio: -1.2980945229374754 dB
+2025-04-01 02:22:24,202 - main - DEBUG - Entering the preprocessing of audio
+2025-04-01 02:22:24,416 - main - DEBUG - waveform shape: (24663215,)
+2025-04-01 02:22:25,424 - main - DEBUG - Entering the preprocessing of audio
+2025-04-01 02:22:25,620 - main - DEBUG - Audio file converted to WAV format
+2025-04-01 02:22:25,620 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-04-01 02:22:27,119 - main - INFO - Calculating the gain needed for the audio: -2.938601701130594 dB
+2025-04-01 02:22:27,119 - main - DEBUG - Audio file converted to WAV format
+2025-04-01 02:22:27,119 - main - INFO - Preprocessing completed in 10.66 seconds
+2025-04-01 02:22:27,434 - main - INFO - Calculating the gain needed for the audio: -3.092205650268326 dB
+2025-04-01 02:22:29,665 - main - DEBUG - waveform shape: (27204608,)
+2025-04-01 02:22:29,666 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-04-01 02:22:29,666 - main - INFO - Preprocessing completed in 13.20 seconds
+2025-04-01 02:22:30,657 - main - DEBUG - waveform shape: (30040956,)
+2025-04-01 02:22:30,658 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-04-01 02:22:30,658 - main - INFO - Preprocessing completed in 14.19 seconds
+2025-04-01 02:22:30,835 - main - INFO - Batch 4 processed in 14.45 seconds
+2025-04-01 02:22:30,836 - main - INFO - Loading diarization model...
+2025-04-01 02:22:30,836 - main - INFO - Loading diarization model...
+2025-04-01 02:22:33,412 - main - INFO - Diarization model loaded successfully
+2025-04-01 02:22:55,239 - main - INFO - Processed file: 3 Drama Lê Tuấn Khang tuần vừa qua thật điên rồ... (cả Dino sasuke nữa) .mp3
+2025-04-01 02:23:37,444 - main - INFO - Processed file: 4 Song ca khi ở nhà một mình vào ngày Giáng Sinh  ｜ Siêu tổng hợp： Home Alone ( 2 phần ) .mp3
+2025-04-01 02:24:25,445 - main - INFO - Processed file: 5 Can You Fool A Self Driving Car？ .mp3
+2025-04-01 02:25:18,197 - main - INFO - Processed file: 6 Những Ván Game DÀI Nhất Thế Giới .mp3
+2025-04-01 02:25:18,203 - main - INFO - Diarization model cleared from GPU memory
+2025-04-01 02:25:22,349 - main - DEBUG - Entering the preprocessing of audio
+2025-04-01 02:25:23,827 - main - DEBUG - Audio file converted to WAV format
+2025-04-01 02:25:23,926 - main - INFO - Calculating the gain needed for the audio: -2.8817194438899705 dB
+2025-04-01 02:25:26,406 - main - DEBUG - waveform shape: (32979209,)
+2025-04-01 02:25:26,406 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-04-01 02:25:26,406 - main - INFO - Preprocessing completed in 8.19 seconds
+2025-04-01 02:25:27,135 - main - DEBUG - Entering the preprocessing of audio
+2025-04-01 02:25:28,939 - main - DEBUG - Audio file converted to WAV format
+2025-04-01 02:25:29,083 - main - INFO - Calculating the gain needed for the audio: 0.6087744076228958 dB
+2025-04-01 02:25:31,722 - main - DEBUG - waveform shape: (37051246,)
+2025-04-01 02:25:31,722 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-04-01 02:25:31,722 - main - INFO - Preprocessing completed in 13.50 seconds
+2025-04-01 02:25:32,940 - main - DEBUG - Entering the preprocessing of audio
+2025-04-01 02:25:35,150 - main - DEBUG - Audio file converted to WAV format
+2025-04-01 02:25:35,279 - main - INFO - Calculating the gain needed for the audio: -4.114018175799325 dB
+2025-04-01 02:25:40,906 - main - DEBUG - waveform shape: (40452598,)
+2025-04-01 02:25:40,906 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-04-01 02:25:40,907 - main - INFO - Preprocessing completed in 22.67 seconds
+2025-04-01 02:25:40,972 - main - INFO - Batch 5 processed in 22.77 seconds
+2025-04-01 02:25:40,973 - main - INFO - Loading diarization model...
+2025-04-01 02:25:40,973 - main - INFO - Loading diarization model...
+2025-04-01 02:25:43,516 - main - INFO - Diarization model loaded successfully
+2025-04-01 02:26:41,815 - main - INFO - Processed file: 7 Testing The World's Smartest Crow .mp3
+2025-04-01 02:27:45,226 - main - INFO - Processed file: 8 Chủ nghĩa KHẮC KỶ và trào lưu CHILL GUY：Làm sao sống BÌNH THẢN nhưng không TRỐN CHẠY？｜Nguyễn Hữu Trí .mp3
+2025-04-01 02:28:56,730 - main - INFO - Processed file: 9 Ngôi trường dành cho các Conan： Recap xàm Danganronpa The Anime .mp3
+2025-04-01 02:28:56,736 - main - INFO - Diarization model cleared from GPU memory

@@ -1,0 +1,37 @@
+2025-03-29 18:57:13,441 - main - INFO - ENV: CUDA_VISIBLE_DEVICES not set, use default setting
+2025-03-29 18:57:13,472 - main - DEBUG - Torch CUDA: Detected 4 GPUs.
+2025-03-29 18:57:13,545 - main - DEBUG -  * GPU 0: Tesla V100-PCIE-32GB
+2025-03-29 18:57:13,545 - main - DEBUG -  * GPU 1: Tesla V100-PCIE-32GB
+2025-03-29 18:57:13,545 - main - DEBUG -  * GPU 2: Tesla V100-PCIE-32GB
+2025-03-29 18:57:13,546 - main - DEBUG -  * GPU 3: Tesla V100-SXM2-32GB
+2025-03-29 18:57:13,549 - main - DEBUG - Torch: CUDNN version = 90100
+2025-03-29 18:57:13,549 - main - DEBUG - Torch: CUDNN is available.
+2025-03-29 18:57:13,550 - main - DEBUG - ORT: Available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2025-03-29 18:57:13,550 - main - WARNING - ORT: CUDAExecutionProvider is not available. Please install a compatible version of ONNX Runtime. See https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html
+2025-03-29 18:57:15,152 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 18:57:15,159 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 18:57:16,309 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 18:57:16,313 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 18:57:16,376 - main - INFO - Calculating the gain needed for the audio: -5.438793727847845 dB
+2025-03-29 18:57:16,396 - main - INFO - Calculating the gain needed for the audio: 8.083748426013049 dB
+2025-03-29 18:57:16,697 - main - DEBUG - waveform shape: (11873385,)
+2025-03-29 18:57:16,697 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 18:57:16,698 - main - INFO - Preprocessing completed in 3.15 seconds
+2025-03-29 18:57:16,714 - main - DEBUG - waveform shape: (12682833,)
+2025-03-29 18:57:16,714 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 18:57:16,714 - main - INFO - Preprocessing completed in 3.16 seconds
+2025-03-29 18:57:18,741 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 18:57:19,916 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 18:57:20,001 - main - INFO - Calculating the gain needed for the audio: -2.938601701130594 dB
+2025-03-29 18:57:20,283 - main - DEBUG - waveform shape: (27204608,)
+2025-03-29 18:57:20,284 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 18:57:20,284 - main - INFO - Preprocessing completed in 6.73 seconds
+2025-03-29 18:57:54,866 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 18:58:09,608 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 18:58:10,719 - main - INFO - Calculating the gain needed for the audio: -2.228069594140159 dB
+2025-03-29 18:58:43,094 - main - DEBUG - waveform shape: (287886664,)
+2025-03-29 18:58:43,095 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 18:58:43,095 - main - INFO - Preprocessing completed in 89.54 seconds
+2025-03-29 18:58:43,278 - main - INFO - Batch 1 processed in 89.73 seconds
+2025-03-29 18:58:43,278 - main - INFO - Loading diarization model...
+2025-03-29 20:20:24,068 - main - INFO - Diarization model cleared from GPU memory

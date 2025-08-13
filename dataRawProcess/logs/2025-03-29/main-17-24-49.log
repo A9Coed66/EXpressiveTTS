@@ -1,0 +1,129 @@
+2025-03-29 17:24:49,895 - main - INFO - ENV: CUDA_VISIBLE_DEVICES not set, use default setting
+2025-03-29 17:24:51,577 - main - DEBUG - Torch CUDA: Detected 4 GPUs.
+2025-03-29 17:24:51,587 - main - DEBUG -  * GPU 0: Tesla V100-PCIE-32GB
+2025-03-29 17:24:51,587 - main - DEBUG -  * GPU 1: Tesla V100-PCIE-32GB
+2025-03-29 17:24:51,587 - main - DEBUG -  * GPU 2: Tesla V100-PCIE-32GB
+2025-03-29 17:24:51,587 - main - DEBUG -  * GPU 3: Tesla V100-SXM2-32GB
+2025-03-29 17:24:51,588 - main - DEBUG - Torch: CUDNN version = 90100
+2025-03-29 17:24:51,588 - main - DEBUG - Torch: CUDNN is available.
+2025-03-29 17:24:51,588 - main - DEBUG - ORT: Available providers: ['AzureExecutionProvider', 'CPUExecutionProvider']
+2025-03-29 17:24:51,589 - main - WARNING - ORT: CUDAExecutionProvider is not available. Please install a compatible version of ONNX Runtime. See https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html
+2025-03-29 17:24:53,675 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 17:24:53,675 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 17:24:55,057 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 17:24:55,092 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 17:24:55,115 - main - INFO - Calculating the gain needed for the audio: -5.438793727847845 dB
+2025-03-29 17:24:55,253 - main - INFO - Calculating the gain needed for the audio: -5.9157967558714315 dB
+2025-03-29 17:24:59,223 - main - DEBUG - waveform shape: (11873385,)
+2025-03-29 17:24:59,224 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 17:24:59,224 - main - INFO - Preprocessing completed in 7.63 seconds
+2025-03-29 17:24:59,262 - main - DEBUG - waveform shape: (12750821,)
+2025-03-29 17:24:59,263 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 17:24:59,263 - main - INFO - Preprocessing completed in 7.67 seconds
+2025-03-29 17:25:01,321 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 17:25:02,640 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 17:25:02,722 - main - INFO - Calculating the gain needed for the audio: -2.938601701130594 dB
+2025-03-29 17:25:05,164 - main - DEBUG - waveform shape: (27204608,)
+2025-03-29 17:25:05,164 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 17:25:05,165 - main - INFO - Preprocessing completed in 13.58 seconds
+2025-03-29 17:25:06,593 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 17:25:08,325 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 17:25:08,435 - main - INFO - Calculating the gain needed for the audio: 0.6087744076228958 dB
+2025-03-29 17:25:12,246 - main - DEBUG - waveform shape: (37051246,)
+2025-03-29 17:25:12,247 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 17:25:12,247 - main - INFO - Preprocessing completed in 20.66 seconds
+2025-03-29 17:25:12,264 - main - INFO - Batch 1 processed in 20.68 seconds
+2025-03-29 17:25:18,173 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 17:25:20,210 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 17:25:20,342 - main - INFO - Calculating the gain needed for the audio: -4.114018175799325 dB
+2025-03-29 17:25:23,168 - main - DEBUG - waveform shape: (40452598,)
+2025-03-29 17:25:23,169 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 17:25:23,169 - main - INFO - Preprocessing completed in 10.86 seconds
+2025-03-29 17:25:28,742 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 17:25:32,481 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 17:25:32,724 - main - INFO - Calculating the gain needed for the audio: -4.377394917985782 dB
+2025-03-29 17:25:36,307 - main - DEBUG - waveform shape: (77919576,)
+2025-03-29 17:25:36,307 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 17:25:36,308 - main - INFO - Preprocessing completed in 24.01 seconds
+2025-03-29 17:25:43,030 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 17:25:47,745 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 17:25:53,809 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 17:25:54,065 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 17:25:54,201 - main - INFO - Calculating the gain needed for the audio: 3.0104780233948425 dB
+2025-03-29 17:25:55,141 - main - INFO - Calculating the gain needed for the audio: 6.324869115961199 dB
+2025-03-29 17:26:04,501 - main - DEBUG - waveform shape: (90787701,)
+2025-03-29 17:26:04,502 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 17:26:04,502 - main - INFO - Preprocessing completed in 52.23 seconds
+2025-03-29 17:26:04,674 - main - DEBUG - waveform shape: (99461469,)
+2025-03-29 17:26:04,674 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 17:26:04,674 - main - INFO - Preprocessing completed in 52.40 seconds
+2025-03-29 17:26:04,818 - main - INFO - Batch 2 processed in 52.55 seconds
+2025-03-29 17:26:06,709 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 17:26:07,309 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 17:26:07,353 - main - INFO - Calculating the gain needed for the audio: 8.083748426013049 dB
+2025-03-29 17:26:10,073 - main - DEBUG - waveform shape: (12682833,)
+2025-03-29 17:26:10,074 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 17:26:10,074 - main - INFO - Preprocessing completed in 5.21 seconds
+2025-03-29 17:26:12,028 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 17:26:13,412 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 17:26:13,491 - main - INFO - Calculating the gain needed for the audio: -1.2980945229374754 dB
+2025-03-29 17:26:16,538 - main - DEBUG - waveform shape: (24663215,)
+2025-03-29 17:26:16,538 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 17:26:16,538 - main - INFO - Preprocessing completed in 11.63 seconds
+2025-03-29 17:26:17,815 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 17:26:19,398 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 17:26:19,490 - main - INFO - Calculating the gain needed for the audio: -3.092205650268326 dB
+2025-03-29 17:26:32,399 - main - DEBUG - waveform shape: (30040956,)
+2025-03-29 17:26:32,400 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 17:26:32,401 - main - INFO - Preprocessing completed in 27.55 seconds
+2025-03-29 17:26:39,766 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 17:26:44,802 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 17:26:45,060 - main - INFO - Calculating the gain needed for the audio: 8.070313172540725 dB
+2025-03-29 17:26:53,135 - main - DEBUG - waveform shape: (68520786,)
+2025-03-29 17:26:53,136 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 17:26:53,137 - main - INFO - Preprocessing completed in 48.22 seconds
+2025-03-29 17:26:53,330 - main - INFO - Batch 3 processed in 48.51 seconds
+2025-03-29 17:27:01,692 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 17:27:04,182 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 17:27:04,353 - main - INFO - Calculating the gain needed for the audio: -2.8817194438899705 dB
+2025-03-29 17:27:08,056 - main - DEBUG - waveform shape: (32979209,)
+2025-03-29 17:27:08,076 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 17:27:08,076 - main - INFO - Preprocessing completed in 14.73 seconds
+2025-03-29 17:27:14,073 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 17:27:19,044 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 17:27:19,289 - main - INFO - Calculating the gain needed for the audio: -3.0063723151932393 dB
+2025-03-29 17:27:23,285 - main - DEBUG - waveform shape: (54113733,)
+2025-03-29 17:27:23,291 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 17:27:23,292 - main - INFO - Preprocessing completed in 29.84 seconds
+2025-03-29 17:28:03,835 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 17:28:17,142 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 17:28:17,955 - main - INFO - Calculating the gain needed for the audio: 4.5306065859598235 dB
+2025-03-29 17:28:37,656 - main - DEBUG - waveform shape: (217967387,)
+2025-03-29 17:28:37,657 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 17:28:37,657 - main - INFO - Preprocessing completed in 104.22 seconds
+2025-03-29 17:28:55,743 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 17:29:16,424 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 17:29:17,661 - main - INFO - Calculating the gain needed for the audio: -2.228069594140159 dB
+2025-03-29 17:30:03,574 - main - DEBUG - waveform shape: (287886664,)
+2025-03-29 17:30:03,575 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 17:30:03,575 - main - INFO - Preprocessing completed in 190.21 seconds
+2025-03-29 17:30:03,924 - main - INFO - Batch 4 processed in 190.59 seconds
+2025-03-29 17:30:17,009 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 17:30:21,275 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 17:30:21,525 - main - INFO - Calculating the gain needed for the audio: -4.066015995598949 dB
+2025-03-29 17:30:27,361 - main - DEBUG - waveform shape: (49699527,)
+2025-03-29 17:30:27,363 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 17:30:27,364 - main - INFO - Preprocessing completed in 23.30 seconds
+2025-03-29 17:30:30,216 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 17:30:34,096 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 17:30:34,332 - main - INFO - Calculating the gain needed for the audio: -0.45996233500998684 dB
+2025-03-29 17:30:44,608 - main - DEBUG - waveform shape: (55065287,)
+2025-03-29 17:30:44,609 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 17:30:44,609 - main - INFO - Preprocessing completed in 40.50 seconds
+2025-03-29 17:30:51,991 - main - DEBUG - Entering the preprocessing of audio
+2025-03-29 17:30:58,344 - main - DEBUG - Audio file converted to WAV format
+2025-03-29 17:30:58,757 - main - INFO - Calculating the gain needed for the audio: -4.308261141735521 dB
+2025-03-29 17:31:09,894 - main - DEBUG - waveform shape: (89659211,)
+2025-03-29 17:31:09,896 - main - DEBUG - waveform in np ndarray, dtype=float32
+2025-03-29 17:31:09,897 - main - INFO - Preprocessing completed in 65.92 seconds
+2025-03-29 17:31:10,252 - main - INFO - Batch 5 processed in 66.33 seconds
